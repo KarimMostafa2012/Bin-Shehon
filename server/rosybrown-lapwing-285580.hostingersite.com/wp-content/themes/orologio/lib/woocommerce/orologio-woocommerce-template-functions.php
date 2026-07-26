@@ -502,7 +502,17 @@ if ( ! function_exists( 'orologio_render_acf_product_data' ) ) {
             echo '</tr>';
         }
 
+        $hidden_acf_fields = array(
+            'btv_tire_front_image',
+            'btv_tire_back_image',
+            'btv_tire_side_image',
+        );
+
         foreach ( $fields as $name => $value ) {
+            if ( in_array( $name, $hidden_acf_fields, true ) ) {
+                continue;
+            }
+
             $formatted_value = orologio_format_acf_product_value( $value );
 
             if ( '' === $formatted_value ) {
@@ -554,7 +564,17 @@ if ( ! function_exists( 'orologio_add_acf_fields_to_product_attributes' ) ) {
             return $product_attributes;
         }
 
+        $hidden_acf_fields = array(
+            'btv_tire_front_image',
+            'btv_tire_back_image',
+            'btv_tire_side_image',
+        );
+
         foreach ( $fields as $name => $value ) {
+            if ( in_array( $name, $hidden_acf_fields, true ) ) {
+                continue;
+            }
+
             $formatted_value = orologio_format_acf_product_value( $value );
 
             if ( '' === $formatted_value ) {
