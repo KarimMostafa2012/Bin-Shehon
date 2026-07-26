@@ -498,7 +498,7 @@ if ( ! function_exists( 'orologio_render_acf_product_data' ) ) {
 
             echo '<tr class="woocommerce-product-attributes-item">';
             echo '<th class="woocommerce-product-attributes-item__label">' . esc_html( $label ) . '</th>';
-            echo '<td class="woocommerce-product-attributes-item__value">' . $formatted_value . '</td>';
+            echo '<td class="woocommerce-product-attributes-item__value" colspan="2">' . $formatted_value . '</td>';
             echo '</tr>';
         }
 
@@ -521,7 +521,7 @@ if ( ! function_exists( 'orologio_render_acf_product_data' ) ) {
 
             echo '<tr class="woocommerce-product-attributes-item">';
             echo '<th class="woocommerce-product-attributes-item__label">' . esc_html( ucwords( str_replace( array( '_', '-' ), ' ', $name ) ) ) . '</th>';
-            echo '<td class="woocommerce-product-attributes-item__value">' . $formatted_value . '</td>';
+            echo '<td class="woocommerce-product-attributes-item__value" colspan="2">' . $formatted_value . '</td>';
             echo '</tr>';
         }
 
