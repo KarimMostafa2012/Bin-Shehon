@@ -18,7 +18,7 @@ add_action('wp', function () {
     add_action(
         'woocommerce_after_single_product_summary',
         'wcqr_quote_button',
-        11
+        15
     );
 
     add_action(
