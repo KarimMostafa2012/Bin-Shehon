@@ -1,0 +1,511 @@
+@font-face {
+  font-family: "DG Baysan";
+  src: url("../fonts/DG-Baysan-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DG Baysan";
+  src: url("../fonts/DG-Baysan-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DG Baysan";
+  src: url("../fonts/DG-Baysan-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Somar Sans";
+  src: url("../fonts/SomarSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Somar Sans";
+  src: url("../fonts/SomarSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Somar Sans";
+  src: url("../fonts/SomarSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bst-red: #c41230;
+  --bst-charcoal: #242424;
+  --bst-ink: #111111;
+  --bst-stone: #f4f1ed;
+  --bst-border: #e6dfd7;
+  --bst-font: "DG Baysan", "Somar Sans", Arial, sans-serif;
+  --orologio-primary-font: var(--bst-font);
+  --orologio-secondary-font: var(--bst-font);
+  --orologio-body-typography-font-family: var(--bst-font);
+  --orologio-h1-typography-font-family: var(--bst-font);
+  --orologio-h2-typography-font-family: var(--bst-font);
+  --orologio-h3-typography-font-family: var(--bst-font);
+  --orologio-h4-typography-font-family: var(--bst-font);
+  --orologio-h5-typography-font-family: var(--bst-font);
+  --orologio-h6-typography-font-family: var(--bst-font);
+  --orologio-buttons-typography-font-family: var(--bst-font);
+  --orologio-menu-typography-font-family: var(--bst-font);
+  --orologio-submenu-typography-font-family: var(--bst-font);
+  --orologio-menu-label-font-family: var(--bst-font);
+  --orologio-body-typography-font-size: 16px;
+  --orologio-body-typography-line-height: 1.7;
+  --orologio-h1-typography-font-size: clamp(2.5rem, 4.6vw, 4.5rem);
+  --orologio-h2-typography-font-size: clamp(2rem, 3.5vw, 3.5rem);
+  --orologio-h3-typography-font-size: clamp(1.625rem, 2.6vw, 2.625rem);
+  --orologio-h4-typography-font-size: clamp(1.375rem, 2vw, 2rem);
+  --orologio-h5-typography-font-size: clamp(1.125rem, 1.5vw, 1.5rem);
+  --orologio-h6-typography-font-size: 0.875rem;
+  --orologio-buttons-typography-font-size: 0.9375rem;
+  --orologio-menu-typography-font-size: 1rem;
+  --orologio-submenu-typography-font-size: 0.875rem;
+  --orologio-navigation-font-size: clamp(2rem, 4vw, 3rem);
+  --orologio-submenu-font-size: clamp(1.125rem, 2vw, 1.5rem);
+  --e-global-typography-primary-font-family: var(--bst-font);
+  --e-global-typography-secondary-font-family: var(--bst-font);
+  --e-global-typography-text-font-family: var(--bst-font);
+  --e-global-typography-accent-font-family: var(--bst-font);
+  --e-global-typography-primary-font-size: clamp(2.5rem, 4.6vw, 4.5rem);
+  --e-global-typography-secondary-font-size: clamp(2rem, 3.5vw, 3.5rem);
+  --e-global-typography-text-font-size: 16px;
+  --e-global-typography-accent-font-size: 0.9375rem;
+}
+
+html {
+  font-size: 16px;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--bst-font) !important;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 0;
+}
+
+body :where(p, li, a, button, input, select, textarea, label, table, th, td, blockquote, figcaption),
+body :where(.elementor-widget-text-editor, .elementor-widget-heading, .elementor-button, .main-navigation-wrapper, .woocommerce, .wc-block-components-form, .wpc-filters-main-wrap) {
+  font-family: var(--bst-font) !important;
+}
+
+body :where(h1, h2, h3, h4, h5, h6, .elementor-heading-title, .main-heading, .entry-title, .product_title, .woocommerce-loop-product__title) {
+  font-family: var(--bst-font) !important;
+  letter-spacing: 0;
+}
+
+body :where(h1, .h1, h1.elementor-heading-title) {
+  font-size: clamp(2.5rem, 4.6vw, 4.5rem);
+  line-height: 1.15;
+}
+
+body :where(h2, .h2, h2.elementor-heading-title, .main-heading) {
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  line-height: 1.2;
+}
+
+body :where(h3, .h3, h3.elementor-heading-title) {
+  font-size: clamp(1.625rem, 2.6vw, 2.625rem);
+  line-height: 1.25;
+}
+
+body :where(h4, .h4, h4.elementor-heading-title) {
+  font-size: clamp(1.375rem, 2vw, 2rem);
+  line-height: 1.3;
+}
+
+body :where(h5, .h5, h5.elementor-heading-title) {
+  font-size: clamp(1.125rem, 1.5vw, 1.5rem);
+  line-height: 1.35;
+}
+
+body :where(h6, .h6, h6.elementor-heading-title, .top-heading-text, .sub-heading-text) {
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+body :where(p, li, .woocommerce-product-excerpt, .woocommerce-product-details__short-description, .elementor-widget-text-editor) {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+body :where(.main-navigation-wrapper ul li a, .elementor-nav-menu a) {
+  font-size: 1rem;
+}
+
+body :where(.elementor-button, button, input[type="submit"], .button, .woocommerce-button) {
+  font-size: 0.9375rem;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+body :where(small, .small, .price, .woocommerce-result-count, .woocommerce-breadcrumb, .product_meta, .wpc-filter-content, .wc-block-components-formatted-money-amount) {
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+i,
+em {
+  font-family: inherit;
+}
+
+.fa,
+.fas,
+.far,
+.fab,
+.fal,
+.fa-solid,
+.fa-regular,
+.fa-brands,
+[class^="fa-"],
+[class*=" fa-"] {
+  font-family: "Font Awesome 6 Free" !important;
+}
+
+.star-rating,
+.star-rating::before,
+.star-rating span::before {
+  font-family: "star" !important;
+}
+
+.bst-product-categories {
+  display: grid;
+  grid-template-columns: repeat(var(--bst-category-columns, 4), minmax(0, 1fr));
+  gap: 24px;
+}
+
+.bst-category-card {
+  margin: 0;
+  list-style: none;
+}
+
+.bst-category-card:hover {
+  transform: translateY(-3px);
+}
+
+.bst-category-card__link {
+  display: block;
+  text-decoration: none;
+}
+
+.bst-category-card__image {
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.bst-category-card__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 240ms ease;
+}
+
+.bst-category-card:hover .bst-category-card__image img {
+  transform: scale(1.04);
+}
+
+.bst-category-card__body {
+  display: block;
+}
+
+.bst-category-card__title {
+  margin: 0;
+  color: white;
+}
+
+body.woocommerce .page-content:has(.bst-shop-filters) {
+  display: grid;
+  grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+body.woocommerce .page-content:has(.bst-shop-filters) > :not(.bst-shop-filters) {
+  grid-column: 2;
+}
+
+body.woocommerce .page-content:has(.bst-shop-filters) > .bst-shop-filters {
+  grid-column: 1;
+  grid-row: 1 / span 10;
+}
+
+.bst-shop-filters {
+  position: sticky;
+  top: 96px;
+  margin: 0;
+  padding: 18px;
+  border: 1px solid #fff;
+  background: #000;
+  color: #fff;
+}
+
+.bst-shop-filters,
+.bst-shop-filters a,
+.bst-shop-filters label,
+.bst-shop-filters span,
+.bst-shop-filters .widget-title,
+.bst-shop-filters .wpc-filter-title,
+.bst-shop-filters .wpc-filter-content {
+  color: #fff;
+  font-family: var(--bst-font);
+}
+
+.bst-shop-filters a:hover,
+.bst-shop-filters .wpc-filter-link:hover,
+.bst-shop-filters .wpc-filter-chip-name,
+.bst-shop-filters .wpc-filter-chip a,
+.bst-shop-filters .wpc-term-selected a,
+.bst-shop-filters input[type="checkbox"]:checked + label a {
+  color: var(--bst-red);
+}
+
+.bst-shop-filters__toggle {
+  display: none;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid #fff;
+  background: #000;
+  color: #fff;
+  font-family: var(--bst-font);
+  font-weight: 700;
+  text-align: start;
+  cursor: pointer;
+}
+
+.bst-shop-filters__toggle-icon,
+.bst-shop-filters__toggle-icon::before,
+.bst-shop-filters__toggle-icon::after {
+  display: block;
+  width: 18px;
+  height: 1px;
+  background: currentColor;
+  content: "";
+}
+
+.bst-shop-filters__toggle-icon {
+  position: relative;
+}
+
+.bst-shop-filters__toggle-icon::before,
+.bst-shop-filters__toggle-icon::after {
+  position: absolute;
+  left: 0;
+}
+
+.bst-shop-filters__toggle-icon::before {
+  top: -6px;
+}
+
+.bst-shop-filters__toggle-icon::after {
+  top: 6px;
+}
+
+.bst-shop-filters__panel {
+  display: block;
+}
+
+.bst-shop-filters .widget,
+.bst-shop-filters .wpc-filters-main-wrap,
+.bst-shop-filters .wpc-filters-widget-content,
+.bst-shop-filters .wpc-filters-widget-containers-wrapper,
+.bst-shop-filters .wpc-filters-scroll-container,
+.bst-shop-filters .wpc-filters-widget-wrapper {
+  margin: 0;
+  background: transparent;
+}
+
+.bst-shop-filters .wpc-filters-open-button-container,
+.bst-shop-filters .wpc-widget-close-container {
+  display: none !important;
+}
+
+.bst-shop-filters .wpc-filters-section {
+  margin: 0;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.bst-shop-filters .wpc-filters-section:last-child {
+  border-bottom: 0;
+}
+
+.bst-shop-filters .wpc-filter-title {
+  margin: 0 0 14px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.bst-shop-filters .wpc-filters-ul-list {
+  margin: 0;
+  padding: 0;
+}
+
+.bst-shop-filters .wpc-term-item {
+  margin: 0 0 10px;
+}
+
+.bst-shop-filters input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0 8px 0 0;
+  accent-color: var(--bst-red);
+}
+
+.bst-shop-filters .wpc-term-count {
+  opacity: 0.72;
+}
+
+.bst-shop-filters input[type="number"],
+.bst-shop-filters input[type="text"],
+.bst-shop-filters select {
+  width: 100%;
+  border: 1px solid #fff;
+  background: #000;
+  color: #fff;
+}
+
+.bst-shop-filters .wpc-filters-apply-button,
+.bst-shop-filters .wpc-filters-close-button,
+.bst-shop-filters .wpc-see-more-control,
+.bst-shop-filters .wpc-see-less-control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #fff;
+  background: #000;
+  color: #fff;
+}
+
+.bst-shop-filters .wpc-filters-apply-button:hover,
+.bst-shop-filters .wpc-filters-close-button:hover,
+.bst-shop-filters .wpc-see-more-control:hover,
+.bst-shop-filters .wpc-see-less-control:hover {
+  border-color: var(--bst-red);
+  background: var(--bst-red);
+  color: #fff;
+}
+
+.bst-shop-filters .wpc-filter-chip a {
+  border: 1px solid var(--bst-red);
+  background: transparent;
+  color: var(--bst-red);
+}
+
+.bst-shop-filters .ui-slider-range,
+.bst-shop-filters .wpc-range-slider .ui-slider-range {
+  background: var(--bst-red);
+}
+
+.bst-shop-filters .ui-slider-handle,
+.bst-shop-filters .wpc-range-slider .ui-slider-handle {
+  border-color: var(--bst-red);
+  background: var(--bst-red);
+}
+
+#wcqr-overlay {
+  font-family: var(--bst-font);
+}
+
+#wcqr-modal {
+  border-top: 6px solid var(--bst-red);
+  background: #fff;
+  color: var(--bst-charcoal);
+}
+
+#wcqr-modal h2 {
+  color: var(--bst-charcoal);
+  font-family: var(--bst-font);
+  font-weight: 700;
+}
+
+#wcqr-modal label {
+  color: var(--bst-charcoal);
+  font-weight: 600;
+}
+
+#wcqr-modal input,
+#wcqr-modal textarea {
+  border-color: var(--bst-border);
+  font-family: var(--bst-font);
+}
+
+#wcqr-modal button[type="submit"],
+#wcqr-close-success {
+  background: var(--bst-red);
+  color: #fff;
+  border: 0;
+  font-family: var(--bst-font);
+  font-weight: 700;
+}
+
+.wcqr-success h3 {
+  font-family: var(--bst-font);
+  font-weight: 700;
+}
+
+html[dir="rtl"] .bst-category-card__body,
+body.rtl .bst-category-card__body {
+  direction: rtl;
+}
+
+@media (max-width: 767px) {
+  body.woocommerce .page-content:has(.bst-shop-filters) {
+    display: block;
+  }
+
+  .bst-shop-filters {
+    position: static;
+    margin: 0 0 24px;
+    padding: 0;
+  }
+
+  .bst-shop-filters__toggle {
+    display: flex;
+  }
+
+  .bst-shop-filters__panel {
+    padding: 0 16px 16px;
+  }
+
+  .bst-shop-filters.is-collapsed .bst-shop-filters__panel {
+    display: none;
+  }
+
+  .bst-product-categories {
+    gap: 16px;
+  }
+
+  .bst-category-card__body {
+    padding: 14px;
+  }
+}

@@ -1,0 +1,4125 @@
+/*
+Theme Name: Orologio
+Theme URI: https://orologio.okthemes.com/
+Author: Cristian Gogoneata
+Author URI: http://www.okthemes.com
+Description: A premium watch shop theme for WordPress
+Version: 1.4
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: orologio
+Tags: e-commerce, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Requires at least: 5.0
+Tested up to: 6.5
+Requires PHP: 7.4
+*/
+
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Global variables
+# Responsive
+    ## Tablet
+    ## Mobile
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+    ## Links
+    ## Menus
+        ### Regular menu navigation
+        ### Mobile trigger button
+        ### Mobile menu display
+# Nav links
+# Pagination
+# Buttons and links
+# Widgets
+# Modules
+    ## Posts and pages
+    ## Comments
+# Media
+    ## Captions
+    ## Galleries
+    ## General page content
+# Blog layout
+# Footer
+# Header
+# Content layout
+# Not found page
+# Not found search
+# Elementor Modules
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Global variables
+--------------------------------------------------------------*/
+:root {
+
+    /*Global colors*/
+    --orologio-primary-color: #8d725b;
+    --orologio-secondary-color: #000;
+    --orologio-tertiary-color: #fbf6f1;
+    --orologio-accent-color: #8d725b;
+
+
+    /*Global typography fonts*/
+    --orologio-primary-font: "Ibarra Real Nova";
+    --orologio-secondary-font: "Manrope";
+
+    /*Body typography*/
+    --orologio-body-typography-font-family: var(--orologio-secondary-font);
+    --orologio-body-typography-font-size: 18px;
+    --orologio-body-typography-font-weight: 400;
+    --orologio-body-typography-line-height: 1.8em;
+    --orologio-body-typography-letter-spacing: 0;
+    --orologio-body-typography-color: #000;
+    --orologio-body-typography-text-transform: none;
+
+    /*Headings typography*/
+
+    /* H1 typography*/
+    --orologio-h1-typography-font-family: var(--orologio-primary-font);
+    --orologio-h1-typography-font-size: 4rem;
+    --orologio-h1-typography-font-weight: 300;
+    --orologio-h1-typography-line-height: 1.3em;
+    --orologio-h1-typography-letter-spacing: 0;
+    --orologio-h1-typography-color: #000;
+    --orologio-h1-typography-text-transform: none;
+
+    /* H2 typography*/
+    --orologio-h2-typography-font-family: var(--orologio-primary-font);
+    --orologio-h2-typography-font-size: 3rem;
+    --orologio-h2-typography-font-weight: 300;
+    --orologio-h2-typography-line-height: 1.3em;
+    --orologio-h2-typography-letter-spacing: 0;
+    --orologio-h2-typography-color: #000;
+    --orologio-h2-typography-text-transform: none;
+
+    /* H3 typography*/
+    --orologio-h3-typography-font-family: var(--orologio-primary-font);
+    --orologio-h3-typography-font-size: 2.3rem;
+    --orologio-h3-typography-font-weight: 300;
+    --orologio-h3-typography-line-height: 1.3em;
+    --orologio-h3-typography-letter-spacing: 0;
+    --orologio-h3-typography-color: #000;
+    --orologio-h3-typography-text-transform: none;
+
+    /* H4 typography*/
+    --orologio-h4-typography-font-family: var(--orologio-primary-font);
+    --orologio-h4-typography-font-size: 2rem;
+    --orologio-h4-typography-font-weight: 300;
+    --orologio-h4-typography-line-height: 1.3em;
+    --orologio-h4-typography-letter-spacing: 0;
+    --orologio-h4-typography-color: #000;
+    --orologio-h4-typography-text-transform: none;
+
+    /* H5 typography*/
+    --orologio-h5-typography-font-family: var(--orologio-primary-font);
+    --orologio-h5-typography-font-size: 1.5rem;
+    --orologio-h5-typography-font-weight: 300;
+    --orologio-h5-typography-line-height: 1.3em;
+    --orologio-h5-typography-letter-spacing: 0;
+    --orologio-h5-typography-color: #000;
+    --orologio-h5-typography-text-transform: none;
+
+    /* H6 typography*/
+    --orologio-h6-typography-font-family: var(--orologio-secondary-font);
+    --orologio-h6-typography-font-size: 1rem;
+    --orologio-h6-typography-font-weight: 600;
+    --orologio-h6-typography-line-height: 1.3em;
+    --orologio-h6-typography-letter-spacing: 3px;
+    --orologio-h6-typography-color: #000;
+    --orologio-h6-typography-text-transform: uppercase;
+
+    /*Buttons*/
+    --orologio-buttons-typography-font-family: var(--orologio-secondary-font);
+    --orologio-buttons-typography-font-size: 16px;
+    --orologio-buttons-typography-font-weight: 400;
+    --orologio-buttons-typography-line-height: 1.8em;
+    --orologio-buttons-typography-letter-spacing: 0;
+    --orologio-buttons-typography-color: #000;
+    --orologio-buttons-typography-text-transform: none;
+
+    --orologio-buttons-padding: 15px 35px 15px 35px;
+
+    --orologio-buttons-border: 1px 1px 1px 1px;
+    --orologio-buttons-border-style: solid;
+    --orologio-buttons-border-radius: 30px;
+
+    --orologio-buttons-color: #ffffff;
+    --orologio-buttons-color-hover: #ffffff;
+    --orologio-buttons-bg-color: var(--orologio-primary-color);
+    --orologio-buttons-bg-color-hover: #000000;
+    --orologio-buttons-border-color: var(--orologio-primary-color);
+    --orologio-buttons-border-color-hover: #000000;
+
+    /*Others*/
+    --orologio-body-background-color: #fff;
+    --orologio-header-background-color: #000;
+    --orologio-footer-background-color: var(--orologio-secondary-color);
+    --orologio-modules-background-color: var(--orologio-tertiary-color);
+
+    --orologio-paragraph-spacing: 1.6em;
+    --orologio-paragraph-lead: 1.5rem;
+    --orologio-container-width: 1500px;
+    --orologio-sidebar-width: 25%;
+
+    --orologio-footer-text-color: #fff;
+    --orologio-links-color: var(--orologio-primary-color);
+
+    --orologio-navigation-font-size: 2.75rem;
+    --orologio-submenu-font-size: 1.95rem;
+
+    
+    --orologio-body-typography-color-light: #999;
+
+    --orologio-grid-gap: 4em;
+    --orologio-layout-padding: 4em;
+
+    --orologio-footer-font-size: 0.875rem;
+    --orologio-footer-copyright-font-size: 0.875rem;
+
+    /*Page header*/
+    --orologio-page-header-min-height: 400px;
+    --orologio-page-header-padding: 4em 2.5em 4em 2.5em;
+    --orologio-page-header-bg-color: var(--orologio-tertiary-color);
+
+    /*Menu*/
+    --orologio-menu-item-color: #fff;
+    --orologio-menu-item-hover-color: var(--orologio-primary-color);
+
+    --orologio-menu-typography-font-family: var(--orologio-primary-font);
+    --orologio-menu-typography-font-size: 1rem;
+    --orologio-menu-typography-font-weight: 500;
+    --orologio-menu-typography-line-height: 1em;
+    --orologio-menu-typography-letter-spacing: 0;
+    --orologio-menu-typography-color: #fff;
+    --orologio-menu-typography-text-transform: none;
+
+    --orologio-submenu-bg-color: #000;
+    --orologio-submenu-item-color: #fff;
+    --orologio-submenu-item-hover-color: var(--orologio-primary-color);
+
+    --orologio-submenu-typography-font-family: var(--orologio-primary-font);
+    --orologio-submenu-typography-font-size: 0.875rem;
+    --orologio-submenu-typography-font-weight: 400;
+    --orologio-submenu-typography-line-height: 1em;
+    --orologio-submenu-typography-letter-spacing: 0;
+    --orologio-submenu-typography-color: #000;
+    --orologio-submenu-typography-text-transform: none;
+
+    --orologio-mobile-bg: #F8F5F2;
+
+    /*Forms*/
+    --orologio-form-border-color: var(--orologio-primary-color);
+    --orologio-menu-label-font-family: var(--orologio-secondary-font);
+    --orologio-menu-label-font-size: 0.875rem;
+    --orologio-menu-label-font-weight: 500;
+    --orologio-menu-label-letter-spacing: 3px;
+    --orologio-menu-label-color: #000;
+    --orologio-menu-label-text-transform: uppercase;
+
+}
+
+
+/*Responsive*/
+
+/*Tablet*/
+@media (min-width: 768px) and (max-width: 1023px) {
+    :root {
+        --orologio-h1-typography-font-size: 3.4rem;
+        --orologio-h2-typography-font-size: 2.8rem;
+        --orologio-h3-typography-font-size: 2.3rem;
+        --orologio-h4-typography-font-size: 2rem;
+        --orologio-h5-typography-font-size: 1.75rem;
+        
+    }
+}
+
+/*Mobile*/
+@media (max-width: 767px) {
+    :root {
+        --orologio-h1-typography-font-size: 3rem;
+        --orologio-h2-typography-font-size: 2.3rem;
+        --orologio-h3-typography-font-size: 2rem;
+        --orologio-h4-typography-font-size: 1.75rem;
+        --orologio-h5-typography-font-size: 1.35rem;
+
+        --orologio-navigation-font-size: 2rem;
+        --orologio-submenu-font-size: 1.2rem;
+
+        --orologio-buttons-padding: 10px 25px 10px 25px;
+        --orologio-buttons-typography-font-size: 14px;
+        --orologio-page-header-min-height: 200px;
+    }
+}
+
+
+.elementor-fullwidth-vw {
+    position: relative;
+    width: 100vw !important;
+    /* Sets the width to 100% of the viewport width */
+    left: calc(50% - 50vw);
+    /* Centers the element by adjusting its left position */
+    max-width: inherit !important;
+    /* Ensures the element can inherit the maximum width from its parent */
+}
+
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+body {
+    font-family: var(--orologio-body-typography-font-family);
+    font-size: var(--orologio-body-typography-font-size);
+    font-weight: var(--orologio-body-typography-font-weight);
+    line-height: var(--orologio-body-typography-line-height);
+    letter-spacing: var(--orologio-body-typography-letter-spacing);
+    color: var(--orologio-body-typography-color);
+    text-transform: var(--orologio-body-typography-text-transform);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    clear: both;
+    margin: 0 0 20px 0;
+}
+
+
+h1 {
+    font-family: var(--orologio-h1-typography-font-family);
+    font-size: var(--orologio-h1-typography-font-size);
+    font-weight: var(--orologio-h1-typography-font-weight);
+    line-height: var(--orologio-h1-typography-line-height);
+    letter-spacing: var(--orologio-h1-typography-letter-spacing);
+    color: var(--orologio-h1-typography-color);
+    text-transform: var(--orologio-h1-typography-text-transform);
+}
+
+h2 {
+    font-family: var(--orologio-h2-typography-font-family);
+    font-size: var(--orologio-h2-typography-font-size);
+    font-weight: var(--orologio-h2-typography-font-weight);
+    line-height: var(--orologio-h2-typography-line-height);
+    letter-spacing: var(--orologio-h2-typography-letter-spacing);
+    color: var(--orologio-h2-typography-color);
+    text-transform: var(--orologio-h2-typography-text-transform);
+}
+
+h3 {
+    font-family: var(--orologio-h3-typography-font-family);
+    font-size: var(--orologio-h3-typography-font-size);
+    font-weight: var(--orologio-h3-typography-font-weight);
+    line-height: var(--orologio-h3-typography-line-height);
+    letter-spacing: var(--orologio-h3-typography-letter-spacing);
+    color: var(--orologio-h3-typography-color);
+    text-transform: var(--orologio-h3-typography-text-transform);
+}
+
+h4 {
+    font-family: var(--orologio-h4-typography-font-family);
+    font-size: var(--orologio-h4-typography-font-size);
+    font-weight: var(--orologio-h4-typography-font-weight);
+    line-height: var(--orologio-h4-typography-line-height);
+    letter-spacing: var(--orologio-h4-typography-letter-spacing);
+    color: var(--orologio-h4-typography-color);
+    text-transform: var(--orologio-h4-typography-text-transform);
+}
+
+h5 {
+    font-family: var(--orologio-h5-typography-font-family);
+    font-size: var(--orologio-h5-typography-font-size);
+    font-weight: var(--orologio-h5-typography-font-weight);
+    line-height: var(--orologio-h5-typography-line-height);
+    letter-spacing: var(--orologio-h5-typography-letter-spacing);
+    color: var(--orologio-h5-typography-color);
+    text-transform: var(--orologio-h5-typography-text-transform);
+}
+
+h6 {
+    font-family: var(--orologio-h6-typography-font-family);
+    font-size: var(--orologio-h6-typography-font-size);
+    font-weight: var(--orologio-h6-typography-font-weight);
+    line-height: var(--orologio-h6-typography-line-height);
+    letter-spacing: var(--orologio-h6-typography-letter-spacing);
+    color: var(--orologio-h6-typography-color);
+    text-transform: var(--orologio-h6-typography-text-transform);
+}
+
+/* Inherit theme headings line-height in Elementor */
+h1.elementor-heading-title {
+    line-height: var(--orologio-h1-typography-line-height);
+}
+h2.elementor-heading-title {
+    line-height: var(--orologio-h2-typography-line-height);
+}
+h3.elementor-heading-title {
+    line-height: var(--orologio-h3-typography-line-height);
+}
+h4.elementor-heading-title {
+    line-height: var(--orologio-h4-typography-line-height);
+}
+h5.elementor-heading-title {
+    line-height: var(--orologio-h5-typography-line-height);
+}
+h6.elementor-heading-title {
+    line-height: var(--orologio-h6-typography-line-height);
+}
+p.elementor-heading-title {
+    line-height: var(--orologio-body-typography-line-height);
+}
+
+p {
+    margin: 0;
+    margin-bottom: var(--orologio-paragraph-spacing);
+}
+
+dfn,
+cite,
+em,
+i {
+    font-style: italic;
+}
+
+q,
+blockquote {
+    quotes: none;
+}
+
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+    content: "";
+    content: none;
+}
+
+blockquote {
+    position: relative;
+    border-left: 2px solid var(--orologio-primary-color);
+    margin-left: 0;
+    padding: 0 0 0 1rem;
+    margin-bottom: 0.9rem;
+}
+
+.wp-block-pullquote p,
+.wp-block-quote p {
+    margin-bottom: 0.5em;
+}
+
+blockquote cite,
+.wp-block-pullquote cite,
+.wp-block-quote cite {
+    font-family: var(--orologio-h6-typography-font-family);
+    font-size: var(--orologio-h6-typography-font-size);
+    font-weight: var(--orologio-h6-typography-font-weight);
+    font-style: normal;
+    text-transform: var(--orologio-h6-typography-text-transform);
+    letter-spacing: var(--orologio-h6-typography-letter-spacing);
+}
+
+.wp-block-pullquote,
+blockquote {
+    font-family: var(--orologio-primary-font);
+    font-size: var(--orologio-h5-typography-font-size);
+    letter-spacing: -0.5px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+blockquote p,
+.wp-block-pullquote p {
+    font-size: inherit;
+}
+
+/*Large style*/
+.wp-block-quote.is-large:not(.is-style-plain) p,
+.wp-block-quote.is-style-large:not(.is-style-plain) p {
+    font-size: var(--orologio-h3-typography-font-size);
+    ;
+    font-style: normal;
+    line-height: 1.6;
+}
+
+.wp-block-quote.is-large:not(.is-style-plain) cite,
+.wp-block-quote.is-large:not(.is-style-plain) footer,
+.wp-block-quote.is-style-large:not(.is-style-plain) cite,
+.wp-block-quote.is-style-large:not(.is-style-plain) footer {
+    font-size: var(--orologio-body-typography-font-size);
+    font-weight: 500;
+    font-style: normal;
+}
+
+address {
+    margin: 0 0 1.5em;
+    font-style: italic;
+}
+
+pre {
+    background: #000;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    font-size: 15px;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1.6em;
+    color: #fff;
+}
+
+code,
+kbd,
+tt,
+var,
+samp {
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    font-size: 15px;
+    font-size: 0.9375rem;
+}
+
+abbr,
+acronym {
+    border-bottom: 1px dotted var(--orologio-modules-background-color);
+    cursor: help;
+}
+
+mark,
+ins {
+    background: var(--orologio-body-background-color);
+    text-decoration: none;
+    color: var(--orologio-body-typography-color);
+}
+
+big {
+    font-size: 125%;
+}
+
+.small {
+    font-size: 16px;
+}
+
+.lead {
+    font-size: 18px;
+}
+
+.lead-large {
+    font-size: 27px;
+}
+
+.white-text {
+    color: #fff;
+}
+
+.is-style-outline {
+    color: var(--orologio-primary-color);
+}
+
+.wp-block-button__link {
+    background-color: var(--orologio-primary-color);
+}
+
+.is-style-outline>:where(.wp-block-button__link),
+:where(.wp-block-button__link).is-style-outline {
+    border: 1px solid;
+    padding: 25px 35px;
+    font-size: inherit;
+    line-height: normal;
+}
+
+.sub-heading-text,
+.top-heading-text,
+.top-title {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.has-left-wing::after,
+.has-right-wing::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+    height: 60%;
+    background: var(--orologio-tertiary-color);
+    display: block;
+    top: 20%;
+    z-index: -1;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 3s;
+}
+
+.has-left-wing::after {
+    right: auto;
+    left: 0;
+    transform: translateX(-100%);
+}
+.has-left-wing.animated::after,
+.has-right-wing.animated::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+body:not(.elementor-editor-active) .elementor-element.has-left-wing,
+body:not(.elementor-editor-active) .elementor-element.has-right-wing {
+    overflow-x: hidden;
+}
+
+.force-fullwidth {
+    max-width:inherit !important;
+    width: 100vw;
+    margin-left: -53vw;
+}
+
+ /* Improved Animations Stylesheet from https://element.how/elementor-improve-entrance-animations/ , works for the 'fade' animations */
+
+ @keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0,-30px,0)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+.elementor-element.fadeInDown {
+    animation-name: fadeDown
+}
+
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translate3d(-30px,0,0)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+.elementor-element.fadeInLeft {
+    animation-name: fadeLeft
+}
+
+@keyframes fadeRight {
+    from {
+        opacity: 0;
+        transform: translate3d(30px,0,0)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+.elementor-element.fadeInRight {
+    animation-name: fadeRight
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0,30px,0)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+.elementor-element.fadeInUp {
+    animation-name: fadeUp
+}
+
+
+/*--------------------------------------------------------------
+# Body & Containers
+--------------------------------------------------------------*/
+
+body {
+    margin: 0;
+    background: var(--orologio-body-background-color);
+}
+
+body.elementor-editor-active {
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.site-wrapper.inertia {
+    width: 100%; /* Ensure main content wrapper takes full width */
+}
+.site-wrapper.inertia .elementor-element:not(:last-child) {
+    margin-bottom: -1px; /* Slight overlap to prevent white lines */
+}
+
+.theme-container {
+    max-width: calc(var(--orologio-container-width) - 40px);
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 20px;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+
+    background-color: #ccc;
+    border: 0;
+    height: 1px;
+    margin-bottom: 1.5em;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding: 0.5em 0 1.5em 1.5em;
+}
+
+ul {
+    list-style: disc;
+}
+
+ol {
+    list-style: decimal;
+}
+
+li>ul,
+li>ol {
+    padding-bottom: 0.5em;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin: 0 1.5em 1.5em;
+}
+
+img {
+    height: auto;
+    /* Make sure images are scaled correctly. */
+    max-width: 100%;
+    /* Adhere to container width. */
+    vertical-align: top;
+    border-style: none;
+}
+
+figure {
+    margin: 1em 0;
+    /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0 0 1.5em;
+    width: 100%;
+}
+
+caption,
+th,
+td {
+    text-align: left;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+table th {
+    padding: 10px 15px;
+    text-transform: var(--orologio-h6-typography-text-transform);
+    font-family: var(--orologio-h6-typography-font-family);
+    font-weight: var(--orologio-h6-typography-font-weight);
+    /*font-size: var(--orologio-h6-typography-font-size);*/
+    font-size: 11px;
+    letter-spacing: var(--orologio-h6-typography-letter-spacing);
+}
+
+table td {
+    padding: 10px 15px;
+}
+
+.wp-block-table td,
+.wp-block-table th {
+    padding: 10px 15px;
+}
+
+table tr {
+    border-bottom: 1px solid #ccc;
+}
+
+.comment table tr.odd {
+    background: var(--orologio-body-background-color);
+}
+
+.wp-block-calendar table caption,
+.wp-block-calendar table tbody {
+    color: var(--orologio-body-typography-color);
+    margin: 1.5em 0;
+}
+
+.wp-block-calendar table th {
+    background: var(--orologio-body-background-color);
+}
+
+.wp-block-calendar tbody td,
+.wp-block-calendar th {
+    border-color: var(--orologio-modules-background-color);
+}
+
+.wp-block-calendar td,
+.wp-block-calendar th {
+    padding: 10px 15px;
+}
+
+.wp-block-calendar tfoot a {
+    color: var(--orologio-primary-color);
+}
+
+.wp-block-categories.wp-block-categories-dropdown {
+    margin-bottom: 1.5em;
+}
+
+.wp-block-image {
+    margin-bottom: 1.5em;
+}
+
+.wp-block-image .alignleft {
+    margin-right: 1.5em;
+}
+
+.wp-block-image .alignright {
+    margin-left: 1.5em;
+}
+
+.wp-block-button,
+.wp-block-cover,
+.wp-block-quote,
+.wp-block-gallery {
+    margin-bottom: 1.5em;
+}
+
+.wp-block-latest-posts__post-date {
+    color: var(--orologio-body-typography-color);
+}
+
+.wp-block-group+.more-link-wrapper {
+    margin-top: 1.5em;
+}
+
+.wp-block-pullquote {
+    border-color: transparent;
+    border-width: 2px;
+    padding: 1rem;
+    border-top: 4px solid var(--orologio-primary-color);
+    border-bottom: 4px solid var(--orologio-primary-color);
+}
+
+.wp-block-pullquote blockquote {
+    border: none;
+    margin-top: calc(4*1rem);
+    margin-bottom: calc(4.33*1rem);
+    margin-right: 0;
+    padding-left: 0;
+}
+
+.wp-block-archives {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wp-block-table.is-style-stripes {
+    border: 0;
+}
+
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+    background-color: var(--orologio-body-background-color);
+}
+
+.wp-block-latest-comments__comment {
+    line-height: normal;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+    display: inline;
+    float: left;
+    margin-right: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.alignright {
+    display: inline;
+    float: right;
+    margin-left: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.aligncenter {
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alignfull {
+    margin-bottom: 1.5em;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear::before,
+.clear::after,
+.entry-content::before,
+.entry-content::after,
+.comment-content::before,
+.comment-content::after,
+.site-header::before,
+.site-header::after,
+.site-subheader::before,
+.site-subheader::after,
+.site-content::before,
+.site-content::after,
+.site-footer::before,
+.site-footer::after,
+.page-meta::before,
+.page-meta::after {
+    content: '';
+    display: table;
+}
+
+.clear::after,
+.entry-content::after,
+.comment-content::after,
+.site-header::after,
+.site-subheader::after,
+.site-content::after,
+.site-footer::after,
+.page-meta::after {
+    clear: both;
+}
+
+.screen-reader-text {
+    display: none;
+}
+
+.blur {
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+}
+
+body .background-position-center-top {
+    background-position: center top !important;
+}
+
+.visible-on-mobile {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .visible-on-mobile {
+        display: none;
+    }
+}
+
+body .no-overflow {
+    overflow: visible !important;
+}
+
+body.disable-scroll {
+    overflow: hidden !important;
+}
+
+/*Go to top*/
+.scrollup {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    -webkit-transform: translate(var(--orologio-layout-padding), 0);
+    transform: translate(var(--orologio-layout-padding), 0);
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+    display: none;
+}
+
+.scrollup {
+    display: block;
+}
+
+.scrollup .icon-scrollup {
+    height: 60px;
+    width: calc(var(--orologio-layout-padding) - 1px);
+    display: inline-block;
+    vertical-align: middle;
+    line-height: inherit;
+    position: relative;
+}
+
+.scrollup .icon-scrollup path {
+    fill: rgba(0, 0, 0, 1);
+}
+body.is-over-footer .scrollup .icon-scrollup path {
+    fill: rgba(255, 255, 255, 1);
+}
+
+@media (min-width: 2400px) {
+    .scrollup .icon-scrollup {
+        height: 100px;
+    }
+}
+
+.is-scrolled .scrollup {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+.uppercase-style {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: var(--orologio-primary-font);
+    font-weight: 500;
+    font-size: 0.857rem;
+}
+
+@media (min-width: 2400px) {
+    .uppercase-style {
+        font-size: 1rem;
+        letter-spacing: 4px;
+    }
+}
+
+.blur-10px {
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+}
+
+body .ytp-show-cards-title {
+    display: none !important;
+}
+
+.wrapper {
+    box-sizing: border-box;
+    max-width: 2560px;
+    margin: 0 auto;
+}
+
+
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+form label {
+    font-weight: 500;
+    margin: 0;
+    display: block;
+}
+
+form input[type="checkbox"]+label,
+form input[type="radio"]+label {
+    display: inline-block;
+}
+
+@media (min-width: 2400px) {
+    form label {
+        font-size: 0.857rem;
+        letter-spacing: 4px;
+    }
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+    background: var(--orologio-primary-color);
+}
+
+button:active,
+button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+    outline: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+    color: var(--orologio-body-typography-color);
+    border: 0;
+    border-bottom: 1px solid var(--orologio-form-border-color);
+    padding: 1em 1em 1em 0;
+    line-height: normal;
+    background: transparent;
+    display: block;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--orologio-primary-color);
+}
+
+select {
+    border: 1px solid var(--orologio-modules-background-color);
+    padding: 1em;
+    background: var(--orologio-body-background-color);
+}
+
+textarea {
+    width: 100%;
+}
+
+::-webkit-input-placeholder {
+    color: var(--orologio-body-typography-color) !important;
+}
+
+:-moz-placeholder {
+    color: var(--orologio-body-typography-color) !important;
+}
+
+::-moz-placeholder {
+    color: var(--orologio-body-typography-color) !important;
+}
+
+:-ms-input-placeholder {
+    color: var(--orologio-body-typography-color) !important;
+}
+
+.header-searchform #s::-webkit-input-placeholder {
+    font-style: normal;
+}
+
+.header-searchform #s:-moz-placeholder {
+    font-style: normal;
+}
+
+.header-searchform #s::-moz-placeholder {
+    font-style: normal;
+}
+
+.header-searchform #s:-ms-input-placeholder {
+    font-style: normal;
+}
+
+.wpcf7-form .wpcf7-form-control-wrap {
+    display: block;
+}
+
+.wpcf7-form .wpcf7-form-control-wrap input[type="text"],
+.wpcf7-form .wpcf7-form-control-wrap input[type="email"],
+.wpcf7-form .wpcf7-form-control-wrap input[type="url"],
+.wpcf7-form .wpcf7-form-control-wrap input[type="password"],
+.wpcf7-form .wpcf7-form-control-wrap input[type="search"],
+.wpcf7-form .wpcf7-form-control-wrap input[type="number"],
+.wpcf7-form .wpcf7-form-control-wrap input[type="tel"] {
+    width: 100%;
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+legend {
+    font-family: var(--orologio-h6-typography-font-family);
+    font-size: var(--orologio-h6-typography-font-size);
+    font-weight: var(--orologio-h6-typography-font-weight);
+    line-height: var(--orologio-h6-typography-line-height);
+    letter-spacing: var(--orologio-h6-typography-letter-spacing);
+    text-transform: var(--orologio-h6-typography-text-transform);
+
+    color: #fff;
+    background: var(--orologio-primary-color);
+}
+
+.required {
+    color: var(--orologio-primary-color);
+}
+
+/* Group name and email next to each other */
+.wpcf7-form .two-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: var(--orologio-paragraph-spacing);
+}
+  
+.wpcf7-form .two-columns p {
+    flex: 1 1 48%;
+    margin: 0;
+}
+
+.wpcf7-form textarea {
+    height: 160px;
+}
+  
+@media (max-width: 768px) {
+    .wpcf7-form  .two-columns p {
+      flex: 1 1 100%;
+    }
+}
+  
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+    outline: 0;
+    text-decoration: none;
+    color: var(--orologio-primary-color);
+    transition: all 0.25s ease-in-out;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: var(--orologio-primary-color);
+}
+
+a:focus {
+    outline: 0;
+}
+
+a:hover,
+a:active {
+    outline: 0;
+}
+
+a.link-with-arrow .icon-arrow {
+    position: relative;
+    min-width: 1.875rem;
+    min-height: 1.3125rem;
+    font-size: 1rem;
+    line-height: 1rem;
+    margin-right: 1.875rem;
+    margin-left: 0.675rem;
+}
+
+a.link-with-arrow .icon-arrow > svg {
+    width: 1.25rem;
+    height: .75rem;
+    top: .3rem;
+    left: .2rem;
+    position: absolute;
+    transition: all .3s cubic-bezier(.22, 1, .36, 1);
+    z-index: 1;
+}
+
+a.link-with-arrow .icon-arrow>svg {
+    stroke: var(--orologio-primary-color);
+}
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+### Regular menu navigation
+--------------------------------------------------------------*/
+.main-menu {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .main-menu {
+        display: flex;
+        align-items: center;
+    }
+
+    header.site-header .main-header-extras {
+        display: flex;
+        align-items: center;
+    }
+
+    header.site-header .main-header-extras:has(div) {
+        margin-left: 2em;
+    }
+
+    header.site-header .main-header-extras .header-extra {
+        padding: 0 5px;
+    }
+
+    header.site-header .main-header-extras .header-extra .orologio-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.main-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    font-family: var(--orologio-menu-typography-font-family);
+    font-size: var(--orologio-menu-typography-font-size);
+    font-weight: var(--orologio-menu-typography-font-weight);
+    line-height: var(--orologio-menu-typography-line-height);
+    letter-spacing: var(--orologio-menu-typography-letter-spacing);
+    color: var(--orologio-menu-typography-color);
+    text-transform: var(--orologio-menu-typography-text-transform);
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+
+
+.main-menu ul li {
+    display: flex;
+    position: relative;
+}
+
+.main-menu ul li a {
+    padding: 0.5em 1.2em;
+    color: var(--orologio-menu-item-color);
+}
+
+.main-menu ul li ul li a {
+    padding: 0.7em 1.2em;
+    color: var(--orologio-submenu-item-color);
+}
+
+.main-menu ul li:hover > a,
+.main-menu ul li a:hover,
+.main-menu ul li.current-menu-item > a {
+    color: var(--orologio-menu-item-hover-color);
+}
+
+.main-menu ul li ul li:hover > a,
+.main-menu ul li ul li a:hover,
+.main-menu ul li ul li.current-menu-item > a {
+    color: var(--orologio-submenu-item-hover-color);
+}
+
+body:not(.primary-navigation-open) .main-menu:not(.vertical) ul li ul {
+    background: var(--orologio-submenu-bg-color);
+    opacity: 0;
+    padding: 0.3em 0;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    transition: opacity 0.15s linear, transform 0.15s linear, left 0s 0.15s;
+    transform: translateY(0.6rem);
+    width: 15rem;
+    z-index: -99;
+    -webkit-flex-flow: column;
+    flex-flow: column;
+
+    font-family: var(--orologio-submenu-typography-font-family);
+    font-size: var(--orologio-submenu-typography-font-size);
+    font-weight: var(--orologio-submenu-typography-font-weight);
+    line-height: var(--orologio-submenu-typography-line-height);
+    letter-spacing: var(--orologio-submenu-typography-letter-spacing);
+    color: var(--orologio-submenu-typography-color);
+    text-transform: var(--orologio-submenu-typography-text-transform);
+}
+
+body:not(.primary-navigation-open) .main-menu:not(.vertical) ul li ul li ul {
+    top: calc(-0.3em - 1px);
+}
+
+body:not(.primary-navigation-open) .main-menu:not(.vertical) ul li ul li.menu-item-has-children:hover>ul,
+body:not(.primary-navigation-open) .main-menu:not(.vertical) ul li ul li.menu-item-has-children:focus>ul,
+body:not(.primary-navigation-open) .main-menu:not(.vertical) ul li ul li.menu-item-has-children.focus>ul,
+body:not(.primary-navigation-open) .main-menu:not(.vertical) ul li ul li.page_item_has_children:hover>ul,
+body:not(.primary-navigation-open) .main-menu:not(.vertical) ul li ul li.page_item_has_children:focus>ul,
+body:not(.primary-navigation-open) .main-menu:not(.vertical) ul li ul li.page_item_has_children.focus>ul {
+    left: 100%;
+}
+
+body:not(.primary-navigation-open) .main-menu:not(.vertical) ul li.menu-item-has-children:hover>ul,
+body:not(.primary-navigation-open) .main-menu:not(.vertical) ul li.menu-item-has-children:focus>ul,
+body:not(.primary-navigation-open) .main-menu:not(.vertical) ul li.menu-item-has-children.focus>ul,
+body:not(.primary-navigation-open) .main-menu:not(.vertical) ul li.page_item_has_children:hover>ul,
+body:not(.primary-navigation-open) .main-menu:not(.vertical) ul li.page_item_has_children:focus>ul,
+body:not(.primary-navigation-open) .main-menu:not(.vertical) ul li.page_item_has_children.focus>ul {
+    left: 0;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.15s linear, transform 0.15s linear;
+    z-index: 99;
+}
+
+button.sub-menu-toggle {
+    display: none;
+    background: transparent;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    overflow: hidden;
+    padding: 0;
+}
+
+@media only screen and (max-width: 992px) {
+    .main-menu ul > li .sub-menu-toggle span svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .main-menu ul > li .sub-menu-toggle span svg path {
+        fill: var(--orologio-primary-color);
+    }
+
+    .main-menu ul > li .sub-menu-toggle:hover span svg path {
+        fill: var(--orologio-primary-color);;
+    }
+
+    .main-menu ul > li .sub-menu-toggle[aria-expanded="false"] .icon-minus {
+        display: none;
+    }
+
+    .main-menu ul > li .sub-menu-toggle[aria-expanded="true"] .icon-plus {
+        display: none;
+    }
+
+    .main-menu ul > li .sub-menu-toggle {
+        display: block;
+    }
+
+    .main-menu ul > li.gg-language-switcher>a,
+    .main-menu ul > li.gg-currency-switcher>a {
+        padding-right: 30px;
+    }
+
+    .main-menu ul > li.gg-language-switcher .sub-menu-toggle,
+    .main-menu ul > li.gg-currency-switcher .sub-menu-toggle {
+        right: 0;
+    }
+
+}
+
+
+/*Mobile trigger button*/
+.menu-button-container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    display: flex;
+    justify-content: flex-end;
+    grid-area: mobile-toggle;
+}
+
+@media only screen and (min-width: 992px) {
+    .menu-button-container {
+        display: none;
+    }
+}
+
+.menu-button-container .button.button {
+    border: none;
+    width: auto;
+    color: #fff;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: var(--orologio-body-typography-font-family);
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.menu-button-container .button.button .dropdown-icon {
+    display: flex;
+    align-items: center;
+}
+
+.menu-button-container .button.button .dropdown-icon .icon-mobile-menu-toggle{
+    display: flex;
+}
+
+.menu-button-container .button.button .dropdown-icon .svg-icon {
+    margin-left: 15px;
+    width: 20px;
+    height: 20px;
+}
+
+.menu-button-container .button.button .dropdown-icon.open .svg-icon {
+
+}
+
+.menu-button-container .button.button .dropdown-icon.close {
+    display: none;
+}
+
+.menu-button-container .button.button[aria-expanded*=true] .dropdown-icon.open {
+    display: none;
+}
+
+.menu-button-container .button.button[aria-expanded*=true] .dropdown-icon.close {
+    display: flex;
+}
+
+/* Mobile menu display */
+@media only screen and (max-width: 992px) {
+    html {
+        height: -webkit-fill-available;
+    }
+
+    body.primary-navigation-open {
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+    }
+
+    body.primary-navigation-open.lock-scrolling {
+        overflow: hidden;
+    }
+
+
+    .primary-navigation-open header.site-header .menu-button-container #primary-mobile-menu {
+        z-index: 999;
+    }
+    .primary-navigation-open header.site-header .main-navigation-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px;
+        margin: 0;
+
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--orologio-secondary-color);
+        justify-content: center;
+        z-index: 99;
+    }
+    .primary-navigation-open header.site-header.elementor-powered .main-navigation-wrapper {
+        width: 100%;
+    }
+
+    .primary-navigation-open header.site-header .main-menu {
+        display: block;
+        width: 100%;
+
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+
+    .primary-navigation-open header.site-header .main-menu ul {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .primary-navigation-open header.site-header .main-menu ul li{
+        flex-direction: column;
+    }
+
+    .primary-navigation-open header.site-header .main-menu ul li a {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .primary-navigation-open header.site-header .main-menu ul li ul li a {
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+
+    .primary-navigation-open header.site-header .main-menu ul>li .sub-menu-toggle ~ .sub-menu {
+        display: none;
+    }
+
+    .primary-navigation-open header.site-header .main-menu ul>li .sub-menu-toggle[aria-expanded=true] ~ .sub-menu {
+        display: block;
+        padding: 15px;
+    }
+
+    .primary-navigation-open header.site-header .main-menu ul>li .sub-menu-toggle[aria-expanded=true] ~ .sub-menu .sub-menu {
+        margin: 0 0 0 15px;
+    }
+
+
+    .primary-navigation-open header.site-header .main-menu ul ul li:not(:last-of-type) {
+        border-bottom: 1px solid var(--orologio-primary-color);
+    }
+
+    .primary-navigation-open header.site-header .main-menu ul>li .sub-menu-toggle[aria-expanded=true] {
+        background: transparent;
+        border-color: var(--orologio-primary-color);
+        color: var(--orologio-primary-color);
+    }
+
+}
+
+/**
+ * Vertical Navigation Menu Styles
+ * These styles enhance the existing CSS to support vertical navigation in popups
+ */
+
+/* Always display vertical menus, regardless of screen size */
+.main-menu.vertical {
+    display: block !important;
+    
+}
+
+/* Setup vertical menu structure */
+.main-menu.vertical ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+
+.main-menu.vertical ul li {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+/* Enhanced spacing for vertical navigation items */
+.main-menu.vertical ul li a {
+    padding: 0.4em 0;
+    font-size: 2.8rem;
+    font-weight: 100;
+}
+
+.main-menu.vertical ul li ul li a {
+    padding: 0.3em 0;
+    font-size: 1.8rem;
+    font-style: italic;
+}
+
+/* Position submenus in vertical navigation */
+/* Position submenus in vertical navigation */
+.main-menu.vertical ul li ul {
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    opacity: 1 !important;
+    transform: none !important;
+    background: transparent !important;
+    border-top: none !important;
+    z-index: 1 !important;
+    padding-left: 1.5em !important;
+    display: none;
+}
+
+
+/* Submenu toggle styling for vertical menus */
+.main-menu.vertical ul li .sub-menu-toggle {
+    display: block !important;
+    background: transparent;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: auto;
+    left: -30px;
+    top: 25px;
+    overflow: hidden;
+    padding: 0;
+    z-index: 2;
+    border: 0;
+}
+
+/* Hide/show appropriate icon based on state */
+.main-menu.vertical ul li .sub-menu-toggle[aria-expanded="false"] .icon-minus {
+    display: none;
+}
+
+.main-menu.vertical ul li .sub-menu-toggle[aria-expanded="true"] .icon-plus {
+    display: none;
+}
+
+/* Show submenu when toggle is expanded */
+.main-menu.vertical ul li .sub-menu-toggle[aria-expanded="true"] ~ .sub-menu {
+    display: block;
+}
+
+/* Indent submenu items for better hierarchy */
+.main-menu.vertical ul li .sub-menu-toggle ~ .sub-menu li {
+    padding-left: 0.5em;
+}
+
+/* Popup-specific styles */
+.popup-content .main-menu.vertical {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+/* Ensure submenu toggles are properly visible in vertical menus in popups */
+.popup-content .main-menu.vertical ul li .sub-menu-toggle svg {
+    width: 25px;
+    height: 25px;
+}
+
+/* Ensure submenus are properly styled in popups */
+.popup-content .main-menu.vertical ul > li .sub-menu-toggle ~ .sub-menu {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    width: 100% !important;
+}
+
+/* Responsive adjustments */
+@media only screen and (min-width: 992px) {
+    /* Ensure vertical menus in popups behave like mobile menus even on desktop */
+    .popup-content .main-menu.vertical {
+        display: block !important;
+    }
+    
+    /* Specific adjustments for vertical navigation in popups */
+    .popup-content .main-menu.vertical ul > li .sub-menu-toggle ~ .sub-menu {
+        border: none;
+        padding: 0 0 0 1.5em !important;
+        background: transparent !important;
+        position: static !important;
+    }
+}
+
+/*--------------------------------------------------------------
+# Nav links
+--------------------------------------------------------------*/
+.nav-links {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
+    grid-template-areas: "previous next";
+    padding-top: 5em;
+}
+
+.nav-links .meta-nav {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: var(--orologio-primary-font);
+    font-weight: 500;
+    font-size: 0.857rem;
+}
+
+@media (min-width: 2400px) {
+    .nav-links .meta-nav {
+        font-size: 1rem;
+        letter-spacing: 4px;
+    }
+}
+
+.nav-links .post-title {
+    font-family: var(--orologio-secondary-font);
+    font-size: 1.75rem;
+    color: var(--orologio-heading-color);
+}
+
+.nav-links .nav-previous {
+    grid-area: previous;
+}
+
+.nav-links .nav-next {
+    grid-area: next;
+    justify-self: end;
+    text-align: right;
+}
+
+/*--------------------------------------------------------------
+# Pagination
+--------------------------------------------------------------*/
+.pagination-wrapper {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pagination-wrapper.btn-group {
+    padding: 2em 3em;
+    background: #000;
+}
+
+.pagination-wrapper .nav-previous a,
+.pagination-wrapper .nav-next a {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: var(--orologio-primary-font);
+    font-weight: 500;
+    font-size: 0.857rem;
+    color: #fff;
+}
+
+@media (min-width: 2400px) {
+
+    .pagination-wrapper .nav-previous a,
+    .pagination-wrapper .nav-next a {
+        font-size: 1rem;
+        letter-spacing: 4px;
+    }
+}
+
+.pagination-wrapper .nav-previous a:hover,
+.pagination-wrapper .nav-next a:hover {
+    color: var(--orologio-primary-color);
+}
+
+ul.pagination,
+ul.page-numbers {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 60px;
+    font-weight: 500;
+}
+
+ul.pagination li a,
+ul.pagination li span,
+ul.page-numbers li a,
+ul.page-numbers li span {
+    padding: 0.5em 1em;
+    color: var(--orologio-body-typography-color);
+}
+
+ul.pagination li a.current,
+ul.pagination li a:hover,
+ul.pagination li span.current,
+ul.pagination li span:hover,
+ul.page-numbers li a.current,
+ul.page-numbers li a:hover,
+ul.page-numbers li span.current,
+ul.page-numbers li span:hover {
+    color: var(--orologio-primary-color);
+}
+
+ul.pagination li a.next,
+ul.pagination li a.prev,
+ul.page-numbers li a.next,
+ul.page-numbers li a.prev {
+    position: relative;
+}
+
+ul.pagination li a.next .next-arrow,
+ul.pagination li a.next .prev-arrow,
+ul.pagination li a.prev .next-arrow,
+ul.pagination li a.prev .prev-arrow,
+ul.page-numbers li a.next .next-arrow,
+ul.page-numbers li a.next .prev-arrow,
+ul.page-numbers li a.prev .next-arrow,
+ul.page-numbers li a.prev .prev-arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    width: 30px;
+    height: 30px;
+    background: url(assets/images/pagination-next-arrow.svg) 100%/auto 7px no-repeat;
+    background-repeat: no-repeat;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+ul.pagination li a.next:hover .next-arrow,
+ul.pagination li a.next:hover .prev-arrow,
+ul.pagination li a.prev:hover .next-arrow,
+ul.pagination li a.prev:hover .prev-arrow,
+ul.page-numbers li a.next:hover .next-arrow,
+ul.page-numbers li a.next:hover .prev-arrow,
+ul.page-numbers li a.prev:hover .next-arrow,
+ul.page-numbers li a.prev:hover .prev-arrow {
+    width: 45px;
+}
+
+ul.pagination li a.next .prev-arrow,
+ul.pagination li a.prev .prev-arrow,
+ul.page-numbers li a.next .prev-arrow,
+ul.page-numbers li a.prev .prev-arrow {
+    background: url(assets/images/pagination-prev-arrow.svg) 100%/auto 7px no-repeat;
+    background-position: 0;
+    left: auto;
+    right: 15px;
+}
+
+body.blog .pagination-wrapper {
+    padding: 3em 0 0 0;
+}
+
+/*--------------------------------------------------------------
+# Buttons and links
+--------------------------------------------------------------*/
+
+.btn,
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+body .elementor-button {
+    font-family: var(--orologio-buttons-typography-font-family);
+    font-size: var(--orologio-buttons-typography-font-size);
+    font-weight: var(--orologio-buttons-typography-font-weight);
+    line-height: var(--orologio-buttons-typography-line-height);
+    letter-spacing: var(--orologio-buttons-typography-letter-spacing);
+    text-transform: var(--orologio-buttons-typography-text-transform);
+
+    padding: var(--orologio-buttons-padding);
+
+    border-width: var(--orologio-buttons-border);
+    border-style: var(--orologio-buttons-border-style);
+    border-radius: var(--orologio-buttons-border-radius);
+
+    color: var(--orologio-buttons-color);
+    background: var(--orologio-buttons-bg-color);
+    border-color: var(--orologio-buttons-border-color);
+
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.btn:hover,
+.button:hover,
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+.elementor-button:hover {
+    color: var(--orologio-buttons-color-hover);
+    background: var(--orologio-buttons-bg-color-hover);
+    border-color: var(--orologio-buttons-border-color-hover);
+}
+
+.btn:focus,
+.button:focus,
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+.elementor-button:focus {
+    color: var(--orologio-buttons-color-hover);
+}
+
+.elementor-button-outline .elementor-button,
+.btn.outline,
+.button.outline,
+button.outline,
+input[type="button"].outline,
+input[type="reset"].outline,
+input[type="submit"].outline {
+    border: 1px solid var(--orologio-primary-color);
+    color: var(--orologio-body-typography-color);
+    background: transparent;
+    transition: all 0.25s;
+}
+
+.elementor-button-outline .elementor-button:hover,
+.btn.outline:hover,
+.button.outline:hover,
+button.outline:hover,
+input[type="button"].outline:hover,
+input[type="reset"].outline:hover,
+input[type="submit"].outline:hover {
+    border-color: var(--orologio-primary-color);
+    background: var(--orologio-primary-color);
+    color: #fff;
+}
+
+.elementor-button-secondary .elementor-button,
+.btn.secondary,
+.button.secondary,
+button.secondary,
+input[type="button"].secondary,
+input[type="reset"].secondary,
+input[type="submit"].secondary {
+    border: 1px solid var(--orologio-secondary-color);
+    color: #fff;
+    background: var(--orologio-secondary-color);
+    transition: all 0.25s;
+}
+
+.elementor-button-secondary .elementor-button:hover,
+.btn.secondary:hover,
+.button.secondary:hover,
+button.secondary:hover,
+input[type="button"].secondary:hover,
+input[type="reset"].secondary:hover,
+input[type="submit"].secondary:hover {
+    border-color: var(--orologio-primary-color);
+    background: var(--orologio-primary-color);
+    color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.sidebar-nav :where(.wp-block-heading) {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+}
+
+.sidebar-nav :where(.wp-block-latest-comments) {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.widget_block:not(:first-child) .wp-block-heading {
+    margin-top: 20px;
+}
+
+
+.gg-widget ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.gg-widget ol {
+    margin: 0;
+    padding: 0;
+}
+
+.gg-widget ul.children,
+.gg-widget ul.sub-menu {
+    margin-left: 1em;
+}
+
+.gg-widget ul li:not(.wp-social-link) {
+    padding: 0.2em 0;
+}
+
+.gg-widget ul.menu li a {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.gg-widget ul .post-date {
+    display: block;
+}
+
+.gg-widget h2 {
+    padding: 0;
+    font-size: 30px;
+    margin: 15px 0;
+}
+
+.gg-widget .widget-content {
+    padding: 10%;
+}
+
+.gg-widget .textwidget p:last-child {
+    margin-bottom: 0;
+}
+
+.gg-widget.widget_rss li {
+    margin-bottom: 0.5em;
+}
+
+.gg-widget.widget_rss li .rss-date {
+    display: block;
+    font-style: italic;
+}
+
+.gg-widget.widget_search {
+    margin-bottom: 2em;
+    position: relative;
+}
+
+.gg-widget table th,
+.gg-widget table td {
+    padding: 0.3em;
+}
+
+.gg-widget.widget_calendar table caption {
+    margin-bottom: 1em;
+}
+
+.gg-widget select {
+    max-width: 100%;
+}
+
+
+/*--------------------------------------------------------------
+# Modules
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+    display: block;
+}
+
+.hentry {
+    margin: 0;
+}
+
+.hentry.post {
+    margin: 0 0 3em 0;
+}
+
+body.single-post .hentry.post {
+    margin: 0;
+}
+
+body.single-post .hentry.post .post-content-wrapper {
+    margin: 0 0 3em 0;
+}
+
+.updated:not(.published) {
+    display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+    margin: 0;
+}
+
+.page-links {
+    clear: both;
+    margin: 0 0 1.5em;
+    padding-top: 1.5em;
+}
+
+.page-links .page-links-title {
+    padding-right: .5em;
+}
+
+.page-links .post-page-numbers>span,
+.page-links .post-page-numbers a {
+    padding: 0 .5em;
+}
+
+.post-password-form label {
+    float: left;
+}
+
+.post-password-form input[type="password"] {}
+
+.entry-content .search-form {
+    display: flex;
+    margin-top: 35px;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+#respond .form-submit {
+    margin-bottom: 0;
+}
+
+.comment-content a {
+    word-wrap: break-word;
+}
+
+.bypostauthor {
+    display: block;
+}
+
+#post-navigation+#comments {
+    margin-top: 5em;
+}
+
+#comments {
+    margin-top: var(--orologio-layout-padding);
+}
+
+#comments.comments-closed {
+    padding: 0;
+    background: transparent;
+}
+
+#comments .comments-title {
+    margin: 0 0 1em 0;
+    font-size: var(--orologio-h4-typography-font-size);
+    line-height: normal;
+}
+
+#comments #cancel-comment-reply-link {
+    float: right;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: var(--orologio-primary-font);
+    font-weight: 500;
+    font-size: 0.857rem;
+}
+
+#comments .avatar-holder {
+    width: 30px;
+    margin-right: 15px;
+    border-radius: 50%;
+}
+
+@media (min-width: 768px) {
+    #comments .avatar-holder {
+        width: 50px;
+        margin-right: 30px;
+    }
+}
+
+#comments .avatar-holder img {
+    border-radius: 50%;
+}
+
+#comments .comments-body .comments-body-header {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+#comments .comments-body .comments-body-content {
+    padding-left: 80px;
+}
+
+#comments .comments-body .comment-author {
+    font-size: var(--orologio-h5-typography-font-size);
+    line-height: normal;
+    margin-bottom: 5px;
+}
+
+#comments .comments-body .comment-author cite {
+    font-style: normal;
+}
+
+#comments .comments-body .meta {
+    margin-bottom: 1em;
+    text-transform: var(--orologio-h6-typography-text-transform);
+    font-family: var(--orologio-h6-typography-font-family);
+    font-weight: var(--orologio-h6-typography-font-weight);
+    /*font-size: var(--orologio-h6-typography-font-size);*/
+    font-size: 11px;
+    letter-spacing: var(--orologio-h6-typography-letter-spacing);
+}
+
+#comments .comments-body .meta a {
+    color: #999;
+}
+
+#comments .comments-body .comment-reply-link {
+    font-family: var(--orologio-h6-typography-font-family);
+    font-size: var(--orologio-h6-typography-font-size);
+    font-weight: var(--orologio-h6-typography-font-weight);
+    line-height: var(--orologio-h6-typography-line-height);
+    letter-spacing: var(--orologio-h6-typography-letter-spacing);
+    text-transform: var(--orologio-h6-typography-text-transform);
+
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+@media (min-width: 2400px) {
+    #comments .comments-body .reply {
+        font-size: 1rem;
+        letter-spacing: 4px;
+    }
+}
+
+#comments .comment-respond {
+    padding-bottom: 3em;
+    margin-bottom: 3em;
+    border-bottom: 1px solid var(--orologio-modules-background-color);
+}
+
+#comments ul.media-list {
+    list-style: none;
+    margin: 0 0 1.5em 0;
+    padding: 0;
+    border-bottom: 1px solid var(--orologio-modules-background-color);
+}
+
+#comments ul.media-list ul.children {
+    list-style: none;
+}
+
+#comments ul.media-list+.comment-respond {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: 0;
+}
+
+#comments ul.media-list>li {
+    border-bottom: 1px solid var(--orologio-modules-background-color);
+    margin-bottom: 1.5em;
+    display: flex;
+    flex-direction: column;
+}
+
+#comments ul.media-list>li:last-child {
+    border: 0;
+}
+
+#comments ul.media-list li ul.children {
+    border-top: 1px solid var(--orologio-modules-background-color);
+    margin-left: 0;
+    padding-top: 1.5em;
+    padding-left: 1.5em;
+}
+
+#comments ul.media-list li ul.children li {
+    border-bottom: 1px solid var(--orologio-modules-background-color);
+    width: 100%;
+    margin-bottom: 1.5em;
+}
+
+#comments ul.media-list li ul.children li:last-child {
+    border: 0;
+    margin-bottom: 0;
+}
+
+#comments ul.media-list li:last-of-type+.comment-respond {
+    margin-bottom: 0;
+    border: 0;
+}
+
+#commentform {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Creates three equal columns */
+    grid-gap: 30px;
+    /* Space between grid items */
+}
+
+#commentform>p {
+    grid-column: span 3;
+    /* By default, each item spans all three columns */
+}
+
+/* Adjustments to ensure that the full-width inputs are aligned properly */
+#commentform>p:nth-child(2),
+/* Comment textarea field */
+#commentform>p:nth-last-child(-n+3) {
+    /* Cookies consent and submit button */
+    grid-column: 1 / -1;
+    /* Ensures these fields span all columns */
+}
+
+#commentform p.comment-form-author,
+#commentform p.comment-form-email,
+#commentform p.comment-form-url {
+    grid-column: span 1;
+    /* These items each span one column */
+}
+
+
+/*--------------------------------------------------------------
+## Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+    border: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object,
+video {
+    max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+    margin-bottom: 1.5em;
+    max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+    margin: 0.8075em 0;
+}
+
+.wp-block-image figcaption,
+.wp-caption-text {
+    line-height: normal;
+    padding: 0.5em 0;
+    color: var(--orologio-body-typography-color-light);
+}
+
+article.post .wp-caption-text,
+article.post .wp-block-image figcaption {
+    color: var(--orologio-body-typography-color);
+    font-size: 14px;
+}
+
+.wp-block-cover,
+.wp-block-cover-image {
+    color: #fff;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+    margin-bottom: 1.5em;
+}
+
+.gallery-item {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+    max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+    max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+    max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+    max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+    max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+    max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+    max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+    max-width: 11.11%;
+}
+
+.gallery-caption {
+    display: block;
+}
+
+/*--------------------------------------------------------------
+## General page content
+--------------------------------------------------------------*/
+.gg_posts_grid ul.el-grid {
+    list-style: none;
+    margin: 0;
+    --orologio-template-columns: 1;
+    --orologio-template-rows: 1;
+    --orologio-column-gap: 0em;
+    --orologio-row-gap: 1.5em;
+    grid-template-columns: 100%;
+    display: grid;
+    grid-column-gap: var(--orologio-column-gap);
+    grid-row-gap: var(--orologio-row-gap);
+    grid-template-rows: repeat(var(--orologio-template-rows), 1fr);
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 768px) {
+    .gg_posts_grid ul.el-grid {
+        --orologio-column-gap: 1.5em;
+        --orologio-row-gap: 1.5em;
+    }
+
+    .gg_posts_grid ul.el-grid[data-columns="2"],
+    .gg_posts_grid ul.el-grid[data-columns="3"],
+    .gg_posts_grid ul.el-grid[data-columns="4"] {
+        --orologio-template-columns: 2;
+        grid-template-columns: repeat(var(--orologio-template-columns), 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .gg_posts_grid ul.el-grid {
+        --orologio-column-gap: 3em;
+        --orologio-row-gap: 3em;
+    }
+
+    .gg_posts_grid ul.el-grid[data-gap="nogap"] {
+        --orologio-column-gap: 0em;
+        --orologio-row-gap: 0em;
+    }
+
+    .gg_posts_grid ul.el-grid[data-columns="3"] {
+        --orologio-template-columns: 3;
+        grid-template-columns: repeat(var(--orologio-template-columns), 1fr);
+    }
+
+    .gg_posts_grid ul.el-grid[data-columns="4"] {
+        --orologio-template-columns: 4;
+        grid-template-columns: repeat(var(--orologio-template-columns), 1fr);
+    }
+}
+
+
+.gg_posts_grid ul.el-grid[data-columns="2"] article.post .entry-title,
+.gg_posts_grid ul.el-grid[data-columns="3"] article.post .entry-title {
+    font-size: xx-large;
+}
+.gg_posts_grid ul.el-grid[data-columns="4"] article.post .entry-title {
+    font-size: x-large;
+}
+
+.gg_posts_grid ul.el-grid[data-list-style="inline"] article.post {
+    display: flex;
+    flex-direction: row;
+}
+
+.gg_posts_grid ul.el-grid[data-list-style="inline"] article.post .post-thumbnail {
+    width: 40%;
+}
+
+.gg_posts_grid ul.el-grid[data-list-style="inline"] article.post .post-thumbnail a {
+    display: block;
+    height: 100%;
+}
+
+.gg_posts_grid ul.el-grid[data-list-style="inline"] article.post .post-thumbnail a img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gg_posts_grid ul.el-grid li .hentry.post {
+    margin: 0;
+}
+
+.gg_products_grid .grid-title {
+    font-size: var(--orologio-h1-typography-font-size);
+    text-align: center;
+}
+
+.gg_products_grid .gg_filter {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    margin: 6em 0;
+}
+
+@media (min-width: 768px) {
+    .gg_products_grid .gg_filter {
+        -webkit-box-direction: normal;
+        -webkit-box-orient: horizontal;
+        -webkit-flex-direction: row;
+        -moz-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+}
+
+.gg_products_grid .gg_filter li a {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: var(--orologio-primary-font);
+    font-weight: 500;
+    font-size: 0.714rem;
+    margin-right: 1px;
+    background: var(--orologio-secondary-color);
+    padding: 1.5em 3em;
+    cursor: pointer;
+    color: #fff;
+    display: block;
+}
+
+@media (min-width: 2400px) {
+    .gg_products_grid .gg_filter li a {
+        font-size: 0.857rem;
+        letter-spacing: 4px;
+    }
+}
+
+@media (min-width: 768px) {
+    .gg_products_grid .gg_filter li a {
+        display: inline-block;
+    }
+}
+
+.gg_products_grid .gg_filter li a:hover {
+    background: var(--orologio-primary-color);
+    color: var(--orologio-secondary-color);
+}
+
+.gg_products_grid .gg_filter li.active a {
+    background: var(--orologio-primary-color);
+    color: var(--orologio-secondary-color);
+}
+
+article .entry-title a {
+    color: var(--orologio-heading-color);
+}
+
+article .entry-title a:hover {
+    color: var(--orologio-heading-color);
+}
+
+/*--------------------------------------------------------------
+## General post content
+--------------------------------------------------------------*/
+.entry-header {
+    margin: 0 0 1.5em 0;
+}
+
+.entry-header .entry-title {
+    line-height: normal;
+}
+
+.single .entry-meta {
+    margin-top: 1.5em;
+    border: 0;
+    padding: 0;
+}
+
+.entry-footer {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: var(--orologio-primary-font);
+    font-weight: 500;
+    font-size: 0.857rem;
+    color: #666666;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+@media (min-width: 2400px) {
+    .entry-footer {
+        font-size: 1rem;
+        letter-spacing: 4px;
+    }
+}
+
+.entry-footer .tags-links {
+    position: relative;
+    display: block;
+    margin-top: 0.5em;
+}
+
+.entry-footer .tags-links a {
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.entry-meta-header {
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: var(--orologio-primary-font);
+    font-weight: 500;
+    font-size: 0.857rem;
+    color: #666666;
+}
+
+@media (min-width: 2400px) {
+    .entry-meta-header {
+        font-size: 1rem;
+        letter-spacing: 4px;
+    }
+}
+
+.entry-meta-header .cat-links {
+    position: relative;
+}
+
+.entry-footer ul,
+.entry-header ul,
+.entry-meta-header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.entry-footer ul li,
+.entry-header ul li,
+.entry-meta-header ul li {
+    display: inline-block;
+}
+
+.entry-footer .tags-links a,
+.entry-meta-header .cat-links a {
+    font-family: var(--orologio-h6-typography-font-family);
+    font-size: 11px;
+    font-weight: var(--orologio-h6-typography-font-weight);
+    letter-spacing: var(--orologio-h6-typography-letter-spacing);
+    text-transform: var(--orologio-h6-typography-text-transform);
+    display: inline-block;
+    margin: 0 0.5em 0.5em 0;
+}
+
+.entry-read-more {
+    padding-top: 0.5em;
+}
+
+.more-link-wrapper {
+    margin-bottom: 0.3em;
+}
+
+.post-thumbnail {
+    overflow: hidden;
+}
+
+.single .post-thumbnail {
+    margin-bottom: 30px;
+}
+
+.post-thumbnail img {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: block;
+    transform: scale(1);
+    transition: transform 3s ease-out 0s;
+}
+
+.post-thumbnail img:hover {
+    transform: scale(1.1);
+    transition: transform 3s ease-out 0s;
+}
+
+.post-social {
+    position: fixed;
+    right: 15px;
+    bottom: 100px;
+    -webkit-transform: translate(60px, 0);
+    transform: translate(60px, 0);
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+}
+
+.post-social ul {
+    list-style: none;
+    margin: 0;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+
+.post-social ul li a {
+    padding: 0.5em;
+    color: #999;
+}
+
+.post-social ul li a:hover {
+    color: var(--orologio-primary-color);
+}
+
+.is-scrolled .post-social {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+.btn-group.btn-group-justified {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .btn-group.btn-group-justified {
+        -webkit-box-direction: normal;
+        -webkit-box-orient: horizontal;
+        -webkit-flex-direction: row;
+        -moz-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+}
+
+.btn-group.btn-group-justified .btn-group {
+    flex: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    padding: 1em 0;
+}
+
+@media (min-width: 768px) {
+    .btn-group.btn-group-justified .btn-group {
+        padding: 0;
+    }
+}
+
+.btn-group.btn-group-justified .btn-group:first-child>div {
+    margin-right: auto;
+}
+
+.btn-group.btn-group-justified .btn-group:last-child>div {
+    margin-left: auto;
+}
+
+body.single .site-subheader .page-meta .page-meta-wrapper {
+    padding-bottom: 5em;
+}
+
+/*Next post navigation*/
+body.single .next-post-nav {
+    margin-top: 3rem;
+    padding: 1em;
+    background: var(--orologio-modules-background-color);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    gap: 1em;
+}
+@media (min-width: 768px) {
+    body.single .next-post-nav {
+        flex-direction: row;
+        padding: 3em;
+        align-items: center;
+        gap: 0;
+    }
+}
+
+body.single .next-post-nav .next-article-title {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 65%;
+}
+body.single .next-post-nav .next-article-btns {
+    display: flex;
+    flex-basis: 35%;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+body.single .next-post-nav .next-article-btns .button:last-child {
+    margin-left: -1px;
+}
+
+body.single .next-post-nav span.next-article {
+    font-family: var(--orologio-h2-typography-font-family);
+    font-size: var(--orologio-h5-typography-font-size);
+    font-weight: var(--orologio-h2-typography-font-weight);
+    line-height: var(--orologio-h2-typography-line-height);
+    letter-spacing: var(--orologio-h2-typography-letter-spacing);
+    color: var(--orologio-h2-typography-color);
+    text-transform: var(--orologio-h2-typography-text-transform);
+}
+
+body.single .next-post-nav span.toptitle {
+    margin: 0 0 0.3em 0;
+}
+
+
+/*--------------------------------------------------------------
+## Blog layout
+--------------------------------------------------------------*/
+ul.el-grid li article.sticky .post-content-wrapper {
+    position: relative;
+}
+
+ul.el-grid li article.sticky .post-content-wrapper::before {
+    border: 1px solid var(--orologio-primary-color);
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    display: block;
+}
+
+ul.el-grid li article.sticky .post-content-wrapper > div{
+    position: relative;
+}
+
+ul.el-grid li article .post-content-wrapper {
+    background: var(--orologio-modules-background-color);
+    padding: 45px 0 0 0;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+ul.el-grid li article .post-content-wrapper>div:not(.entry-meta) {
+    padding: 0 45px 0 45px;
+}
+@media (max-width: 1023px) {
+    ul.el-grid li article .post-content-wrapper>div:not(.entry-meta) {
+        padding: 0 20px 0 20px;
+    }
+}
+
+ul.el-grid .post-content-wrapper .entry-meta {
+    font-family: var(--orologio-h6-typography-font-family);
+    font-size: 11px;
+    font-weight: var(--orologio-h6-typography-font-weight);
+    line-height: var(--orologio-h6-typography-line-height);
+    letter-spacing: var(--orologio-h6-typography-letter-spacing);
+    color: var(--orologio-h6-typography-color);
+    text-transform: var(--orologio-h6-typography-text-transform);
+    padding: 20px 15px 20px 15px;
+    border-top: 1px solid #eee8e3;
+    margin-top: 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ul.el-grid li article.sticky .post-content-wrapper .entry-meta {
+    border-color: var(--orologio-primary-color);
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-bottom: 45px;
+}
+@media (min-width: 768px) {
+    ul.el-grid .post-content-wrapper .entry-meta {
+        padding: 30px 45px 30px 45px;
+    }
+}
+
+ul.el-grid li article.has_thumb .post-content-wrapper {
+    position: relative;
+}
+
+ul.el-grid[data-columns="4"] .post-content-wrapper .entry-title {
+    font-size: var(--orologio-h3-typography-font-size);
+}
+
+ul.el-grid li .inline-mode {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-bottom: 5px;
+    background: var(--orologio-modules-background-color);
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+ul.el-grid li .inline-mode .post-thumbnail {
+    -webkit-flex: 0 0 30%;
+    flex: 0 0 30%;
+    margin: 3%;
+}
+
+ul.el-grid li .inline-mode .post-content-wrapper {
+    -webkit-flex: 0 0 68%;
+    flex: 0 0 68%;
+    background: transparent;
+    margin: 0;
+    padding: 0 15% 0 10%;
+}
+
+ul.el-grid li .inline-mode .post-content-wrapper .entry-header {
+    padding: 0;
+    margin: 0;
+}
+
+ul.el-grid li .inline-mode .post-content-wrapper .entry-header .entry-title {
+    font-size: 3rem;
+}
+
+ul.el-grid li .inline-mode .inline-mode-wrapper-link {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+ul.el-grid li .inline-mode .inline-mode-wrapper-link:after {
+    content: '';
+    background: url(assets/images/slider-next-arrow.svg) right center no-repeat;
+    display: block;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    right: 50px;
+    bottom: calc(50% - 50px);
+    opacity: 0;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+
+ul.el-grid li .inline-mode:hover {
+    background: #fff;
+}
+
+ul.el-grid li .inline-mode:hover .post-thumbnail img {
+    transform: scale(1.05);
+}
+
+ul.el-grid li .inline-mode:hover .inline-mode-wrapper-link:after {
+    opacity: 1;
+    bottom: calc(50% - 25px);
+}
+
+body.search-results .pagination-wrapper {
+    margin-top: var(--orologio-layout-padding);
+}
+
+
+/*Sticky post*/
+
+.sticky-post {
+    position: relative;
+}
+
+.sticky-post-article.hentry.post {
+    margin: 0 0 4em 0;
+}
+
+.sticky-post-article .sticky-post-inner {
+    display: flex;
+    gap: 60px;
+}
+
+
+.sticky-post-article .sticky-post-inner .post-thumbnail {
+    width: 40%;
+    position: relative;
+}
+.sticky-post-article .sticky-post-inner .post-thumbnail img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.sticky-post-article .sticky-post-inner .post-content-wrapper {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+    border: 1px solid var(--orologio-accent-color);
+}
+
+.sticky-post-article .sticky-post-inner .post-content-wrapper .entry-header .entry-title {
+    margin-bottom: 0;
+}
+
+.sticky-post-article .sticky-post-inner .post-content-wrapper .entry-header,
+.sticky-post-article .sticky-post-inner .post-content-wrapper .entry-summary {
+    margin: 0 0 2em 0;
+}
+
+.sticky-post-article .sticky-post-inner .post-content-wrapper .entry-meta{
+    font-family: var(--orologio-h6-typography-font-family);
+    font-size: 11px;
+    font-weight: var(--orologio-h6-typography-font-weight);
+    line-height: var(--orologio-h6-typography-line-height);
+    letter-spacing: var(--orologio-h6-typography-letter-spacing);
+    color: var(--orologio-h6-typography-color);
+    text-transform: var(--orologio-h6-typography-text-transform);
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 1023px) {
+    .sticky-post:after{
+        display: none;
+    }
+    .sticky-post-article .sticky-post-inner {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .sticky-post-article .sticky-post-inner .post-content-wrapper,
+    .sticky-post-article .sticky-post-inner .post-thumbnail {
+        width: 100%;
+    }
+    .sticky-post-article .sticky-post-inner .post-content-wrapper {
+        padding: 0;
+    }
+}
+
+/*Footer*/
+
+footer.site-footer {
+    
+}
+
+footer.site-footer:not(.elementor-powered) {
+    color: var(--orologio-footer-text-color);
+    font-size: var(--orologio-footer-font-size);
+    background: var(--orologio-footer-background-color);
+    margin-top: var(--orologio-grid-gap);
+}
+
+footer.site-footer .footer-credit-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 60px 0;
+    font-size: var(--orologio-footer-copyright-font-size);
+}
+
+@media (min-width: 992px) {
+    footer.site-footer .footer-credit-wrapper {
+        flex-direction: row;
+    }
+}
+
+footer.site-footer .footer-widgets:not(.no_active_widgets) {
+    display: flex;
+    margin-bottom: 60px;
+    flex-direction: column;
+}
+
+footer.site-footer .footer-widgets .footer-widgets-area {
+    width: 100%;
+}
+
+footer.site-footer .footer-widget {
+    margin: 0 15px;
+}
+
+footer.site-footer .gg-widget {
+    padding: 0;
+    background: transparent;
+}
+
+footer.site-footer .gg-widget h1,
+footer.site-footer .gg-widget h2,
+footer.site-footer .gg-widget h3,
+footer.site-footer .gg-widget h4,
+footer.site-footer .gg-widget h5,
+footer.site-footer .gg-widget h6 {
+    color: #fff;
+}
+
+footer.site-footer .gg-widget .widget-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0;
+    color: var(--orologio-accent-color);
+    font-weight: 500;
+}
+
+footer.site-footer .gg-widget h2 {
+    font-size: 3.5rem;
+    line-height: normal;
+    margin-bottom: 45px;
+}
+
+footer.site-footer .gg-widget ul li {
+    border-color: var(--orologio-modules-background-color);
+}
+
+footer.site-footer .gg-widget ul li a {
+    color: var(--orologio-primary-color);
+}
+
+footer.site-footer .gg-widget ul.menu li {
+    border: 0;
+    padding: 0;
+}
+
+footer.site-footer .gg-widget ul.menu li a {
+    padding: 0;
+    color: var(--orologio-body-typography-color);
+}
+
+footer.site-footer .gg-widget ul.menu li a:hover {
+    color: var(--orologio-primary-color);
+}
+
+footer.site-footer .gg-widget.widget_orologio_btn_widget {
+    padding-top: 3em;
+}
+
+footer.site-footer .gg-widget .is-style-outline>.wp-block-button__link:not(.has-text-color) {
+    color: #fff;
+    border-color: var(--orologio-primary-color);
+}
+
+/* Footer Newsletter */
+.newsletter-form {
+    position: relative;
+}
+.newsletter-form input[type="email"]{
+    width: 100%;
+}
+.newsletter-form input[type="submit"]{
+    position: absolute;
+    right: 0;
+    top: 15px;
+    border: 0;
+    background: transparent;
+    color: var(--orologio-primary-color);
+    text-transform: uppercase;
+    padding: 1em 0;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/*Footer Navigation*/
+footer.site-footer .footer-navigation {
+    max-width: 100%;
+}
+
+footer.site-footer .footer-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: var(--orologio-primary-font);
+    font-weight: 500;
+    font-size: 0.857rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (min-width: 992px) {
+    footer.site-footer .footer-navigation ul {
+        justify-content: flex-end;
+    }
+}
+
+footer.site-footer .footer-navigation ul li {
+    padding: 1em;
+    position: relative;
+}
+
+footer.site-footer .footer-navigation ul li a {
+    color: #fff;
+}
+
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+header.site-header {
+    background-color: var(--orologio-header-background-color);
+}
+
+header.site-header.elementor-powered {
+    /*max-width: var(--orologio-container-width);*/
+    background-color:transparent;
+    overflow: hidden;
+}
+
+body.header-is-sticky header.site-header {
+    position: sticky;
+    position: -webkit-sticky;
+    /* For Safari */
+    top: 0;
+    z-index: 9999;
+}
+
+header.site-header .site-branding {
+    position: relative;
+}
+
+/*Elementor logo*/
+.okthemes-site-logo a {
+    font-family: var(--orologio-primary-font);
+    font-size: 2rem;
+}
+
+header.site-header .site-branding .sticky-logo {
+    display: none;
+}
+
+body.header-is-sticky.has-sticky-logo header.site-header.sticky .site-branding .default-logo {
+    display: none;
+}
+
+body.header-is-sticky.has-sticky-logo header.site-header.sticky .site-branding .sticky-logo {
+    display: block;
+}
+
+header.site-header .site-branding .site-title {
+    font-family: var(--orologio-secondary-font);
+    font-size: var(--orologio-h4-typography-font-size);
+    line-height: normal;
+}
+
+header.site-header .site-branding .site-description {
+    margin: 0;
+}
+
+header.site-header .subheader-slider {
+    float: left;
+    width: 100%;
+}
+
+
+body.regular-menu header.site-header .site-branding {
+    text-align: left;
+}
+
+@media (max-width: 767px) {
+    .header-section-navigation ul.elementor-icon-list-items.elementor-inline-items {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        display: block;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+    .header-section-navigation ul.elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item {
+        display: inline-block;
+    }
+}
+
+/*Searchform overlay*/
+.searchform-overlay-wrapper {
+    visibility: hidden;
+    /* Hidden but still occupies space */
+    opacity: 0;
+    /* Start fully transparent */
+    transition: opacity 0.5s ease;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--orologio-modules-background-color);
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchform-overlay-wrapper.is-visible {
+    visibility: visible;
+    /* Make visible */
+
+    opacity: 1;
+    /* Fully opaque */
+    z-index: 9999;
+    /* Ensure it's above other content */
+}
+
+.searchform-overlay-wrapper .close-overlay {
+    padding: 0;
+    background: transparent;
+    border: 0;
+    width: 40px;
+    height: 40px;
+    transition: 0.45s ease-in-out;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+}
+
+.searchform-overlay-wrapper .close-overlay-icon {
+    width: 30px;
+    line-height: 0;
+    cursor: pointer;
+    transition: 0.4s ease;
+    /* Apply easing for smoother transition */
+}
+
+.searchform-overlay-wrapper .close-overlay-icon span {
+    display: inline-block;
+    position: relative;
+    width: 26px;
+    height: 2px;
+    vertical-align: top;
+    background: var(--orologio-buttons-bg-color);
+    transition: background-color 0.4s ease, transform 0.4s ease;
+    /* Smooth transitions for color and transform */
+}
+
+.searchform-overlay-wrapper .close-overlay-icon span:nth-child(1) {
+    top: 1px;
+    transform: rotate(45deg);
+}
+
+.searchform-overlay-wrapper .close-overlay-icon span:nth-child(2) {
+    top: -1px;
+    transform: rotate(135deg);
+}
+
+/* Hover effects */
+.searchform-overlay-wrapper .close-overlay:hover .close-overlay-icon span {
+    background-color: var(--orologio-buttons-bg-color);
+}
+
+.searchform-overlay-wrapper .close-overlay:hover .close-overlay-icon span:nth-child(1) {
+    transform: rotate(135deg);
+}
+
+.searchform-overlay-wrapper .close-overlay:hover .close-overlay-icon span:nth-child(2) {
+    transform: rotate(225deg);
+}
+
+
+.searchform-overlay-wrapper form {
+    display: flex;
+
+    opacity: 0;
+    /* Start fully transparent */
+    transform: translateY(100px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.searchform-overlay-wrapper.is-visible form {
+    opacity: 1;
+    /* Fully opaque */
+    transform: translateY(0);
+    /* Move to final position */
+}
+
+.searchform-overlay-wrapper form input[type="search"] {
+    background: #fff;
+    border-bottom: 1px solid #fff;
+    min-width: 500px;
+    padding: 1em;
+}
+@media (max-width: 767px) {
+    .searchform-overlay-wrapper form input[type="search"] {
+        min-width: auto;
+    }
+}
+
+.searchform-overlay-wrapper form button[type="submit"] {
+    line-height: normal;
+}
+
+.searchform-overlay-wrapper form button[type="submit"] svg {
+    fill: #fff;
+}
+
+/*Page header*/
+.site-subheader {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--orologio-page-header-bg-color);
+}
+
+.site-subheader .page-meta {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    width: 100%;
+    min-height: var(--orologio-page-header-min-height);
+}
+
+.site-subheader .page-meta .page-meta-wrapper {
+    text-align: center;
+    padding: var(--orologio-page-header-padding);
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 782px) {
+    .site-subheader .page-meta .page-meta-wrapper {
+        padding: 45px 20px 0 20px;
+    }
+}
+
+.site-subheader .page-meta .page-meta-wrapper .page-header-toptitle {
+    margin: 0;
+    color: var(--orologio-primary-color);
+}
+
+@media (min-width: 2400px) {
+    .site-subheader .page-meta .page-meta-wrapper .page-header-toptitle {
+        font-size: 1rem;
+        letter-spacing: 4px;
+    }
+}
+
+.site-subheader .page-meta .page-meta-wrapper h1 {
+    margin: 0;
+    position: relative;
+    word-break: break-word;
+}
+
+.site-subheader .page-meta .page-meta-wrapper .header-page-description {
+    margin-top: 1.5em;
+}
+
+@media (min-width: 992px) {
+    .site-subheader .page-meta .page-meta-wrapper .header-page-description {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.site-subheader .page-meta .page-meta-wrapper .header-page-description p {
+    margin: 0;
+}
+
+.site-subheader .page-header-image {
+    text-align: center;
+}
+
+.site-subheader .page-header-image img {
+    display: inline-block;
+    margin: 0;
+    vertical-align: top;
+}
+
+@media (min-width: 1200px) {
+    .site-subheader .page-header-image img {
+        width: 100%;
+    }
+}
+
+body.single-product .site-subheader,
+body.single-product .site-subheader .page-meta {
+    height: auto;
+}
+
+.gg-page-has-header-image .site-subheader .page-meta {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100vw;
+    margin-left: -50vw;
+    left: 50%;
+}
+
+.gg-page-has-header-image .site-subheader .page-meta .page-meta-wrapper>* {
+    color: #fff;
+}
+
+.gg-page-has-header-image.featured-image-is-fullwidth .site-subheader {
+    padding: 0;
+}
+
+.gg-page-has-header-image .site-subheader .page-meta .page-meta-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.gg-page-has-header-image .site-subheader .page-meta:after {
+    content: '';
+    background: var(--orologio-secondary-color);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0.6;
+    z-index: 1;
+    display: block;
+}
+
+.gg-page-header-left-align .page-meta .page-meta-wrapper {
+    text-align: left;
+}
+
+.gg-page-header-left-align .page-meta .page-meta-wrapper h1 {
+    margin-top: 1em;
+}
+
+.gg-page-header-right-align .page-meta .page-meta-wrapper {
+    text-align: right;
+}
+
+header.site-header .header-wrapper {
+    padding: 2em 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "logo mobile-toggle";
+}
+
+@media (min-width: 992px) {
+    header.site-header .header-wrapper {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "logo main-nav";
+    }
+}
+
+header.site-header .main-navigation-wrapper {
+    grid-area: main-nav;
+    justify-content: flex-end;
+    display: flex;
+}
+
+header.site-header .site-branding {
+    grid-area: logo;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+
+    font-family: var(--orologio-primary-font);
+    font-size: 32px;
+}
+
+header.site-header .site-branding a {
+    color: #fff;
+}
+
+header.site-header .secondary-navigation {
+    grid-area: sec-nav;
+
+    display: flex;
+    justify-self: end;
+    align-self: center;
+}
+
+
+
+/*--------------------------------------------------------------
+# Content layout
+--------------------------------------------------------------*/
+
+.page-content {
+    display: flex;
+    justify-content: start;
+    padding: var(--orologio-grid-gap) 0;
+    flex-direction: column;
+}
+
+body.elementor-page:not(.single-product) .page-content {
+    padding: 0;
+}
+
+
+.sidebar-nav {
+    flex: 1;
+    /* Grow to fill space, will be overridden in media query */
+}
+
+/* Layout adjustment for larger screens */
+@media (min-width: 768px) {
+
+    .page-content {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: var(--orologio-grid-gap);
+        padding: var(--orologio-grid-gap) 0;
+    }
+
+    .page-content:has(.sidebar-nav) > .gg_posts_grid,
+    .page-content article {
+        flex: 0 0 calc(100% - var(--orologio-sidebar-width) - var(--orologio-grid-gap));
+        min-width: 0;
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+
+    .page-content .sidebar-nav {
+        flex: 0 0 var(--orologio-sidebar-width);
+        min-width: 0;
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+
+    body.left-sidebar .page-content {
+        flex-direction: row-reverse;
+    }
+
+}
+
+/* Special cases */
+body.no-active-sidebar-page .page-content,
+body.no-active-sidebar-post .page-content,
+body.no-active-sidebar-search .page-content,
+body.no-sidebar .page-content,
+body.error404 .page-content {
+    flex-direction: column;
+    gap: 0;
+}
+
+@media (max-width: 1500px) {
+    body.no-sidebar .page-content {
+        padding-left: 30px;
+        padding-right: 30px;
+
+    }
+}
+
+@media (max-width: 768px) {
+    body.no-sidebar .page-content {
+        padding-left: 15px;
+        padding-right: 15px;
+
+    }
+}
+
+body.no-active-sidebar-post .page-content {
+    flex-direction: column;
+}
+
+body.post-type-archive .products+.pagination-wrapper {
+    margin-top: var(--orologio-layout-padding);
+}
+
+@media (min-width: 768px) {
+    .el-grid.products .isotope-item {
+        margin: 1.5em;
+    }
+
+    .el-grid.products.has-1-columns .isotope-item {
+        width: 100%;
+    }
+
+    .el-grid.products.has-2-columns .isotope-item {
+        width: calc(50% - 3em);
+    }
+
+    .el-grid.products.has-3-columns .isotope-item {
+        width: calc(33.33% - 3em);
+    }
+
+    .el-grid.products.has-4-columns .isotope-item {
+        width: calc(25% - 3em);
+    }
+
+    .el-grid.products.has-5-columns .isotope-item {
+        width: calc(20% - 3em);
+    }
+
+    .el-grid.products.has-6-columns .isotope-item {
+        width: calc(16.66% - 3em);
+    }
+}
+
+/*--------------------------------------------------------------
+# Not found page
+--------------------------------------------------------------*/
+.not_found_wrapper {
+    text-align: center;
+}
+
+.not_found_wrapper .not_found_box {
+    width: 50%;
+    border: 1px solid var(--orologio-primary-color);
+    margin: 0 auto;
+    padding: 5%;
+}
+
+.not_found_wrapper .not_found_box h1 {
+    font-size: 7rem;
+    line-height: normal;
+}
+
+.not_found_wrapper .not_found_box .btn {
+    margin-top: 60px;
+}
+
+/*--------------------------------------------------------------
+# Not found search
+--------------------------------------------------------------*/
+.no-results.not-found {
+    width: 50%;
+    border: 1px solid var(--orologio-primary-color);
+    margin: 0 auto;
+    padding: 10%;
+}
+
+.no-results.not-found .search-form .search-field {
+    min-width: 300px;
+}
+
+/*--------------------------------------------------------------
+# Elementor Modules
+--------------------------------------------------------------*/
+#panelOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+    opacity: 0;
+    display: none;
+}
+
+#panelOverlay.open {
+    opacity: 1;
+    z-index: 999;
+    display: block;
+}
+
+#cart-drawer-trigger {
+    position: relative;
+}
+
+#cart-drawer-trigger > .count {
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--orologio-primary-color);
+    background: var(--orologio-secondary-color);
+    border-radius: 50%;
+    font-size: 10px;
+}
+#cart-drawer-trigger > .count:empty {
+    display: none;
+}
+
+.cart-drawer-header {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+#cartDrawer {
+    position: fixed;
+    left: auto;
+    right: 0;
+    
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 200px;
+    width: 400px;
+    max-width: 100%;
+    transition: .3s;
+    padding: 20px 30px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(100%);
+    z-index: 1000;
+
+}
+body.admin-bar #cartDrawer {
+    top: 32px;
+}
+
+#cartDrawer.open {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#cartDrawer h2 {
+    margin-top: 0;
+    padding: 20px;
+}
+
+#closeDrawerbtn {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+#closeDrawerbtn svg path {
+    fill: var(--orologio-primary-color);
+}
+
+#cartDrawer .cart_item .product-thumbnail img {
+    max-width: 50px;
+    float: left;
+}
+
+/* Price table */
+.okthemes-price-table {
+    border: 1px solid #f4e5d5;
+}
+
+.okthemes-price-table .okthemes-price-table__header h4 {
+    font-size: 60px;
+    font-weight: 200;
+    color: var(--orologio-primary-color);
+}
+
+.okthemes-price-table .okthemes-price-table__header p {
+    font-size: 21px;
+    font-weight: 400;
+    color: var(--orologio-secondary-color);
+}
+
+.okthemes-price-table .okthemes-price-table__price {
+    background: var(--orologio-modules-background-color);
+}
+
+.okthemes-price-table .okthemes-price-table__features-list {
+    background: var(--orologio-modules-background-color);
+    padding-bottom: 60px;
+}
+
+.okthemes-price-table .okthemes-price-table__price {
+    font-size: 90px;
+    padding-bottom: 30px;
+}
+
+.okthemes-price-table .okthemes-price-table__price .okthemes-price-table__period {
+    font-family: var(--orologio-h6-typography-font-family);
+    font-size: var(--orologio-h6-typography-font-size);
+    font-weight: var(--orologio-h6-typography-font-weight);
+    line-height: var(--orologio-h6-typography-line-height);
+    letter-spacing: var(--orologio-h6-typography-letter-spacing);
+    color: var(--orologio-h6-typography-color);
+    text-transform: var(--orologio-h6-typography-text-transform);
+    line-height: 40px;
+}
+
+.okthemes-price-table .okthemes-price-table__features-list ul li {
+    line-height: 40px;
+}
+
+/*Simple link*/
+.okthemes-simple-link {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0;
+    color: var(--orologio-body-typography-color);
+}
+
+.okthemes-simple-link .simple-link-text {
+    margin-right: 10px;
+}
+
+/*Content carousel*/
+.okthemes-content-carousel .swiper-pagination .swiper-pagination-bullet {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0;
+    color: var(--orologio-body-typography-color);
+    cursor: pointer;
+}
+
+.okthemes-content-carousel .swiper-pagination .swiper-pagination-bullet:hover,
+.okthemes-content-carousel .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    color: var(--orologio-primary-color);
+}
+
+/*Motion FX E styles*/
+
+.elementor-motion-effects-element, .elementor-motion-effects-layer {
+    transition-property: transform, opacity;
+    transition-timing-function: cubic-bezier(0, 0.33, 0.07, 1.03);
+    transition-duration: 1s;
+  }
+  
+  .elementor-motion-effects-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transform-origin: var(--e-transform-origin-y) var(--e-transform-origin-x);
+  }
+  .elementor-motion-effects-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .elementor-motion-effects-perspective {
+    perspective: 1200px;
+  }
+  .elementor-motion-effects-element {
+    transform-origin: var(--e-transform-origin-y) var(--e-transform-origin-x);
+  }
+  
+  /*# sourceMappingURL=motion-fx.css.map */
+
+/*Elementor Accordion*/
+
+.elementor-widget-n-accordion .e-n-accordion-item {
+    margin-top: -1px;
+}
+
+.elementor-widget-n-accordion .e-n-accordion-item-title {
+    border-color: var(--orologio-primary-color);
+    padding: 1.5em 0;
+}
+
+.elementor-widget-n-accordion .e-n-accordion-item-title-text {
+    font-family: var(--orologio-h6-typography-font-family);
+    font-size: var(--orologio-h6-typography-font-size);
+    font-weight: var(--orologio-h6-typography-font-weight);
+    line-height: var(--orologio-h6-typography-line-height);
+    letter-spacing: var(--orologio-h6-typography-letter-spacing);
+    color: var(--orologio-h6-typography-color);
+    text-transform: var(--orologio-h6-typography-text-transform);
+}
+
+/*Tabs*/
+.elementor-widget-n-tabs .e-n-tab-title {
+    color: var(--orologio-body-typography-color);
+    font-family: var(--orologio-menu-typography-font-family);
+}
+.elementor-widget-n-tabs .e-n-tab-title-text {   
+    font-size: 1.6rem;
+    font-style: italic;   
+}
+
+.elementor-widget-n-tabs .e-n-tab-title[aria-selected=true],
+.elementor-widget-n-tabs .e-n-tab-title[aria-selected=true] a {
+    text-decoration-line: line-through;
+}
+
+/*News page*/
+body.blog .site-subheader{
+    background: transparent;
+}
+
+body.blog .site-subheader .page-meta {
+    min-height: 200px;
+}
+body.blog .site-subheader .page-meta .page-meta-wrapper {
+    padding-bottom: 0;
+}

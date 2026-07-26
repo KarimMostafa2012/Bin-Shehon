@@ -1,0 +1,861 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: orologio Vineyards\n"
+"POT-Creation-Date: 2025-07-23 23:39+0300\n"
+"PO-Revision-Date: 2016-05-17 21:29+0300\n"
+"Last-Translator: Cristian Gogoneata <cristiangogoneata@gmail.com>\n"
+"Language-Team: Cristian Gogoneata <cristiangogoneata@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Poedit 2.4.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:20
+msgid "404 Error"
+msgstr ""
+
+#: 404.php:21
+msgid "It seems we cannot find what you are looking for."
+msgstr ""
+
+#: 404.php:22
+msgid "Return To Home"
+msgstr ""
+
+#: admin/class-theme-license.php:17 admin/class-theme-license.php:90
+#: admin/class-theme-license.php:116
+msgid "Unauthorized request."
+msgstr ""
+
+#: admin/class-theme-setup.php:20 admin/class-theme-setup.php:21
+#: admin/views/page-setup.php:11
+msgid "Theme Setup"
+msgstr ""
+
+#: admin/views/page-setup.php:22
+msgid "Welcome to"
+msgstr ""
+
+#: admin/views/page-setup.php:27
+msgid ""
+"Beautifully crafted WordPress theme ready to take your watches to the next "
+"level."
+msgstr ""
+
+#: admin/views/page-setup.php:41
+msgid "Activate theme"
+msgstr ""
+
+#: admin/views/page-setup.php:42
+msgid ""
+"Enter your purchase code and email to activate the theme and unlock premium "
+"features."
+msgstr ""
+
+#: admin/views/page-setup.php:51
+msgid "License activated successfully."
+msgstr ""
+
+#: admin/views/page-setup.php:53
+msgid "License was deactivated."
+msgstr ""
+
+#: admin/views/page-setup.php:55
+msgid "License has been reset. You can now activate it again."
+msgstr ""
+
+#: admin/views/page-setup.php:64
+msgid "Where did you get this theme?"
+msgstr ""
+
+#: admin/views/page-setup.php:66
+msgid "Envato Market"
+msgstr ""
+
+#: admin/views/page-setup.php:67
+msgid "Envato Elements"
+msgstr ""
+
+#: admin/views/page-setup.php:71
+msgid "Purchase Code"
+msgstr ""
+
+#: admin/views/page-setup.php:74
+msgid "How to find your purchase code?"
+msgstr ""
+
+#: admin/views/page-setup.php:79
+msgid "Email Address"
+msgstr ""
+
+#: admin/views/page-setup.php:83
+msgid "Continue Setup"
+msgstr ""
+
+#: admin/views/page-setup.php:86
+msgid "License is active."
+msgstr ""
+
+#: admin/views/page-setup.php:91
+msgid "Deactivate License on this domain"
+msgstr ""
+
+#: admin/views/page-setup.php:103 admin/views/page-setup.php:108
+#: admin/views/page-setup.php:112 lib/class-tgm-plugin-activation.php:341
+msgid "Install Plugins"
+msgstr ""
+
+#: admin/views/page-setup.php:104
+msgid ""
+"Install the recommended plugins to ensure full functionality and design "
+"flexibility."
+msgstr ""
+
+#: admin/views/page-setup.php:111 admin/views/page-setup.php:130
+msgid "Please activate your theme to enable this step."
+msgstr ""
+
+#: admin/views/page-setup.php:114
+msgid "You need to activate the theme before installing plugins."
+msgstr ""
+
+#: admin/views/page-setup.php:122
+msgid "Import demo content"
+msgstr ""
+
+#: admin/views/page-setup.php:123
+msgid ""
+"Import demo pages, settings, and layouts to quickly replicate the theme's live "
+"preview."
+msgstr ""
+
+#: admin/views/page-setup.php:127 admin/views/page-setup.php:131
+msgid "Import Demo Content"
+msgstr ""
+
+#: admin/views/page-setup.php:133
+msgid "You need to activate the theme before importing the demo content."
+msgstr ""
+
+#: admin/views/page-setup.php:145
+msgid "Free Theme Download"
+msgstr ""
+
+#: admin/views/page-setup.php:159
+msgid "Customize Appearance"
+msgstr ""
+
+#: admin/views/page-setup.php:167
+msgid "Online Documentation"
+msgstr ""
+
+#: admin/views/page-setup.php:173
+msgid "Support"
+msgstr ""
+
+#: comments.php:40
+#, php-format
+msgctxt "comments title"
+msgid "One comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:52
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:55
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:61
+msgid "Comments are closed."
+msgstr ""
+
+#: lib/class-helper.php:111
+msgid "Orologio Primary Color"
+msgstr ""
+
+#: lib/class-helper.php:117
+msgid "Orologio Secondary Color"
+msgstr ""
+
+#: lib/class-helper.php:123
+msgid "Orologio Accent Color"
+msgstr ""
+
+#: lib/class-helper.php:129
+msgid "Orologio Accent Color #1"
+msgstr ""
+
+#: lib/class-helper.php:135
+msgid "Orologio Accent Color #2"
+msgstr ""
+
+#: lib/class-helper.php:141
+msgid "Orologio Body Background Color"
+msgstr ""
+
+#: lib/class-helper.php:147
+msgid "Orologio Header Background Color"
+msgstr ""
+
+#: lib/class-helper.php:153
+msgid "Orologio Footer Background Color"
+msgstr ""
+
+#: lib/class-helper.php:159
+msgid "Orologio Modules Background Color"
+msgstr ""
+
+#: lib/class-orologio.php:80
+msgid "Main Menu"
+msgstr ""
+
+#: lib/class-orologio.php:81
+msgid "Footer Menu"
+msgstr ""
+
+#: lib/class-orologio.php:113
+msgid "Page Sidebar"
+msgstr ""
+
+#: lib/class-orologio.php:114
+msgid "Posts Sidebar"
+msgstr ""
+
+#: lib/class-orologio.php:115
+msgid "Search Sidebar"
+msgstr ""
+
+#: lib/class-orologio.php:116
+msgid "Shop Sidebar"
+msgstr ""
+
+#: lib/class-orologio.php:117
+msgid "Product Sidebar"
+msgstr ""
+
+#: lib/class-orologio.php:118
+msgid "Footer Hero Area"
+msgstr ""
+
+#: lib/class-orologio.php:119
+msgid "Footer Widgets Area"
+msgstr ""
+
+#: lib/class-orologio.php:162
+msgid "Expand child menu"
+msgstr ""
+
+#: lib/class-orologio.php:163
+msgid "Collapse child menu"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:340
+msgid "Install Required Plugins"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:343
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:345
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:346
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:349
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:355
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:361
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:367
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:373
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:379
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:384
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:389
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:394
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:398
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:399
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:400
+#: lib/class-tgm-plugin-activation.php:3314
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:401
+#: lib/class-tgm-plugin-activation.php:3106
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:403
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:405
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. Please "
+"update the plugin."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:407
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:408
+msgid "Dismiss this notice"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:409
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:410
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:616
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:617
+msgid "Update Required"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:735
+msgid "Set the parent_slug config variable instead."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:1042
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug and "
+"renaming did not work."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:1042
+#: lib/class-tgm-plugin-activation.php:1052
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:1052
+msgid ""
+"The remote plugin package consists of more than one file, but the files are not "
+"packaged in a folder."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:1243
+#: lib/class-tgm-plugin-activation.php:3102
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2115
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2424
+msgid "Required"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2427
+msgid "Recommended"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2443
+msgid "WordPress Repository"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2446
+msgid "External Source"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2449
+msgid "Pre-Packaged"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2466
+msgid "Not Installed"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2470
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2472
+msgid "Active"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2478
+msgid "Required Update not Available"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2481
+msgid "Requires Update"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2484
+msgid "Update recommended"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2493
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2539
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:2543
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:2547
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:2551
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:2633
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2641
+msgid "Installed version:"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2649
+msgid "Minimum required version:"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2661
+msgid "Available version:"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2684
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2698
+msgid "Plugin"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2699
+msgid "Source"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2700
+msgid "Type"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2704
+msgid "Version"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2705
+msgid "Status"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2754
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2759
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2765
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2837
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2870
+msgid "Install"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2876
+msgid "Update"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2879
+msgid "Activate"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2910
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2912
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2953
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2955
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3062
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3088
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3313
+msgid "Plugin activation failed."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3659
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3662
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3664
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3668
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3670
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3671
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3673
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3676
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3678
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3679
+msgid "All installations have been completed."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3681
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3686
+msgid "Show Details"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3686
+msgid "Hide Details"
+msgstr ""
+
+#: lib/elementor/el-custom-header-typography.php:19
+#: lib/elementor/el-custom-header-typography.php:35
+msgid "Page Header Typography"
+msgstr ""
+
+#: lib/elementor/el-custom-header-typography.php:44
+msgid "Heading"
+msgstr ""
+
+#: lib/elementor/el-custom-header-typography.php:51
+msgid "Text Color"
+msgstr ""
+
+#: lib/elementor/el-custom-header-typography.php:71
+msgid "Padding"
+msgstr ""
+
+#: lib/orologio-template-functions.php:97
+msgid "Next article"
+msgstr ""
+
+#: lib/orologio-template-functions.php:267
+msgid "Menu"
+msgstr ""
+
+#: lib/orologio-template-functions.php:268
+#: lib/woocommerce/class-orologio-woocommerce.php:272
+msgid "Close"
+msgstr ""
+
+#: lib/orologio-template-functions.php:334
+msgid "Open menu"
+msgstr ""
+
+#: lib/orologio-template-functions.php:464
+#, php-format
+msgid "Results for \"%s\""
+msgstr ""
+
+#: lib/orologio-template-functions.php:486
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: lib/orologio-template-functions.php:507
+#, php-format
+msgid "by %s"
+msgstr ""
+
+#: lib/orologio-template-functions.php:563
+#: lib/woocommerce/class-orologio-shop-filters.php:379
+msgid "Tags"
+msgstr ""
+
+#: lib/orologio-template-functions.php:595
+#: lib/woocommerce/class-orologio-shop-filters.php:353
+#: lib/woocommerce/class-orologio-shop-filters.php:365
+msgid "Categories"
+msgstr ""
+
+#: lib/orologio-template-functions.php:614 lib/orologio-template-functions.php:625
+msgid "Read More"
+msgstr ""
+
+#: lib/orologio-template-functions.php:663
+msgid "Posts Pagination"
+msgstr ""
+
+#: lib/orologio-template-functions.php:686
+msgid "Pingback:"
+msgstr ""
+
+#: lib/orologio-template-functions.php:709
+msgid "Post author"
+msgstr ""
+
+#: lib/orologio-template-functions.php:718
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: lib/orologio-template-functions.php:726
+msgid "Reply"
+msgstr ""
+
+#: lib/orologio-template-functions.php:736
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: lib/orologio-template-functions.php:763
+msgid "Search products"
+msgstr ""
+
+#: lib/woocommerce/class-orologio-shop-filters.php:54
+msgid "Invalid nonce verification"
+msgstr ""
+
+#: lib/woocommerce/class-orologio-shop-filters.php:130
+msgid "No products found."
+msgstr ""
+
+#: lib/woocommerce/class-orologio-woocommerce.php:210
+msgid "View your shopping cart"
+msgstr ""
+
+#: lib/woocommerce/class-orologio-woocommerce.php:271
+msgid "Shopping cart"
+msgstr ""
+
+#: lib/woocommerce/orologio-woocommerce-template-functions.php:78
+msgid "View cart"
+msgstr ""
+
+#: lib/woocommerce/orologio-woocommerce-template-functions.php:302
+msgid "Product Data"
+msgstr ""
+
+#: parts/part-page.php:15 parts/post-formats/part-single.php:38
+msgid "Pages:"
+msgstr ""
+
+#: parts/part-searchform-overlay.php:12
+msgid "Type here"
+msgstr ""
+
+#: parts/post-formats/part-none.php:15
+msgid "Nothing Found"
+msgstr ""
+
+#: parts/post-formats/part-none.php:21
+msgid ""
+"Apologies, but no results were found. Perhaps searching will help find a "
+"related post."
+msgstr ""
+
+#: parts/post-formats/part-single.php:33 parts/post-formats/part-sticky.php:48
+#: parts/post-formats/part.php:46
+#, php-format
+msgid "Continue reading %s"
+msgstr ""
+
+#: parts/post-formats/part-single.php:42
+msgid "Page"
+msgstr ""
+
+#: searchform.php:12
+msgctxt "label"
+msgid "Search"
+msgstr ""
+
+#: searchform.php:14
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: searchform.php:15
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Orologio"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://orologio.okthemes.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "A premium watch shop theme for WordPress"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Cristian Gogoneata"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.okthemes.com"
+msgstr ""

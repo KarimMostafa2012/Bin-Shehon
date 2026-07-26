@@ -1,0 +1,137 @@
+.wcqr-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.72);
+}
+
+.wcqr-overlay.is-active,
+#wcqr-overlay.is-active {
+    display: flex !important;
+}
+
+.wcqr-modal {
+    position: relative;
+    width: min(100%, 520px);
+    max-height: calc(100vh - 48px);
+    overflow: auto;
+    padding: 30px;
+    background: #0b0b0b;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+}
+
+#wcqr-overlay[aria-hidden="false"] {
+    display: flex !important;
+}
+
+.wcqr-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 1px solid #ffffff;
+    background: transparent;
+    color: #ffffff;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.wcqr-close:hover,
+.wcqr-close:focus {
+    border-color: #b71918;
+    color: #b71918;
+}
+
+.wcqr-modal h2,
+.wcqr-success h3 {
+    margin: 0 0 18px;
+    color: #ffffff;
+}
+
+#wcqr-form {
+    display: grid;
+    gap: 10px;
+}
+
+#wcqr-form[hidden],
+#wcqr-success[hidden] {
+    display: none !important;
+}
+
+#wcqr-form label {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+#wcqr-form input,
+#wcqr-form textarea {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid #ffffff;
+    background: #000000;
+    color: #ffffff;
+}
+
+#wcqr-form textarea {
+    min-height: 88px;
+    resize: vertical;
+}
+
+#wcqr-form input:focus,
+#wcqr-form textarea:focus {
+    outline: 2px solid #b71918;
+    outline-offset: 1px;
+}
+
+#wcqr-form button[type="submit"],
+#wcqr-close-success {
+    min-height: 46px;
+    padding: 12px 18px;
+    border: 1px solid #b71918;
+    background: #b71918;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#wcqr-form button[type="submit"]:disabled {
+    cursor: wait;
+    opacity: 0.7;
+}
+
+.wcqr-success {
+    display: grid;
+    justify-items: center;
+    gap: 12px;
+    text-align: center;
+}
+
+.wcqr-success p,
+.wcqr-success strong {
+    margin: 0;
+    color: #ffffff;
+}
+
+body.wcqr-modal-open {
+    overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    .wcqr-overlay {
+        padding: 14px;
+    }
+
+    .wcqr-modal {
+        padding: 24px 18px;
+    }
+}

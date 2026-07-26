@@ -1,0 +1,31 @@
+/*Large style*/
+.wp-block-quote.is-large:not(.is-style-plain) p,
+.wp-block-quote.is-style-large:not(.is-style-plain) p {
+  font-size: var(--orologio-headings-3-font-size);;
+  font-style: normal;
+  line-height: 1.6;
+}
+
+.wp-block-quote.is-large:not(.is-style-plain) cite,
+.wp-block-quote.is-large:not(.is-style-plain) footer,
+.wp-block-quote.is-style-large:not(.is-style-plain) cite, 
+.wp-block-quote.is-style-large:not(.is-style-plain) footer {
+  font-size: var(--orologio-base-font-size);
+  font-weight: 500;
+  font-style: normal;
+}
+
+.is-style-outline {
+    color: var(--orologio-primary-color);
+  }
+  
+  .wp-block-button__link {
+    background-color: var(--orologio-primary-color);
+  }
+  
+  .is-style-outline>:where(.wp-block-button__link), :where(.wp-block-button__link).is-style-outline {
+    border: 1px solid;
+    padding: 25px 35px;
+    font-size: inherit;
+    line-height: normal;
+  }

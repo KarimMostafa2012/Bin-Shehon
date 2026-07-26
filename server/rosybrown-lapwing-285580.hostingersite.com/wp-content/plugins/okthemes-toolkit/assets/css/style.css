@@ -1,0 +1,28 @@
+.okthemes-admin .csf-header-inner,
+.okthemes-admin .csf-footer{
+    padding: 15px;
+}
+
+.okthemes-admin .csf-field {
+    padding: 20px;
+}
+
+.okthemes-admin .csf-field-image_select img {
+    max-width: 80px;
+}
+
+.okthemes-admin .csf-tabbed-content .csf-field .csf-title,
+.okthemes-admin .csf-tabbed-content .csf-field .csf-fieldset {
+    width: 100%;
+}
+
+.okthemes-admin .csf-tabbed-content .csf-field .csf-title {
+    margin-bottom: 15px;
+}
+
+
+.okthemes-admin .csf-field.responsiveness-switcher {
+    text-align: center;
+    background: #f1f1f1;
+    font-weight: bold;
+}

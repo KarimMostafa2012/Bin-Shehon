@@ -1,0 +1,44 @@
+name: Deploy Hostinger FTP
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "server/rosybrown-lapwing-285580.hostingersite.com/wp-content/**"
+      - "scripts/ftp_deploy_changed.py"
+      - ".github/workflows/deploy-hostinger.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hostinger-ftp-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Deploy changed wp-content files
+        env:
+          FTP_HOST: ${{ secrets.HOSTINGER_FTP_HOST }}
+          FTP_USER: ${{ secrets.HOSTINGER_FTP_USER }}
+          FTP_PASSWORD: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
+        run: |
+          python3 scripts/ftp_deploy_changed.py \
+            --base "${{ github.event.before }}" \
+            --head "${{ github.sha }}" \
+            --local-root "server/rosybrown-lapwing-285580.hostingersite.com/wp-content" \
+            --remote-root "/domains/rosybrown-lapwing-285580.hostingersite.com/public_html/wp-content" \
+            --exclude "uploads/**" \
+            --exclude "cache/**" \
+            --exclude "litespeed/**" \
+            --exclude "debug.log"

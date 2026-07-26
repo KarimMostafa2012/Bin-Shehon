@@ -1,0 +1,230 @@
+/*Admin okthemes-Welcome Page*/
+.okthemes-admin-welcome-page {
+    margin: 0;
+}
+
+body .acf-fields > .acf-field.acf-field-message {
+    text-align: center;
+    background: #f1f1f1;
+}
+
+body .acf-fields > .acf-field.acf-field-message label {
+    font-size: 16px;
+}
+
+/*Footer*/
+.okthemes-admin-welcome-page .footer {
+    background: #000;
+    padding: 30px 0;
+}
+.okthemes-admin-welcome-page .footer ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    color: #fff;
+    gap: 30px;
+}
+
+.okthemes-admin-welcome-page .footer ul li {
+    margin: 0 10px;
+}
+
+.okthemes-admin-welcome-page .footer ul a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 5px;
+}
+.okthemes-admin-welcome-page .footer ul a:hover{
+    opacity: 0.8;
+}
+
+/*okthemes-Welcome panel*/
+.okthemes-welcome-panel {
+    position: relative;
+    overflow: auto;
+    margin: 0;
+    background-color: #151515;
+    font-size: 16px;
+    line-height: 1.3;
+    clear: both
+}
+
+.okthemes-welcome-panel h2 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.25
+}
+
+.okthemes-welcome-panel h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4
+}
+
+.okthemes-welcome-panel p {
+    font-size: inherit;
+    line-height: inherit
+}
+
+.okthemes-welcome-panel-header {
+    position: relative;
+    color: #fff
+}
+
+.okthemes-welcome-panel-header * {
+    color: inherit;
+    position: relative;
+    z-index: 1
+}
+
+
+.okthemes-welcome-panel-header p {
+    margin: .5em 0 0;
+    font-size: 20px;
+    line-height: 1.4
+}
+
+.wp-core-ui .okthemes-welcome-panel .button.button-hero {
+    margin: 15px 13px 3px 0;
+    padding: 12px 36px;
+    height: auto;
+    line-height: 1.4285714;
+    white-space: normal
+}
+
+.okthemes-welcome-panel-content {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+
+.okthemes-welcome-panel-header {
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1500px;
+    width: 100%;
+    padding: 48px 0 80px 48px
+}
+
+.okthemes-welcome-panel .okthemes-welcome-panel-container {
+    box-sizing: border-box;
+    width: 100%;
+    clear: both;
+    display: grid;
+    z-index: 1;
+    padding: 48px;
+    grid-template-columns: minmax(100px, 300px) 1fr minmax(150px, 250px);
+    gap: 32px;
+    align-self: flex-end;
+    background: #fff
+}
+
+.okthemes-welcome-panel .okthemes-welcome-panel-column-wrapper {
+    display: flex;
+    align-items: flex-start;
+}
+.okthemes-welcome-panel .okthemes-welcome-panel-column-wrapper img {
+    max-width: 100%;
+    object-fit: contain;
+}
+.okthemes-welcome-panel .okthemes-welcome-panel-column-wrapper.theme-setup {
+    flex-direction: column;
+    gap: 24px;
+}
+.okthemes-welcome-panel .okthemes-welcome-panel-column-wrapper:last-child {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+}
+
+.okthemes-welcome-panel .okthemes-welcome-panel-column-wrapper:last-child .okthemes-promotion {
+    border:1px solid #eee;
+    padding: 5%;
+}
+
+.okthemes-welcome-panel-column {
+    background: #f6f5f2;
+    padding: 5%;
+}
+
+.okthemes-welcome-panel .okthemes-welcome-panel-column ul {
+    margin: .8em 1em 1em 0
+}
+
+.okthemes-welcome-panel li {
+    font-size: 14px
+}
+
+.okthemes-welcome-panel li a {
+    text-decoration: none
+}
+
+.okthemes-welcome-panel .okthemes-welcome-panel-column li {
+    line-height: 1.14285714;
+    list-style-type: none;
+    padding: 0 0 8px
+}
+
+.okthemes-welcome-panel .okthemes-welcome-icon {
+    background: 0 0!important
+}
+
+
+@media only screen and (min-width: 1600px) {
+    .okthemes-welcome-panel-column {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 870px) {
+    .okthemes-welcome-panel .okthemes-welcome-panel-column li {
+        display:inline-block;
+        margin-right: 13px
+    }
+
+    .okthemes-welcome-panel .okthemes-welcome-panel-column ul {
+        margin: .4em 0 0
+    }
+}
+
+@media screen and (max-width: 1180px) and (min-width:783px) {
+    .okthemes-welcome-panel .okthemes-welcome-panel-container {
+        grid-template-columns: 100px 1fr 200px;
+    }
+}
+
+@media screen and (max-width: 782px) {
+    .okthemes-welcome-panel .okthemes-welcome-panel-container {
+        grid-template-columns:1fr;
+        box-sizing: border-box;
+        padding: 32px;
+        width: 100%
+    }
+
+    .okthemes-welcome-panel .okthemes-welcome-panel-column-wrapper img {
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .okthemes-welcome-panel-header {
+        padding:32px 32px 64px
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .okthemes-welcome-panel-column {
+        gap:16px
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .okthemes-welcome-panel-column {
+        grid-template-columns:1fr
+    }
+
+}

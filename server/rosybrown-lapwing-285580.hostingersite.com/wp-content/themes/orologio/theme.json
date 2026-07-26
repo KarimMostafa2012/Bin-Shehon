@@ -1,0 +1,300 @@
+{
+	"version": "2",
+	"patterns": [
+		"footer-contact"
+	],
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"palette": [
+				{
+					"color": "var(--orologio-primary-color)",
+					"slug": "primary-color",
+					"name": "Primary color"
+				},
+				{
+					"color": "var(--orologio-secondary-color)",
+					"slug": "secondary-color",
+					"name": "Secondary color"
+				},
+				{
+					"color": "var(--orologio-accent-color)",
+					"slug": "accent-color",
+					"name": "Accent color"
+				},
+				{
+					"color": "var(--orologio-accent-color-1)",
+					"slug": "accent-color-earth",
+					"name": "Accent color earth"
+				},
+				{
+					"color": "var(--orologio-accent-color-2)",
+					"slug": "accent-color-dune",
+					"name": "Accent color dune"
+				}
+			]
+		},
+		"layout": {
+			"contentSize": "800px",
+			"wideSize": "1000px"
+		},
+		"spacing": {
+			"blockGap": null,
+			"margin": true,
+			"padding": true,
+			"units": [
+				"px",
+				"em",
+				"rem",
+				"vh",
+				"vw",
+				"%"
+			]
+		},
+		"typography": {
+			"customFontSize": true,
+			"dropCap": false,
+			"fontSizes": [
+				{
+					"name": "Normal",
+					"size": "var(--orologio-body-typography-font-size)",
+					"slug": "normal"
+				}
+			],
+			"fontStyle": true,
+			"fontWeight": true,
+			"letterSpacing": true,
+			"lineHeight": true,
+			"textDecoration": true,
+			"textTransform": true
+		},
+		"custom": {
+			"woocommerce": {
+				"button-bg": "var(--orologio-buttons-bg-color)",
+				"button-text": "var(--orologio-buttons-color)",
+				"button-radius": "var(--orologio-buttons-border-radius)",
+				"primary-color": "var(--orologio-primary-color)",
+				"secondary-color": "var(--orologio-secondary-color)",
+				"accent-color": "var(--orologio-accent-color)"
+			}
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "#ffffff",
+			"text": "var(--orologio-body-typography-color)"
+		},
+		"typography": {
+			"fontFamily": "var(--orologio-body-typography-font-family)",
+			"fontSize": "var(--orologio-body-typography-font-size)",
+			"fontStyle": "normal",
+			"fontWeight": "var(--orologio-body-typography-font-weight)",
+			"letterSpacing": "var(--orologio-body-typography-letter-spacing)",
+			"lineHeight": "var(--orologio-body-typography-line-height)",
+			"textDecoration": "none",
+			"textTransform": "var(--orologio-body-typography-text-transform)"
+		},
+		"blocks": {
+			"woocommerce/cart": {
+				"color": {
+				"text": "var(--orologio-body-typography-color)"
+				},
+				"typography": {
+				"fontFamily": "var(--orologio-body-typography-font-family)",
+				"fontSize": "var(--orologio-body-typography-font-size)",
+				"fontWeight": "var(--orologio-body-typography-font-weight)",
+				"lineHeight": "var(--orologio-body-typography-line-height)"
+				},
+				"spacing": {
+				"padding": {
+					"top": "0",
+					"bottom": "0",
+					"left": "0",
+					"right": "0"
+				}
+				}
+			},
+			
+			"woocommerce/checkout": {
+				"color": {
+					"text": "var(--orologio-body-typography-color)"
+				},
+				"typography": {
+				"fontFamily": "var(--orologio-body-typography-font-family)",
+				"fontSize": "var(--orologio-body-typography-font-size)",
+				"fontWeight": "var(--orologio-body-typography-font-weight)",
+				"lineHeight": "var(--orologio-body-typography-line-height)"
+				},
+				"spacing": {
+				"padding": {
+					"top": "0",
+					"bottom": "0",
+					"left": "0",
+					"right": "0"
+				}
+				}
+			},
+			"woocommerce/product-price": {
+				"color": {
+					"text": "var(--orologio-primary-color)"
+				},
+				"typography": {
+					"fontFamily": "var(--orologio-h6-typography-font-family)",
+					"fontSize": "var(--orologio-h6-typography-font-size)",
+					"fontWeight": "var(--orologio-h6-typography-font-weight)",
+					"lineHeight": "var(--orologio-h6-typography-line-height)"
+				}
+			},
+			"woocommerce/product-title": {
+				"typography": {
+				"fontFamily": "var(--orologio-h4-typography-font-family)",
+				"fontSize": "var(--orologio-h4-typography-font-size)",
+				"fontWeight": "var(--orologio-h4-typography-font-weight)",
+				"lineHeight": "var(--orologio-h4-typography-line-height)"
+				}
+			},
+			"woocommerce/featured-product": {
+				"spacing": {
+				"padding": {
+					"top": "2em",
+					"bottom": "2em",
+					"left": "2em",
+					"right": "2em"
+				}
+				}
+			},
+			"woocommerce/all-products": {
+				"spacing": {
+				"margin": {
+					"top": "var(--orologio-grid-gap)",
+					"bottom": "var(--orologio-grid-gap)"
+				},
+				"blockGap": "var(--orologio-grid-gap)"
+				}
+			},
+			"woocommerce/product-categories": {
+				"typography": {
+				"fontFamily": "var(--orologio-body-typography-font-family)",
+				"fontSize": "var(--orologio-body-typography-font-size)"
+				}
+			},
+			"core/button": {
+				"border": {
+				"radius": "var(--orologio-buttons-border-radius)",
+				"width": "1px",
+				"color": "var(--orologio-primary-color)"
+				},
+				"color": {
+				"background": "var(--orologio-buttons-bg-color)",
+				"text": "var(--orologio-buttons-color)"
+				},
+				"typography": {
+				"fontFamily": "var(--orologio-buttons-typography-font-family)",
+				"fontSize": "var(--orologio-buttons-typography-font-size)",
+				"fontWeight": "var(--orologio-buttons-typography-font-weight)",
+				"lineHeight": "var(--orologio-buttons-typography-line-height)",
+				"letterSpacing": "var(--orologio-buttons-typography-letter-spacing)",
+				"textTransform": "var(--orologio-buttons-typography-text-transform)"
+				},
+				"spacing": {
+				"padding": {
+					"top": "15px",
+					"right": "35px",
+					"bottom": "15px",
+					"left": "35px"
+				}
+				}
+			},
+			"woocommerce/mini-cart": {
+				"typography": {
+				"fontFamily": "var(--orologio-body-typography-font-family)",
+				"fontSize": "var(--orologio-body-typography-font-size)"
+				}
+			}
+		},
+		"elements": {
+			"h1": {
+				"typography": {
+					"fontFamily": "var(--orologio-h1-typography-font-family)",
+					"lineHeight": "var(--orologio-h1-typography-line-height)",
+					"fontWeight": "var(--orologio-h1-typography-font-weight)",
+					"fontSize": "var(--orologio-h1-typography-font-size)",
+					"textTransform": "var(--orologio-h1-typography-text-transform)",
+					"letterSpacing": "var(--orologio-h1-typography-letter-spacing)"
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontFamily": "var(--orologio-h2-typography-font-family)",
+					"lineHeight": "var(--orologio-h2-typography-line-height)",
+					"fontWeight": "var(--orologio-h2-typography-font-weight)",
+					"fontSize": "var(--orologio-h2-typography-font-size)",
+					"textTransform": "var(--orologio-h2-typography-text-transform)",
+					"letterSpacing": "var(--orologio-h2-typography-letter-spacing)"
+				}
+			},
+			"h3": {
+				"typography": {
+					"fontFamily": "var(--orologio-h3-typography-font-family)",
+					"lineHeight": "var(--orologio-h3-typography-line-height)",
+					"fontWeight": "var(--orologio-h3-typography-font-weight)",
+					"fontSize": "var(--orologio-h3-typography-font-size)",
+					"textTransform": "var(--orologio-h3-typography-text-transform)",
+					"letterSpacing": "var(--orologio-h3-typography-letter-spacing)"
+				}
+			},
+			"h4": {
+				"typography": {
+					"fontFamily": "var(--orologio-h4-typography-font-family)",
+					"lineHeight": "var(--orologio-h4-typography-line-height)",
+					"fontWeight": "var(--orologio-h4-typography-font-weight)",
+					"fontSize": "var(--orologio-h4-typography-font-size)",
+					"textTransform": "var(--orologio-h4-typography-text-transform)",
+					"letterSpacing": "var(--orologio-h4-typography-letter-spacing)"
+				}
+			},
+			"h5": {
+				"typography": {
+					"fontFamily": "var(--orologio-h5-typography-font-family)",
+					"lineHeight": "var(--orologio-h5-typography-line-height)",
+					"fontWeight": "var(--orologio-h5-typography-font-weight)",
+					"fontSize": "var(--orologio-h5-typography-font-size)",
+					"textTransform": "var(--orologio-h5-typography-text-transform)",
+					"letterSpacing": "var(--orologio-h5-typography-letter-spacing)"
+				}
+			},
+			"h6": {
+				"typography": {
+					"fontFamily": "var(--orologio-h6-typography-font-family)",
+					"lineHeight": "var(--orologio-h6-typography-line-height)",
+					"fontWeight": "var(--orologio-h6-typography-font-weight)",
+					"fontSize": "var(--orologio-h6-typography-font-size)",
+					"textTransform": "var(--orologio-h6-typography-text-transform)",
+					"letterSpacing": "var(--orologio-h6-typography-letter-spacing)"
+				}
+			},
+			"link": {
+				"color": {
+					"text": "var(--orologio-primary-color)"
+				}
+			},
+			"button": {
+				"border": {
+				"radius": "var(--orologio-buttons-border-radius)"
+				},
+				"color": {
+				"background": "var(--orologio-buttons-bg-color)",
+				"text": "var(--orologio-buttons-color)"
+				},
+				":hover": {
+				"color": {
+					"background": "var(--orologio-buttons-bg-color-hover)",
+					"text": "var(--orologio-buttons-color-hover)"
+				}
+				}
+			}
+		}
+	},
+	"customTemplates": [],
+	"templateParts": []
+}

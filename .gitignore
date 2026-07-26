@@ -1,0 +1,17 @@
+.ftp.env
+.DS_Store
+__pycache__/
+
+# Only track the active Hostinger domain mirror.
+server/*
+!server/rosybrown-lapwing-285580.hostingersite.com/
+!server/rosybrown-lapwing-285580.hostingersite.com/**
+
+# Do not track WordPress media/uploads or generated runtime files.
+server/rosybrown-lapwing-285580.hostingersite.com/wp-content/uploads/
+server/rosybrown-lapwing-285580.hostingersite.com/wp-content/cache/
+server/rosybrown-lapwing-285580.hostingersite.com/wp-content/litespeed/
+server/rosybrown-lapwing-285580.hostingersite.com/wp-content/debug.log
+
+# Local scratch files.
+tmp/
