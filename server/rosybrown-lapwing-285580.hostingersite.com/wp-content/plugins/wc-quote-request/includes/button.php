@@ -18,7 +18,7 @@ add_action('wp', function () {
     add_action(
         'woocommerce_after_single_product_summary',
         'wcqr_quote_button',
-        10
+        11
     );
 
     add_action(
@@ -26,14 +26,15 @@ add_action('wp', function () {
         'wcqr_quote_button_fallback',
         25
     );
-
 });
 
-function wcqr_quote_button() {
+function wcqr_quote_button()
+{
     echo wcqr_get_quote_button_html();
 }
 
-function wcqr_get_quote_button_html() {
+function wcqr_get_quote_button_html()
+{
 
     global $product;
 
@@ -57,7 +58,7 @@ function wcqr_get_quote_button_html() {
     $rendered[$product_id] = true;
 
     ob_start();
-    ?>
+?>
     <div class="wcqr-wrapper">
 
         <button
@@ -69,12 +70,13 @@ function wcqr_get_quote_button_html() {
         </button>
 
     </div>
-    <?php
+<?php
 
     return ob_get_clean();
 }
 
-function wcqr_quote_button_fallback() {
+function wcqr_quote_button_fallback()
+{
     if (!function_exists('is_product') || !is_product()) {
         return;
     }
@@ -84,7 +86,7 @@ function wcqr_quote_button_fallback() {
     if (!$button_html) {
         return;
     }
-    ?>
+?>
     <template id="wcqr-button-template"><?php echo $button_html; ?></template>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -108,5 +110,5 @@ function wcqr_quote_button_fallback() {
             }
         });
     </script>
-    <?php
+<?php
 }
