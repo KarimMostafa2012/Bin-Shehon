@@ -2,14 +2,14 @@
 /**
  * Plugin Name: Single Product Roller
  * Description: Adds repeatable image, title, and description rows to products with a shortcode renderer.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Bin Shihon
  * Text Domain: single-product-roller
  */
 
 defined('ABSPATH') || exit;
 
-define('SPR_VERSION', '1.0.0');
+define('SPR_VERSION', '1.0.1');
 define('SPR_PATH', plugin_dir_path(__FILE__));
 define('SPR_URL', plugin_dir_url(__FILE__));
 define('SPR_META_KEY', '_spr_items');
@@ -68,6 +68,13 @@ function spr_register_frontend_assets()
         SPR_URL . 'assets/css/single-product-roller.css',
         array(),
         SPR_VERSION
+    );
+    wp_register_script(
+        'single-product-roller',
+        SPR_URL . 'assets/js/single-product-roller.js',
+        array(),
+        SPR_VERSION,
+        true
     );
 }
 
@@ -256,29 +263,50 @@ function spr_shortcode($atts)
     }
 
     wp_enqueue_style('single-product-roller');
+    wp_enqueue_script('single-product-roller');
 
     $classes = trim('spr-roller ' . sanitize_html_class($atts['class']));
+    $slide_count = count($items);
 
     ob_start();
     ?>
-    <section class="<?php echo esc_attr($classes); ?>">
-        <?php foreach ($items as $item) : ?>
-            <article class="spr-roller__item">
-                <?php if (! empty($item['image_id'])) : ?>
-                    <figure class="spr-roller__media">
-                        <?php echo wp_get_attachment_image($item['image_id'], 'large'); ?>
+    <section class="<?php echo esc_attr($classes); ?>" data-spr-roller data-spr-index="0" style="--spr-slide-count: <?php echo esc_attr($slide_count); ?>; --spr-rotation: 0deg;">
+        <div class="spr-roller__visual">
+            <div class="spr-roller__circle" data-spr-circle>
+                <?php foreach ($items as $index => $item) : ?>
+                    <figure class="spr-roller__media<?php echo 0 === $index ? ' is-active' : ''; ?>" data-spr-media="<?php echo esc_attr($index); ?>">
+                        <?php if (! empty($item['image_id'])) : ?>
+                            <?php echo wp_get_attachment_image($item['image_id'], 'large'); ?>
+                        <?php endif; ?>
                     </figure>
-                <?php endif; ?>
-                <div class="spr-roller__content">
-                    <?php if ('' !== $item['title']) : ?>
-                        <h3 class="spr-roller__title"><?php echo esc_html($item['title']); ?></h3>
-                    <?php endif; ?>
-                    <?php if ('' !== $item['description']) : ?>
-                        <div class="spr-roller__description"><?php echo wp_kses_post(wpautop($item['description'])); ?></div>
-                    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+        </div>
+        <div class="spr-roller__body">
+            <div class="spr-roller__slides">
+                <?php foreach ($items as $index => $item) : ?>
+                    <article class="spr-roller__slide<?php echo 0 === $index ? ' is-active' : ''; ?>" data-spr-slide="<?php echo esc_attr($index); ?>">
+                        <?php if ('' !== $item['title']) : ?>
+                            <h3 class="spr-roller__title"><?php echo esc_html($item['title']); ?></h3>
+                        <?php endif; ?>
+                        <?php if ('' !== $item['description']) : ?>
+                            <div class="spr-roller__description"><?php echo wp_kses_post(wpautop($item['description'])); ?></div>
+                        <?php endif; ?>
+                    </article>
+                <?php endforeach; ?>
+            </div>
+            <?php if ($slide_count > 1) : ?>
+                <div class="spr-roller__controls">
+                    <button type="button" class="spr-roller__arrow" data-spr-prev aria-label="<?php esc_attr_e('Previous slide', 'single-product-roller'); ?>">&larr;</button>
+                    <div class="spr-roller__dots" role="tablist">
+                        <?php foreach ($items as $index => $item) : ?>
+                            <button type="button" class="spr-roller__dot<?php echo 0 === $index ? ' is-active' : ''; ?>" data-spr-dot="<?php echo esc_attr($index); ?>" aria-label="<?php echo esc_attr(sprintf(__('Show slide %d', 'single-product-roller'), $index + 1)); ?>"></button>
+                        <?php endforeach; ?>
+                    </div>
+                    <button type="button" class="spr-roller__arrow" data-spr-next aria-label="<?php esc_attr_e('Next slide', 'single-product-roller'); ?>">&rarr;</button>
                 </div>
-            </article>
-        <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
     </section>
     <?php
 
