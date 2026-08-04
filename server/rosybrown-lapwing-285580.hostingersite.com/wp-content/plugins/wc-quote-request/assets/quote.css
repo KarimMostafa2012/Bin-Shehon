@@ -81,11 +81,19 @@
   background: white;
   color: black;
   outline: unset;
+  transition: 0.3s;
+  margin-bottom: 24px;
+  padding: 0;
 }
 
 #wcqr-form textarea {
   min-height: 88px;
   resize: vertical;
+  margin-bottom: 24px;
+}
+
+#wcqr-modal label {
+  line-height: 1;
 }
 
 #wcqr-form input:focus,
