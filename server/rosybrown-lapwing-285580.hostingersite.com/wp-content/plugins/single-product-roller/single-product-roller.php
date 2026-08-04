@@ -2,14 +2,14 @@
 /**
  * Plugin Name: Single Product Roller
  * Description: Adds repeatable image, title, and description rows to products with a shortcode renderer.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Bin Shihon
  * Text Domain: single-product-roller
  */
 
 defined('ABSPATH') || exit;
 
-define('SPR_VERSION', '1.0.1');
+define('SPR_VERSION', '1.0.2');
 define('SPR_PATH', plugin_dir_path(__FILE__));
 define('SPR_URL', plugin_dir_url(__FILE__));
 define('SPR_META_KEY', '_spr_items');
@@ -274,7 +274,7 @@ function spr_shortcode($atts)
         <div class="spr-roller__visual">
             <div class="spr-roller__circle" data-spr-circle>
                 <?php foreach ($items as $index => $item) : ?>
-                    <figure class="spr-roller__media<?php echo 0 === $index ? ' is-active' : ''; ?>" data-spr-media="<?php echo esc_attr($index); ?>">
+                    <figure class="spr-roller__media spr-roller__media--slot-<?php echo esc_attr($index % 4); ?><?php echo 0 === $index ? ' is-active' : ''; ?>" data-spr-media="<?php echo esc_attr($index); ?>">
                         <?php if (! empty($item['image_id'])) : ?>
                             <?php echo wp_get_attachment_image($item['image_id'], 'large'); ?>
                         <?php endif; ?>

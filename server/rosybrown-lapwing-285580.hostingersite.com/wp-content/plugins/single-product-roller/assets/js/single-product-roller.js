@@ -10,7 +10,7 @@
     }
 
     var index = ((nextIndex % count) + count) % count;
-    var angle = index * (360 / count);
+    var angle = index * -90;
 
     roller.dataset.sprIndex = String(index);
     roller.style.setProperty('--spr-rotation', angle + 'deg');
