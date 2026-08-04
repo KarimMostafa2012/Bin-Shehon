@@ -535,8 +535,6 @@ if (! function_exists('orologio_render_acf_product_data')) {
             'btv_tire_side_image',
         );
 
-        $details_value = '';
-
         foreach ($fields as $name => $value) {
             if (in_array($name, $hidden_acf_fields, true)) {
                 continue;
@@ -549,7 +547,6 @@ if (! function_exists('orologio_render_acf_product_data')) {
             }
 
             if ('details' === $name) {
-                $details_value = $formatted_value;
                 continue;
             }
 
@@ -560,10 +557,6 @@ if (! function_exists('orologio_render_acf_product_data')) {
         }
 
         echo '</table>';
-
-        if ('' !== $details_value) {
-            echo '<div class="orologio-product-details-acf">' . $details_value . '</div>';
-        }
 
         if ($show_heading) {
             echo '</div>';
@@ -635,6 +628,49 @@ if (! function_exists('orologio_add_acf_fields_to_product_attributes')) {
     }
 }
 add_filter('woocommerce_display_product_attributes', 'orologio_add_acf_fields_to_product_attributes', 20, 2);
+
+if (! function_exists('orologio_get_product_details_acf_value')) {
+    /**
+     * Return the formatted public product details ACF field.
+     */
+    function orologio_get_product_details_acf_value($product_id)
+    {
+        if (! function_exists('get_field')) {
+            return '';
+        }
+
+        $details = get_field('details', $product_id);
+
+        if ('' === $details || null === $details || array() === $details) {
+            return '';
+        }
+
+        return orologio_format_acf_product_value($details);
+    }
+}
+
+if (! function_exists('orologio_render_product_details_acf')) {
+    /**
+     * Render the details ACF field outside the WooCommerce tabs panel.
+     */
+    function orologio_render_product_details_acf()
+    {
+        global $product;
+
+        if (! $product) {
+            return;
+        }
+
+        $details_value = orologio_get_product_details_acf_value($product->get_id());
+
+        if ('' === $details_value) {
+            return;
+        }
+
+        echo '<div class="orologio-product-details-acf">' . $details_value . '</div>';
+    }
+}
+add_action('woocommerce_single_product_summary', 'orologio_render_product_details_acf', 71);
 
 if (! function_exists('orologio_add_acf_product_data_tab')) {
     /**
