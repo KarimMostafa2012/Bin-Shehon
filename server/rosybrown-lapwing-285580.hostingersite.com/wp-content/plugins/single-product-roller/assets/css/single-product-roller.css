@@ -3,7 +3,6 @@
   grid-template-columns: 1fr 1fr;
   gap: clamp(24px, 5vw, 70px);
   align-items: center;
-  margin: 44px 0;
   color: #fff;
 }
 
@@ -24,7 +23,6 @@
   right: 0;
   width: 200%;
   height: 200%;
-  border: 1px solid rgba(255, 255, 255, 0.32);
   border-radius: 50%;
   overflow: hidden;
   transform-origin: 50% 50%;
