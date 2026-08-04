@@ -10,7 +10,9 @@
     }
 
     var index = ((nextIndex % count) + count) % count;
-    var angle = index * 90;
+    var lang = document.documentElement.lang || '';
+    var direction = lang.toLowerCase().indexOf('en') === 0 ? -90 : 90;
+    var angle = index * direction;
 
     roller.dataset.sprIndex = String(index);
     roller.style.setProperty('--spr-rotation', angle + 'deg');

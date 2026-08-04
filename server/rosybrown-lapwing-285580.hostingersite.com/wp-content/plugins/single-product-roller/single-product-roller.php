@@ -2,14 +2,14 @@
 /**
  * Plugin Name: Single Product Roller
  * Description: Adds repeatable image, title, and description rows to products with a shortcode renderer.
- * Version: 1.0.5
+ * Version: 1.0.6
  * Author: Bin Shihon
  * Text Domain: single-product-roller
  */
 
 defined('ABSPATH') || exit;
 
-define('SPR_VERSION', '1.0.5');
+define('SPR_VERSION', '1.0.6');
 define('SPR_PATH', plugin_dir_path(__FILE__));
 define('SPR_URL', plugin_dir_url(__FILE__));
 define('SPR_META_KEY', '_spr_items');

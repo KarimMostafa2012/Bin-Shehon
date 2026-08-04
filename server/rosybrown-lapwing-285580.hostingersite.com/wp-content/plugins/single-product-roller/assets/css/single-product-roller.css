@@ -189,6 +189,7 @@
   border-radius: 50%;
   font-size: 18px;
   line-height: 1;
+  rotate: 180deg;
 }
 
 .spr-roller__dots {
@@ -212,6 +213,51 @@
   border-color: #c41718;
   background: #c41718;
   color: #fff;
+}
+
+html[lang^="en"] .spr-roller__visual {
+  order: 1;
+  justify-self: start;
+  transform: rotate(-90deg);
+}
+
+html[lang^="en"] .spr-roller__circle {
+  right: auto;
+  left: 0;
+}
+
+html[lang^="en"] .spr-roller__media--slot-0 {
+  top: 0;
+  left: 0;
+}
+
+html[lang^="en"] .spr-roller__media--slot-1 {
+  top: 0;
+  left: 50%;
+}
+
+html[lang^="en"] .spr-roller__media--slot-2 {
+  top: 50%;
+  left: 50%;
+}
+
+html[lang^="en"] .spr-roller__media--slot-3 {
+  top: 50%;
+  left: 0;
+}
+
+html[lang^="en"] .spr-roller__media img {
+  transform: rotate(calc(90deg - var(--spr-rotation)));
+}
+
+html[lang^="en"] .spr-roller__body {
+  order: 2;
+  padding-inline-start: 0;
+  padding-inline-end: 48px;
+}
+
+html[lang^="en"] .spr-roller__arrow {
+  rotate: 0deg;
 }
 
 @media (max-width: 767px) {
