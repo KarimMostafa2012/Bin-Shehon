@@ -2,14 +2,14 @@
 /**
  * Plugin Name: Single Product Roller
  * Description: Adds repeatable image, title, and description rows to products with a shortcode renderer.
- * Version: 1.1.0
+ * Version: 1.2.0
  * Author: Bin Shihon
  * Text Domain: single-product-roller
  */
 
 defined('ABSPATH') || exit;
 
-define('SPR_VERSION', '1.1.0');
+define('SPR_VERSION', '1.2.0');
 define('SPR_PATH', plugin_dir_path(__FILE__));
 define('SPR_URL', plugin_dir_url(__FILE__));
 define('SPR_META_KEY', '_spr_items');
@@ -267,18 +267,24 @@ function spr_shortcode($atts)
 
     $classes = trim('spr-roller ' . sanitize_html_class($atts['class']));
     $slide_count = count($items);
+    $wheel_groups = array_chunk($items, 4);
 
     ob_start();
     ?>
     <section class="<?php echo esc_attr($classes); ?>" data-spr-roller data-spr-index="0" style="--spr-slide-count: <?php echo esc_attr($slide_count); ?>;">
         <div class="spr-roller__visual">
-            <div class="spr-roller__layers" data-spr-layers>
-                <?php foreach ($items as $index => $item) : ?>
-                    <figure class="spr-roller__media" data-spr-media="<?php echo esc_attr($index); ?>">
-                        <?php if (! empty($item['image_id'])) : ?>
-                            <?php echo wp_get_attachment_image($item['image_id'], 'large'); ?>
-                        <?php endif; ?>
-                    </figure>
+            <div class="spr-roller__wheel-stack" data-spr-wheel-stack>
+                <?php foreach ($wheel_groups as $wheel_index => $wheel_items) : ?>
+                    <div class="spr-roller__wheel" data-spr-wheel="<?php echo esc_attr($wheel_index); ?>" style="--spr-wheel-rotation: 0deg;">
+                        <?php foreach ($wheel_items as $quarter_index => $item) : ?>
+                            <?php $item_index = ($wheel_index * 4) + $quarter_index; ?>
+                            <figure class="spr-roller__media spr-roller__media--slot-<?php echo esc_attr($quarter_index); ?>" data-spr-media="<?php echo esc_attr($item_index); ?>">
+                                <?php if (! empty($item['image_id'])) : ?>
+                                    <?php echo wp_get_attachment_image($item['image_id'], 'large'); ?>
+                                <?php endif; ?>
+                            </figure>
+                        <?php endforeach; ?>
+                    </div>
                 <?php endforeach; ?>
             </div>
         </div>

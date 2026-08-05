@@ -3,9 +3,14 @@
     return ((index % count) + count) % count;
   }
 
+  function isEnglish() {
+    var lang = document.documentElement.lang || '';
+    return lang.toLowerCase().indexOf('en') === 0;
+  }
+
   function setActive(roller, nextIndex) {
     var slides = Array.prototype.slice.call(roller.querySelectorAll('[data-spr-slide]'));
-    var media = Array.prototype.slice.call(roller.querySelectorAll('[data-spr-media]'));
+    var wheels = Array.prototype.slice.call(roller.querySelectorAll('[data-spr-wheel]'));
     var dots = Array.prototype.slice.call(roller.querySelectorAll('[data-spr-dot]'));
     var count = slides.length;
 
@@ -14,8 +19,9 @@
     }
 
     var index = wrappedIndex(nextIndex, count);
-    var prevIndex = wrappedIndex(index - 1, count);
-    var nextItemIndex = wrappedIndex(index + 1, count);
+    var activeWheel = Math.floor(index / 4);
+    var activeQuarter = index % 4;
+    var direction = isEnglish() ? -90 : 90;
 
     roller.dataset.sprIndex = String(index);
 
@@ -23,18 +29,15 @@
       slide.classList.toggle('is-active', slideIndex === index);
     });
 
-    media.forEach(function (item, itemIndex) {
-      item.classList.remove('is-active', 'is-prev', 'is-next', 'is-hidden');
+    wheels.forEach(function (wheel, wheelIndex) {
+      var isActiveWheel = wheelIndex === activeWheel;
+      var distance = wrappedIndex(activeWheel - wheelIndex, wheels.length);
+      var quarter = isActiveWheel ? activeQuarter : 0;
 
-      if (itemIndex === index) {
-        item.classList.add('is-active');
-      } else if (count > 2 && itemIndex === prevIndex) {
-        item.classList.add('is-prev');
-      } else if (count > 1 && itemIndex === nextItemIndex) {
-        item.classList.add('is-next');
-      } else {
-        item.classList.add('is-hidden');
-      }
+      wheel.classList.toggle('is-active', isActiveWheel);
+      wheel.classList.toggle('is-under', !isActiveWheel && distance === 1);
+      wheel.classList.toggle('is-hidden', !isActiveWheel && distance !== 1);
+      wheel.style.setProperty('--spr-wheel-rotation', quarter * direction + 'deg');
     });
 
     dots.forEach(function (dot, dotIndex) {
