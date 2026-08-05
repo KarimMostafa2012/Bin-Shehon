@@ -48,6 +48,16 @@
   opacity: 1;
 }
 
+.spr-roller__wheel.is-bridge-under {
+  z-index: 2;
+  opacity: 1;
+}
+
+.spr-roller__wheel.is-bridging {
+  z-index: 4;
+  opacity: 1;
+}
+
 .spr-roller__wheel.is-hidden {
   z-index: 1;
   opacity: 0;
@@ -100,6 +110,13 @@
 .spr-roller__media--slot-0 {
   top: 0;
   left: 50%;
+}
+
+.spr-roller__wheel.is-bridge-slot-0 .spr-roller__media--slot-0,
+.spr-roller__wheel.is-bridge-slot-1 .spr-roller__media--slot-1,
+.spr-roller__wheel.is-bridge-slot-2 .spr-roller__media--slot-2,
+.spr-roller__wheel.is-bridge-slot-3 .spr-roller__media--slot-3 {
+  opacity: 0;
 }
 
 .spr-roller__media--slot-1 {
