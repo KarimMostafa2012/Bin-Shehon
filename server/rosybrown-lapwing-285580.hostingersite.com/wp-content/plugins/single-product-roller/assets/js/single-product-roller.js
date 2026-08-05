@@ -64,14 +64,23 @@
     });
   }
 
-  function bridgeToNextWheel(roller, currentIndex, targetIndex) {
+  function setWheelRotation(wheel, degrees) {
+    wheel.style.setProperty('--spr-wheel-rotation', degrees + 'deg');
+  }
+
+  function bridgeBetweenWheels(roller, currentIndex, targetIndex, step) {
     var wheels = Array.prototype.slice.call(roller.querySelectorAll('[data-spr-wheel]'));
     var currentWheel = Math.floor(currentIndex / 4);
     var targetWheel = Math.floor(targetIndex / 4);
+    var currentQuarter = currentIndex % 4;
+    var targetQuarter = targetIndex % 4;
+    var direction = getDirection();
     var topWheel = wheels[currentWheel];
     var underWheel = wheels[targetWheel];
-    var bridgeQuarter = (currentIndex % 4) + 1;
-    var bridgeSlot = bridgeQuarter % 4;
+    var bridgeQuarter = currentQuarter + step;
+    var bridgeSlot = wrappedIndex(bridgeQuarter, 4);
+    var underEndRotation = targetQuarter * direction;
+    var underStartRotation = underEndRotation - (step * direction);
 
     if (!topWheel || !underWheel) {
       renderState(roller, targetIndex);
@@ -88,11 +97,15 @@
 
     underWheel.classList.remove('is-hidden');
     underWheel.classList.add('is-bridge-under');
-    underWheel.style.setProperty('--spr-wheel-rotation', '0deg');
+    setWheelRotation(underWheel, underStartRotation);
 
     topWheel.classList.remove('is-hidden');
     topWheel.classList.add('is-active', 'is-bridging', 'is-bridge-slot-' + bridgeSlot);
-    topWheel.style.setProperty('--spr-wheel-rotation', bridgeQuarter * getDirection() + 'deg');
+
+    underWheel.offsetHeight;
+
+    setWheelRotation(underWheel, underEndRotation);
+    setWheelRotation(topWheel, bridgeQuarter * direction);
 
     window.setTimeout(function () {
       renderState(roller, targetIndex);
@@ -111,10 +124,17 @@
     var currentIndex = wrappedIndex(Number(roller.dataset.sprIndex || 0), count);
     var targetIndex = wrappedIndex(nextIndex, count);
     var isForwardOne = targetIndex === wrappedIndex(currentIndex + 1, count);
+    var isBackwardOne = targetIndex === wrappedIndex(currentIndex - 1, count);
     var crossesWheelForward = isForwardOne && Math.floor(currentIndex / 4) !== Math.floor(targetIndex / 4);
+    var crossesWheelBackward = isBackwardOne && Math.floor(currentIndex / 4) !== Math.floor(targetIndex / 4);
 
     if (crossesWheelForward) {
-      bridgeToNextWheel(roller, currentIndex, targetIndex);
+      bridgeBetweenWheels(roller, currentIndex, targetIndex, 1);
+      return;
+    }
+
+    if (crossesWheelBackward) {
+      bridgeBetweenWheels(roller, currentIndex, targetIndex, -1);
       return;
     }
 
