@@ -1,4 +1,8 @@
 (function () {
+  function wrappedIndex(index, count) {
+    return ((index % count) + count) % count;
+  }
+
   function setActive(roller, nextIndex) {
     var slides = Array.prototype.slice.call(roller.querySelectorAll('[data-spr-slide]'));
     var media = Array.prototype.slice.call(roller.querySelectorAll('[data-spr-media]'));
@@ -9,20 +13,28 @@
       return;
     }
 
-    var index = ((nextIndex % count) + count) % count;
-    var lang = document.documentElement.lang || '';
-    var direction = lang.toLowerCase().indexOf('en') === 0 ? -90 : 90;
-    var angle = index * direction;
+    var index = wrappedIndex(nextIndex, count);
+    var prevIndex = wrappedIndex(index - 1, count);
+    var nextItemIndex = wrappedIndex(index + 1, count);
 
     roller.dataset.sprIndex = String(index);
-    roller.style.setProperty('--spr-rotation', angle + 'deg');
 
     slides.forEach(function (slide, slideIndex) {
       slide.classList.toggle('is-active', slideIndex === index);
     });
 
     media.forEach(function (item, itemIndex) {
-      item.classList.toggle('is-active', itemIndex === index);
+      item.classList.remove('is-active', 'is-prev', 'is-next', 'is-hidden');
+
+      if (itemIndex === index) {
+        item.classList.add('is-active');
+      } else if (count > 2 && itemIndex === prevIndex) {
+        item.classList.add('is-prev');
+      } else if (count > 1 && itemIndex === nextItemIndex) {
+        item.classList.add('is-next');
+      } else {
+        item.classList.add('is-hidden');
+      }
     });
 
     dots.forEach(function (dot, dotIndex) {
@@ -33,6 +45,8 @@
   function initRoller(roller) {
     var next = roller.querySelector('[data-spr-next]');
     var prev = roller.querySelector('[data-spr-prev]');
+
+    setActive(roller, Number(roller.dataset.sprIndex || 0));
 
     if (next) {
       next.addEventListener('click', function () {
