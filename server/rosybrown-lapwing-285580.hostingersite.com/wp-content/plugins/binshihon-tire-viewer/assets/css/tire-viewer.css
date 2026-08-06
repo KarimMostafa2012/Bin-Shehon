@@ -98,13 +98,14 @@
   width: 100vw;
   height: 100vh;
   left: 0;
-  top: 0;
-  position: fixed;
+  top: 50vh;
+  position: sticky;
   display: flex;
   justify-content: center;
   align-items: center;
   background: unset;
   z-index: 0;
+  transform: translateY(-50%);
 }
 
 .btv-tire-viewer--shortcode.btv-tire-viewer canvas {
