@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Bin Shihon Tire Viewer
  * Description: Builds a Three.js tire viewer from front, back, and side tire images for WooCommerce products.
- * Version: 1.0.7
+ * Version: 1.0.8
  * Author: Bin Shihon
  * Text Domain: binshihon-tire-viewer
  */
@@ -14,7 +14,7 @@ if (! defined('ABSPATH')) {
 
 define('BTV_PATH', plugin_dir_path(__FILE__));
 define('BTV_URL', plugin_dir_url(__FILE__));
-define('BTV_VERSION', '1.0.7');
+define('BTV_VERSION', '1.0.8');
 
 add_action('acf/init', 'btv_register_acf_fields');
 add_shortcode('binshihon_tire_viewer', 'btv_tire_viewer_shortcode');

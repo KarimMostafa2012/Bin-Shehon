@@ -161,6 +161,78 @@
 		return rect.bottom > 0 && rect.top < window.innerHeight;
 	}
 
+	function getPageTop(element) {
+		return element.getBoundingClientRect().top + window.scrollY;
+	}
+
+	function getStageStopSection(element) {
+		let parent = element.parentElement;
+
+		while (parent) {
+			if (parent.classList && parent.classList.contains("black-bg")) {
+				return parent;
+			}
+
+			parent = parent.parentElement;
+		}
+
+		const internalBlackSection = element.querySelector(".black-bg");
+
+		if (internalBlackSection && internalBlackSection.offsetHeight > window.innerHeight * 0.5) {
+			return internalBlackSection;
+		}
+
+		return element.closest(".elementor-section, .e-con, section") || element;
+	}
+
+	function initScrollStageStop(element, stage, mode) {
+		if (mode !== "scroll" || !element.classList.contains("btv-tire-viewer--shortcode")) {
+			return;
+		}
+
+		let frame = 0;
+
+		function updateStageStop() {
+			frame = 0;
+
+			const stopSection = getStageStopSection(element);
+			const sectionRect = stopSection.getBoundingClientRect();
+			const sectionHeight = stopSection.offsetHeight || sectionRect.height;
+
+			if (!sectionHeight) {
+				element.classList.remove("is-stage-stopped");
+				stage.style.removeProperty("--btv-stage-stop-top");
+				return;
+			}
+
+			const sectionTop = getPageTop(stopSection);
+			const stopScrollY = sectionTop + sectionHeight / 2 - window.innerHeight / 2;
+			const shouldStop = window.scrollY >= stopScrollY;
+
+			element.classList.toggle("is-stage-stopped", shouldStop);
+
+			if (shouldStop) {
+				const stopTop = Math.max(0, stopScrollY - getPageTop(element));
+				stage.style.setProperty("--btv-stage-stop-top", `${Math.round(stopTop)}px`);
+			} else {
+				stage.style.removeProperty("--btv-stage-stop-top");
+			}
+		}
+
+		function requestStageStopUpdate() {
+			if (frame) {
+				return;
+			}
+
+			frame = requestAnimationFrame(updateStageStop);
+		}
+
+		window.addEventListener("scroll", requestStageStopUpdate, { passive: true });
+		window.addEventListener("resize", requestStageStopUpdate);
+		window.addEventListener("load", requestStageStopUpdate);
+		requestStageStopUpdate();
+	}
+
 	async function initViewer(element) {
 		if (element.dataset.btvReady === "1") {
 			return;
@@ -179,6 +251,8 @@
 		if (!stage || !frontUrl || !sideUrl) {
 			return;
 		}
+
+		initScrollStageStop(element, stage, mode);
 
 		try {
 			const THREE = await loadThree();
