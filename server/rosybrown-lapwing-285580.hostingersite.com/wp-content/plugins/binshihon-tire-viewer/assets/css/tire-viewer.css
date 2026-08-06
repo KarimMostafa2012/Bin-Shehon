@@ -111,6 +111,8 @@
   .btv-tire-viewer__stage {
   position: absolute;
   top: var(--btv-stage-stop-top, 0);
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .btv-tire-viewer--shortcode.btv-tire-viewer canvas {
