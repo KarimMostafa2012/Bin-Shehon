@@ -105,6 +105,7 @@
   height: 50%;
   margin: 0;
   overflow: hidden;
+  background-color: #f0f0f0;
 }
 
 .spr-roller__media--slot-0 {
