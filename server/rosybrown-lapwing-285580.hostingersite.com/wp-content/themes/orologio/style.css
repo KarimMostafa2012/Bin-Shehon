@@ -4,7 +4,7 @@ Theme URI: https://orologio.okthemes.com/
 Author: Cristian Gogoneata
 Author URI: http://www.okthemes.com
 Description: A premium watch shop theme for WordPress
-Version: 1.4
+Version: 1.4.1
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: orologio
@@ -4228,4 +4228,155 @@ body.blog .site-subheader .page-meta {
 }
 body.blog .site-subheader .page-meta .page-meta-wrapper {
   padding-bottom: 0;
+}
+
+/* Single blog redesign */
+body.single-post .site-content {
+  padding-top: 0;
+}
+
+body.single-post .orologio-single-post-container {
+  width: 100%;
+  max-width: none;
+  padding: 0;
+}
+
+body.single-post .page-content {
+  display: block;
+}
+
+body.single-post .hentry.post {
+  background: #f6f6f6;
+  color: #111111;
+}
+
+body.single-post .orologio-single-post-hero {
+  position: relative;
+  min-height: 430px;
+  padding: 72px max(28px, calc((100vw - 1120px) / 2)) 150px;
+  overflow: hidden;
+  background-color: #162234;
+  background-position: center;
+  background-size: cover;
+}
+
+body.single-post .orologio-single-post-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 28, 46, 0.88);
+  backdrop-filter: blur(1px);
+}
+
+body.single-post .orologio-single-post-hero__inner {
+  position: relative;
+  z-index: 1;
+  width: min(840px, 100%);
+}
+
+body.single-post .orologio-single-post-hero__date {
+  display: block;
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+body.single-post .orologio-single-post-hero__title {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+body.single-post .orologio-single-post-hero__excerpt {
+  width: min(720px, 100%);
+  margin: 22px 0 0;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+body.single-post .orologio-single-post-featured {
+  position: relative;
+  width: min(1020px, calc(100% - 56px));
+  margin: -78px auto 52px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #111111;
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.18);
+}
+
+body.single-post .orologio-single-post-featured img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 680px;
+  object-fit: cover;
+}
+
+body.single-post .orologio-single-post-featured img:hover {
+  transform: none;
+}
+
+body.single-post .post-content-wrapper,
+body.single-post .post-tags,
+body.single-post .next-post-nav,
+body.single-post .comments-area {
+  width: min(680px, calc(100% - 56px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.single-post .entry-content {
+  color: #171717;
+  font-size: 17px;
+  line-height: 1.78;
+}
+
+body.single-post .entry-content h2 {
+  margin: 34px 0 16px;
+  color: #0d0d0d;
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
+body.single-post .entry-content p {
+  margin: 0 0 22px;
+}
+
+body.single-post .entry-content img {
+  border-radius: 8px;
+}
+
+@media (max-width: 767px) {
+  body.single-post .orologio-single-post-hero {
+    min-height: 390px;
+    padding: 54px 24px 112px;
+  }
+
+  body.single-post .orologio-single-post-hero__date {
+    font-size: 14px;
+  }
+
+  body.single-post .orologio-single-post-hero__excerpt {
+    font-size: 16px;
+  }
+
+  body.single-post .orologio-single-post-featured {
+    width: calc(100% - 32px);
+    margin-top: -54px;
+    margin-bottom: 36px;
+  }
+
+  body.single-post .post-content-wrapper,
+  body.single-post .post-tags,
+  body.single-post .next-post-nav,
+  body.single-post .comments-area {
+    width: calc(100% - 32px);
+  }
 }

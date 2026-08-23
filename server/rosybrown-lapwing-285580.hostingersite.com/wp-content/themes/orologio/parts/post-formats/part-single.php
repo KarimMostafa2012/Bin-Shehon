@@ -8,21 +8,37 @@
 
     use OrologioTheme\Classes\Orologio_Helper;
 
-    $single_post_featured_image         = Orologio_Helper::get_option( 'single_post_featured_image', 'no' );
     $single_post_meta                   = Orologio_Helper::get_option( 'single_post_meta', 'yes' );
     $single_post_meta_tags              = Orologio_Helper::get_option( 'single_post_meta_tags', 'yes' );
     $single_post_navigation             = Orologio_Helper::get_option( 'single_post_navigation', 'yes' );
     $single_post_navigation_next_button = Orologio_Helper::get_option( 'single_post_navigation_next_button', 'Next article' );
+    $featured_image_url                 = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+    $post_description                   = has_excerpt() ? get_the_excerpt() : wp_trim_words( wp_strip_all_tags( get_the_content() ), 34, '...' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>	
 
-		<?php if ( '' !== get_the_post_thumbnail() && $single_post_featured_image == 'yes' ) : ?>
-        <div class="post-thumbnail">
-            <a href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail(); ?>
-            </a>
-        </div><!-- .post-thumbnail -->
+        <header
+            class="orologio-single-post-hero"
+            <?php if ( $featured_image_url ) : ?>
+            style="background-image: url('<?php echo esc_url( $featured_image_url ); ?>');"
+            <?php endif; ?>
+        >
+            <div class="orologio-single-post-hero__inner">
+                <time class="orologio-single-post-hero__date" datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>">
+                    <?php echo esc_html( get_the_date( 'F j, Y' ) ); ?>
+                </time>
+                <?php the_title( '<h1 class="orologio-single-post-hero__title">', '</h1>' ); ?>
+                <?php if ( $post_description ) : ?>
+                    <p class="orologio-single-post-hero__excerpt"><?php echo esc_html( $post_description ); ?></p>
+                <?php endif; ?>
+            </div>
+        </header>
+
+		<?php if ( '' !== get_the_post_thumbnail() ) : ?>
+        <figure class="post-thumbnail orologio-single-post-featured">
+            <?php the_post_thumbnail( 'full' ); ?>
+        </figure><!-- .post-thumbnail -->
         <?php endif; ?>
 
         <div class="post-content-wrapper">
