@@ -2,7 +2,7 @@
 /*
 Plugin Name: WooCommerce Quote Request
 Description: Replace WooCommerce purchases with quote requests.
-Version: 1.0.0
+Version: 1.1.2
 Author: Karim
 */
 
@@ -12,6 +12,7 @@ if (!defined('ABSPATH')) {
 
 define('WCQR_PATH', plugin_dir_path(__FILE__));
 define('WCQR_URL', plugin_dir_url(__FILE__));
+define('WCQR_VERSION', '1.1.2');
 
 add_action('plugins_loaded', function () {
 

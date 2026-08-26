@@ -6,14 +6,14 @@ add_action('wp_enqueue_scripts', function () {
         'wcqr-style',
         WCQR_URL . 'assets/quote.css',
         [],
-        '1.1.1'
+        WCQR_VERSION
     );
 
     wp_enqueue_script(
         'wcqr-script',
         WCQR_URL . 'assets/quote.js',
         [],
-        '1.1.1',
+        WCQR_VERSION,
         true
     );
 
