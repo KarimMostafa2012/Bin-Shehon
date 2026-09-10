@@ -182,6 +182,18 @@
   color: #000;
   font-size: clamp(28px, 3vw, 48px);
   line-height: 1.15;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.spr-roller__title::after {
+  display: block;
+  content: "";
+  width: 48px;
+  height: 6px;
+  background: #c41718;
+  position: absolute;
+  bottom: -8px;
 }
 
 .spr-roller__description {
