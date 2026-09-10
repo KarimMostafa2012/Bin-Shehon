@@ -6,12 +6,24 @@
         .each(function () {
           this.name = this.name.replace(/spr_items\[[^\]]+\]/, 'spr_items[' + index + ']');
         });
+
+      reindexBullets($(this));
     });
   }
 
-  function setPreview($row, attachment) {
-    $row.find('[data-spr-image-id]').val(attachment.id || '');
-    $row
+  function reindexBullets($row) {
+    $row.find('[data-spr-bullet]').each(function (index) {
+      $(this)
+        .find('[name]')
+        .each(function () {
+          this.name = this.name.replace(/\[bullets\]\[[^\]]+\]/, '[bullets][' + index + ']');
+        });
+    });
+  }
+
+  function setPreview($control, attachment) {
+    $control.find('[data-spr-image-id]').val(attachment.id || '');
+    $control
       .find('[data-spr-select-image]')
       .html(attachment.url ? '<img src="' + attachment.url + '" alt="">' : '<span>Choose image</span>');
   }
@@ -32,7 +44,8 @@
 
         if ($rows.length === 1) {
           $rows.find('input[type="text"], textarea, input[type="hidden"]').val('');
-          $rows.find('[data-spr-select-image]').html('<span>Choose image</span>');
+          $rows.find('[data-spr-image-control] [data-spr-select-image]').html('<span>Choose image</span>');
+          $rows.find('[data-spr-bullet]').remove();
           return;
         }
 
@@ -41,11 +54,11 @@
       });
 
       $box.on('click', '[data-spr-remove-image]', function () {
-        setPreview($(this).closest('[data-spr-row]'), {});
+        setPreview($(this).closest('[data-spr-image-control]'), {});
       });
 
       $box.on('click', '[data-spr-select-image]', function () {
-        var $row = $(this).closest('[data-spr-row]');
+        var $control = $(this).closest('[data-spr-image-control]');
         var frame = wp.media({
           title: 'Choose roller image',
           button: {
@@ -56,10 +69,25 @@
 
         frame.on('select', function () {
           var attachment = frame.state().get('selection').first().toJSON();
-          setPreview($row, attachment);
+          setPreview($control, attachment);
         });
 
         frame.open();
+      });
+
+      $box.on('click', '[data-spr-add-bullet]', function () {
+        var $row = $(this).closest('[data-spr-row]');
+        var template = $row.find('[data-spr-bullet-template]').html();
+        var index = $row.find('[data-spr-bullet]').length;
+
+        $row.find('[data-spr-bullet-list]').append(template.replace(/__BULLET_INDEX__/g, index));
+      });
+
+      $box.on('click', '[data-spr-remove-bullet]', function () {
+        var $row = $(this).closest('[data-spr-row]');
+
+        $(this).closest('[data-spr-bullet]').remove();
+        reindexBullets($row);
       });
     });
   });

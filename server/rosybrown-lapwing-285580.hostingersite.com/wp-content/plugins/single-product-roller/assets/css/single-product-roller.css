@@ -199,6 +199,45 @@
   margin-bottom: 0;
 }
 
+.spr-roller__bullets {
+  display: grid;
+  gap: 12px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.spr-roller__bullet {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: #000;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.spr-roller__bullet-image {
+  display: grid;
+  flex: 0 0 42px;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.spr-roller__bullet-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.spr-roller__bullet-text {
+  min-width: 0;
+}
+
 .spr-roller__controls {
   display: flex;
   gap: 12px;

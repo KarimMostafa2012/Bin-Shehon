@@ -1,15 +1,15 @@
 <?php
 /**
  * Plugin Name: Single Product Roller
- * Description: Adds repeatable image, title, and description rows to products with a shortcode renderer.
- * Version: 1.2.2
+ * Description: Adds repeatable image, title, description, and optional bullet rows to products with a shortcode renderer.
+ * Version: 1.2.3
  * Author: Bin Shihon
  * Text Domain: single-product-roller
  */
 
 defined('ABSPATH') || exit;
 
-define('SPR_VERSION', '1.2.2');
+define('SPR_VERSION', '1.2.3');
 define('SPR_PATH', plugin_dir_path(__FILE__));
 define('SPR_URL', plugin_dir_url(__FILE__));
 define('SPR_META_KEY', '_spr_items');
@@ -93,8 +93,9 @@ function spr_get_items($product_id)
                     $image_id    = isset($item['image_id']) ? absint($item['image_id']) : 0;
                     $title       = isset($item['title']) ? sanitize_text_field($item['title']) : '';
                     $description = isset($item['description']) ? wp_kses_post($item['description']) : '';
+                    $bullets     = spr_sanitize_bullets(isset($item['bullets']) && is_array($item['bullets']) ? $item['bullets'] : array());
 
-                    if (! $image_id && '' === $title && '' === $description) {
+                    if (! $image_id && '' === $title && '' === $description && empty($bullets)) {
                         return null;
                     }
 
@@ -102,12 +103,38 @@ function spr_get_items($product_id)
                         'image_id'    => $image_id,
                         'title'       => $title,
                         'description' => $description,
+                        'bullets'     => $bullets,
                     );
                 },
                 $items
             )
         )
     );
+}
+
+function spr_sanitize_bullets($raw_bullets)
+{
+    $bullets = array();
+
+    foreach ($raw_bullets as $bullet) {
+        if (! is_array($bullet)) {
+            continue;
+        }
+
+        $image_id = isset($bullet['image_id']) ? absint($bullet['image_id']) : 0;
+        $text     = isset($bullet['text']) ? sanitize_text_field($bullet['text']) : '';
+
+        if (! $image_id && '' === $text) {
+            continue;
+        }
+
+        $bullets[] = array(
+            'image_id' => $image_id,
+            'text'     => $text,
+        );
+    }
+
+    return $bullets;
 }
 
 function spr_render_product_meta_box($post)
@@ -122,6 +149,7 @@ function spr_render_product_meta_box($post)
                 'image_id'    => 0,
                 'title'       => '',
                 'description' => '',
+                'bullets'     => array(),
             ),
         );
     }
@@ -143,6 +171,7 @@ function spr_render_product_meta_box($post)
                     'image_id'    => 0,
                     'title'       => '',
                     'description' => '',
+                    'bullets'     => array(),
                 )
             );
             ?>
@@ -155,9 +184,10 @@ function spr_render_admin_row($index, $item)
 {
     $image_id  = isset($item['image_id']) ? absint($item['image_id']) : 0;
     $image_src = $image_id ? wp_get_attachment_image_url($image_id, 'thumbnail') : '';
+    $bullets   = isset($item['bullets']) && is_array($item['bullets']) ? $item['bullets'] : array();
     ?>
     <div class="spr-admin__row" data-spr-row>
-        <div class="spr-admin__image">
+        <div class="spr-admin__image" data-spr-image-control>
             <input type="hidden" name="spr_items[<?php echo esc_attr($index); ?>][image_id]" value="<?php echo esc_attr($image_id); ?>" data-spr-image-id>
             <button type="button" class="spr-admin__preview" data-spr-select-image>
                 <?php if ($image_src) : ?>
@@ -179,10 +209,56 @@ function spr_render_admin_row($index, $item)
                 <span><?php esc_html_e('Description', 'single-product-roller'); ?></span>
                 <textarea name="spr_items[<?php echo esc_attr($index); ?>][description]" rows="4"><?php echo esc_textarea(isset($item['description']) ? $item['description'] : ''); ?></textarea>
             </label>
+            <div class="spr-admin__bullets" data-spr-bullets>
+                <div class="spr-admin__bullets-header">
+                    <strong><?php esc_html_e('Bullets', 'single-product-roller'); ?></strong>
+                    <button type="button" class="button spr-admin__add-bullet" data-spr-add-bullet>
+                        <?php esc_html_e('Add bullet', 'single-product-roller'); ?>
+                    </button>
+                </div>
+                <div class="spr-admin__bullet-list" data-spr-bullet-list>
+                    <?php foreach ($bullets as $bullet_index => $bullet) : ?>
+                        <?php spr_render_admin_bullet($index, $bullet_index, $bullet); ?>
+                    <?php endforeach; ?>
+                </div>
+                <template data-spr-bullet-template>
+                    <?php spr_render_admin_bullet($index, '__BULLET_INDEX__', array('image_id' => 0, 'text' => '')); ?>
+                </template>
+            </div>
             <button type="button" class="button spr-admin__remove-row" data-spr-remove-row>
                 <?php esc_html_e('Remove row', 'single-product-roller'); ?>
             </button>
         </div>
+    </div>
+    <?php
+}
+
+function spr_render_admin_bullet($item_index, $bullet_index, $bullet)
+{
+    $image_id  = isset($bullet['image_id']) ? absint($bullet['image_id']) : 0;
+    $image_src = $image_id ? wp_get_attachment_image_url($image_id, 'thumbnail') : '';
+    ?>
+    <div class="spr-admin__bullet" data-spr-bullet>
+        <div class="spr-admin__bullet-image" data-spr-image-control>
+            <input type="hidden" name="spr_items[<?php echo esc_attr($item_index); ?>][bullets][<?php echo esc_attr($bullet_index); ?>][image_id]" value="<?php echo esc_attr($image_id); ?>" data-spr-image-id>
+            <button type="button" class="spr-admin__bullet-preview" data-spr-select-image>
+                <?php if ($image_src) : ?>
+                    <img src="<?php echo esc_url($image_src); ?>" alt="">
+                <?php else : ?>
+                    <span><?php esc_html_e('Image', 'single-product-roller'); ?></span>
+                <?php endif; ?>
+            </button>
+            <button type="button" class="button-link spr-admin__remove-image" data-spr-remove-image>
+                <?php esc_html_e('Remove', 'single-product-roller'); ?>
+            </button>
+        </div>
+        <label class="spr-admin__bullet-text">
+            <span><?php esc_html_e('Bullet text', 'single-product-roller'); ?></span>
+            <input type="text" name="spr_items[<?php echo esc_attr($item_index); ?>][bullets][<?php echo esc_attr($bullet_index); ?>][text]" value="<?php echo esc_attr(isset($bullet['text']) ? $bullet['text'] : ''); ?>">
+        </label>
+        <button type="button" class="button-link-delete spr-admin__remove-bullet" data-spr-remove-bullet>
+            <?php esc_html_e('Remove bullet', 'single-product-roller'); ?>
+        </button>
     </div>
     <?php
 }
@@ -215,8 +291,9 @@ function spr_save_product_meta_box($post_id)
         $image_id    = isset($item['image_id']) ? absint($item['image_id']) : 0;
         $title       = isset($item['title']) ? sanitize_text_field($item['title']) : '';
         $description = isset($item['description']) ? wp_kses_post($item['description']) : '';
+        $bullets     = spr_sanitize_bullets(isset($item['bullets']) && is_array($item['bullets']) ? $item['bullets'] : array());
 
-        if (! $image_id && '' === $title && '' === $description) {
+        if (! $image_id && '' === $title && '' === $description && empty($bullets)) {
             continue;
         }
 
@@ -224,6 +301,7 @@ function spr_save_product_meta_box($post_id)
             'image_id'    => $image_id,
             'title'       => $title,
             'description' => $description,
+            'bullets'     => $bullets,
         );
     }
 
@@ -297,6 +375,20 @@ function spr_shortcode($atts)
                         <?php endif; ?>
                         <?php if ('' !== $item['description']) : ?>
                             <div class="spr-roller__description"><?php echo wp_kses_post(wpautop($item['description'])); ?></div>
+                        <?php endif; ?>
+                        <?php if (! empty($item['bullets'])) : ?>
+                            <ul class="spr-roller__bullets">
+                                <?php foreach ($item['bullets'] as $bullet) : ?>
+                                    <li class="spr-roller__bullet">
+                                        <?php if (! empty($bullet['image_id'])) : ?>
+                                            <span class="spr-roller__bullet-image"><?php echo wp_get_attachment_image($bullet['image_id'], 'thumbnail'); ?></span>
+                                        <?php endif; ?>
+                                        <?php if ('' !== $bullet['text']) : ?>
+                                            <span class="spr-roller__bullet-text"><?php echo esc_html($bullet['text']); ?></span>
+                                        <?php endif; ?>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
                         <?php endif; ?>
                     </article>
                 <?php endforeach; ?>
