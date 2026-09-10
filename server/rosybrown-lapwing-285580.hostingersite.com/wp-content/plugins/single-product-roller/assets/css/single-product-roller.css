@@ -256,6 +256,7 @@
   display: flex;
   gap: 12px;
   align-items: center;
+  justify-content: center;
 }
 
 .spr-roller__arrow,
@@ -348,6 +349,17 @@ html[lang^="en"] .spr-roller__body {
 
 html[lang^="en"] .spr-roller__arrow {
   rotate: 0deg;
+}
+
+@media (max-width: 991px) {
+  .spr-roller__visual {
+    order: 1;
+  }
+  .spr-roller {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin: 32px 0;
+  }
 }
 
 @media (max-width: 767px) {
