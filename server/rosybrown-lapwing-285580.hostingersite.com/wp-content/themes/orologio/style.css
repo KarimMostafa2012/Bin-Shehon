@@ -4,7 +4,7 @@ Theme URI: https://orologio.okthemes.com/
 Author: Cristian Gogoneata
 Author URI: http://www.okthemes.com
 Description: A premium watch shop theme for WordPress
-Version: 1.4.2
+Version: 1.4.3
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: orologio
@@ -4230,6 +4230,89 @@ body.blog .site-subheader .page-meta .page-meta-wrapper {
   padding-bottom: 0;
 }
 
+body.blog .site-content,
+body.archive.category .site-content {
+  background: #f6f6f6;
+}
+
+body.blog .site-content .theme-container,
+body.archive.category .site-content .theme-container {
+  width: min(1120px, calc(100% - 48px));
+  max-width: 1120px;
+  margin-inline: auto;
+}
+
+body.blog .page-content,
+body.archive.category .page-content {
+  display: block;
+}
+
+body.blog .gg_posts_grid,
+body.archive.category .gg_posts_grid {
+  width: 100%;
+}
+
+body.blog .gg_posts_grid ul.el-grid,
+body.archive.category .gg_posts_grid ul.el-grid {
+  gap: 32px;
+}
+
+body.blog .gg_posts_grid article.post,
+body.archive.category .gg_posts_grid article.post {
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  background: #ffffff;
+  color: #111111;
+}
+
+body.blog .gg_posts_grid article.post .post-content-wrapper,
+body.archive.category .gg_posts_grid article.post .post-content-wrapper {
+  padding: clamp(22px, 3vw, 36px);
+}
+
+body.blog .gg_posts_grid article.post .entry-title,
+body.archive.category .gg_posts_grid article.post .entry-title {
+  margin: 0 0 14px;
+  color: #0d0d0d;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.12;
+}
+
+body.blog .gg_posts_grid article.post .entry-title a,
+body.archive.category .gg_posts_grid article.post .entry-title a,
+body.blog .gg_posts_grid article.post .entry-content,
+body.archive.category .gg_posts_grid article.post .entry-content,
+body.blog .gg_posts_grid article.post .entry-summary,
+body.archive.category .gg_posts_grid article.post .entry-summary,
+body.blog .gg_posts_grid article.post .entry-meta,
+body.archive.category .gg_posts_grid article.post .entry-meta,
+body.blog .gg_posts_grid article.post .entry-meta a,
+body.archive.category .gg_posts_grid article.post .entry-meta a {
+  color: #111111;
+}
+
+body.blog .gg_posts_grid article.post .entry-content,
+body.archive.category .gg_posts_grid article.post .entry-content,
+body.blog .gg_posts_grid article.post .entry-summary,
+body.archive.category .gg_posts_grid article.post .entry-summary {
+  max-width: 760px;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+body.blog .gg_posts_grid article.post .post-thumbnail img,
+body.archive.category .gg_posts_grid article.post .post-thumbnail img {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  body.blog .site-content .theme-container,
+  body.archive.category .site-content .theme-container {
+    width: calc(100% - 32px);
+  }
+}
+
 /* Single blog redesign */
 body.single-post .site-content {
   padding-top: 0;
@@ -4364,6 +4447,44 @@ body.single-post .entry-content p {
 
 body.single-post .entry-content img {
   border-radius: 8px;
+}
+
+body.single-post .post-tags,
+body.single-post .post-tags a,
+body.single-post .next-post-nav,
+body.single-post .next-post-nav a,
+body.single-post .next-post-nav span,
+body.single-post .next-post-nav .next-article-title,
+body.single-post .next-post-nav .next-article-title *,
+body.single-post .comments-area,
+body.single-post .comments-area a {
+  color: #111111;
+}
+
+body.single-post .next-post-nav {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+body.single-post .next-post-nav .button,
+body.single-post .next-post-nav a.button {
+  border-color: #111111;
+  background: #111111;
+  color: #ffffff;
+}
+
+body.single-post .next-post-nav .button:hover,
+body.single-post .next-post-nav a.button:hover,
+body.single-post .next-post-nav .button:focus,
+body.single-post .next-post-nav a.button:focus {
+  border-color: #c41718;
+  background: #c41718;
+  color: #ffffff;
+}
+
+body.single-post .post-content-wrapper {
+  padding-bottom: 18px;
 }
 
 @media (max-width: 767px) {
