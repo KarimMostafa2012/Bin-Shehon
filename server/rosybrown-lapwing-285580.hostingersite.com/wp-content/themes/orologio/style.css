@@ -4,7 +4,7 @@ Theme URI: https://orologio.okthemes.com/
 Author: Cristian Gogoneata
 Author URI: http://www.okthemes.com
 Description: A premium watch shop theme for WordPress
-Version: 1.4.5
+Version: 1.4.6
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: orologio
@@ -4256,6 +4256,7 @@ body.single-post .orologio-single-post-container {
 
 body.single-post .page-content {
   display: block;
+  padding-top: 0;
 }
 
 body.single-post .hentry.post {
@@ -4266,7 +4267,7 @@ body.single-post .hentry.post {
 body.single-post .orologio-single-post-hero {
   position: relative;
   min-height: 430px;
-  padding: 72px max(28px, calc((100vw - 1120px) / 2)) 152px;
+  padding: 72px clamp(32px, 8vw, 110px) 152px;
   overflow: hidden;
   background-color: #162234;
   background-position: center;
@@ -4317,7 +4318,7 @@ body.single-post .orologio-single-post-hero__excerpt {
 
 body.single-post .orologio-single-post-featured {
   position: relative;
-  width: min(1020px, calc(100% - 56px));
+  width: min(1280px, calc(100% - 200px));
   margin: -78px auto 52px;
   overflow: hidden;
   border-radius: 8px;
@@ -4369,6 +4370,19 @@ body.single-post .entry-content p {
   margin: 0 0 22px;
 }
 
+body.single-post .entry-content > * {
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  direction: ltr;
+  text-align: left;
+}
+
+body.single-post .entry-content p.wp-block-paragraph {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
 body.single-post .entry-content img {
   border-radius: 8px;
 }
@@ -4386,7 +4400,7 @@ body.single-post .comments-area a {
 }
 
 body.single-post .next-post-nav {
-  width: min(780px, calc(100% - 56px));
+  width: min(900px, calc(100% - 56px));
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -4477,7 +4491,7 @@ body.single-post #comments,
 body.single-post .comments-area {
   margin-top: 0;
   margin-bottom: 0;
-  padding: 0 0 72px;
+  padding: 0 0 64px;
   background: #f6f6f6;
   color: #111111;
   direction: ltr;
@@ -4496,7 +4510,7 @@ body.single-post #comments p {
 
 body.single-post #comments .comment-reply-title,
 body.single-post #comments #reply-title {
-  margin: 0 0 28px;
+  margin: 0 0 24px;
   font-size: clamp(28px, 3vw, 40px);
   font-weight: 800;
   line-height: 1.2;
@@ -4520,7 +4534,7 @@ body.single-post #commentform input[type="url"] {
 }
 
 body.single-post #commentform textarea {
-  min-height: 160px;
+  min-height: 130px;
 }
 
 body.single-post #respond .form-submit {
