@@ -167,8 +167,8 @@
   pointer-events: none;
   transform: translateY(12px);
   transition:
-    opacity 360ms ease,
-    transform 360ms ease;
+    opacity 300ms ease,
+    transform 300ms ease-out;
 }
 
 .spr-roller__slide.is-active {
