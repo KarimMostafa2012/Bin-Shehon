@@ -359,7 +359,7 @@ html[lang^="en"] .spr-roller__arrow {
   .spr-roller {
     grid-template-columns: 1fr;
     gap: 22px;
-    margin: 32px 0;
+    margin: 0 0 32px 0;
   }
   .spr-roller__body {
     padding-inline-start: 0;

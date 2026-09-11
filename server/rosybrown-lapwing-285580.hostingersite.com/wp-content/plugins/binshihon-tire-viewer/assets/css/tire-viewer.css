@@ -123,3 +123,14 @@
   min-height: 320px;
   position: unset;
 }
+
+@media (max-width: 767px) {
+  .btv-tire-viewer--shortcode.btv-tire-viewer canvas {
+    width: 420px;
+    height: 420px;
+    max-width: 80vw;
+    max-height: 80vw;
+    min-width: unset;
+    min-height: unset;
+  }
+}
