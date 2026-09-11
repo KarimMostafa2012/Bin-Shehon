@@ -219,6 +219,7 @@
   list-style: none;
   grid-template-columns: 1fr 1fr;
   margin-bottom: auto;
+  /*  */
 }
 
 .spr-roller__bullet {
