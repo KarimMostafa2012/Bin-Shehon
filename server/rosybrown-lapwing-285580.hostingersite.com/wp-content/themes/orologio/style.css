@@ -4,7 +4,7 @@ Theme URI: https://orologio.okthemes.com/
 Author: Cristian Gogoneata
 Author URI: http://www.okthemes.com
 Description: A premium watch shop theme for WordPress
-Version: 1.4.4
+Version: 1.4.5
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: orologio
@@ -4266,7 +4266,7 @@ body.single-post .hentry.post {
 body.single-post .orologio-single-post-hero {
   position: relative;
   min-height: 430px;
-  padding: 72px max(28px, calc((100vw - 1120px) / 2)) 150px;
+  padding: 72px max(28px, calc((100vw - 1120px) / 2)) 152px;
   overflow: hidden;
   background-color: #162234;
   background-position: center;
@@ -4284,7 +4284,10 @@ body.single-post .orologio-single-post-hero::before {
 body.single-post .orologio-single-post-hero__inner {
   position: relative;
   z-index: 1;
-  width: min(840px, 100%);
+  width: min(850px, 100%);
+  margin: 0;
+  direction: ltr;
+  text-align: left;
 }
 
 body.single-post .orologio-single-post-hero__date {
@@ -4298,9 +4301,9 @@ body.single-post .orologio-single-post-hero__date {
 body.single-post .orologio-single-post-hero__title {
   margin: 0;
   color: #ffffff;
-  font-size: clamp(36px, 5vw, 64px);
+  font-size: clamp(38px, 4.25vw, 58px);
   font-weight: 800;
-  line-height: 1.08;
+  line-height: 1.12;
   letter-spacing: 0;
 }
 
@@ -4318,6 +4321,7 @@ body.single-post .orologio-single-post-featured {
   margin: -78px auto 52px;
   overflow: hidden;
   border-radius: 8px;
+  aspect-ratio: 16 / 9;
   background: #111111;
   box-shadow: 0 22px 55px rgba(0, 0, 0, 0.18);
 }
@@ -4325,8 +4329,7 @@ body.single-post .orologio-single-post-featured {
 body.single-post .orologio-single-post-featured img {
   display: block;
   width: 100%;
-  height: auto;
-  max-height: 680px;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -4347,6 +4350,10 @@ body.single-post .entry-content {
   color: #171717;
   font-size: 17px;
   line-height: 1.78;
+  direction: ltr;
+  text-align: left;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 body.single-post .entry-content h2 {
@@ -4379,16 +4386,78 @@ body.single-post .comments-area a {
 }
 
 body.single-post .next-post-nav {
+  width: min(780px, calc(100% - 56px));
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-top: 52px;
+  margin-bottom: 58px;
+  padding: 38px 42px;
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 8px;
   background: #ffffff;
+  direction: ltr;
+  text-align: left;
 }
 
 body.single-post .next-post-nav .button,
 body.single-post .next-post-nav a.button {
+  display: inline-flex;
+  width: auto;
+  min-width: 124px;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 22px;
   border-color: #111111;
+  border-radius: 999px;
   background: #111111;
   color: #ffffff;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  writing-mode: horizontal-tb;
+  word-break: normal;
+}
+
+body.single-post .next-post-nav .next-article-title {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+body.single-post .next-post-nav .next-article-btns {
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+body.single-post .next-post-nav .next-article-btns .button:last-child {
+  margin-left: 0;
+}
+
+body.single-post .next-post-nav span.top-title {
+  display: block;
+  margin: 0 0 8px;
+  color: #111111;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+body.single-post .next-post-nav span.next-article {
+  display: block;
+  color: #111111;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 body.single-post .next-post-nav .button:hover,
@@ -4402,6 +4471,68 @@ body.single-post .next-post-nav a.button:focus {
 
 body.single-post .post-content-wrapper {
   padding-bottom: 18px;
+}
+
+body.single-post #comments,
+body.single-post .comments-area {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0 0 72px;
+  background: #f6f6f6;
+  color: #111111;
+  direction: ltr;
+  text-align: left;
+}
+
+body.single-post #comments .comments-title,
+body.single-post #comments .comment-reply-title,
+body.single-post #comments #reply-title,
+body.single-post #comments label,
+body.single-post #comments .logged-in-as,
+body.single-post #comments .comment-notes,
+body.single-post #comments p {
+  color: #111111;
+}
+
+body.single-post #comments .comment-reply-title,
+body.single-post #comments #reply-title {
+  margin: 0 0 28px;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+}
+
+body.single-post #commentform {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+body.single-post #commentform textarea,
+body.single-post #commentform input[type="text"],
+body.single-post #commentform input[type="email"],
+body.single-post #commentform input[type="url"] {
+  width: 100%;
+  color: #111111;
+  border-color: rgba(17, 17, 17, 0.2);
+  background: transparent;
+}
+
+body.single-post #commentform textarea {
+  min-height: 160px;
+}
+
+body.single-post #respond .form-submit {
+  text-align: center;
+}
+
+body.single-post #respond .form-submit .submit {
+  min-width: 190px;
+  border-radius: 999px;
+  border-color: #c41718;
+  background: #c41718;
+  color: #ffffff;
 }
 
 @media (max-width: 767px) {
@@ -4429,5 +4560,27 @@ body.single-post .post-content-wrapper {
   body.single-post .next-post-nav,
   body.single-post .comments-area {
     width: calc(100% - 32px);
+  }
+
+  body.single-post .next-post-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 24px;
+  }
+
+  body.single-post .next-post-nav .next-article-btns {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  body.single-post #commentform {
+    grid-template-columns: 1fr;
+  }
+
+  body.single-post #commentform > p,
+  body.single-post #commentform p.comment-form-author,
+  body.single-post #commentform p.comment-form-email,
+  body.single-post #commentform p.comment-form-url {
+    grid-column: 1 / -1;
   }
 }
