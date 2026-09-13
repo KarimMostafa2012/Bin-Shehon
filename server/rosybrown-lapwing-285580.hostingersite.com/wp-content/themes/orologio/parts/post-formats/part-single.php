@@ -18,20 +18,6 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'bs-article-page' ); ?>>
 
-        <div class="bs-article-topbar" id="bs-article-topbar-<?php the_ID(); ?>">
-            <div class="bs-article-frame bs-article-topbar__inner">
-                <?php if ( has_custom_logo() ) : ?>
-                    <a class="bs-article-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
-                        <?php the_custom_logo(); ?>
-                    </a>
-                <?php else : ?>
-                    <a class="bs-article-brand bs-article-brand--text" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                        <?php echo esc_html( get_bloginfo( 'name' ) ); ?>
-                    </a>
-                <?php endif; ?>
-            </div>
-        </div>
-
         <header
             class="bs-article-hero"
             id="bs-article-hero-<?php the_ID(); ?>"

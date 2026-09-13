@@ -4,7 +4,7 @@ Theme URI: https://orologio.okthemes.com/
 Author: Cristian Gogoneata
 Author URI: http://www.okthemes.com
 Description: A premium watch shop theme for WordPress
-Version: 1.4.8
+Version: 1.4.9
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: orologio
@@ -4235,11 +4235,6 @@ body.single-post {
   background: #f6f6f6;
 }
 
-body.single-post .site-header,
-body.single-post .site-subheader {
-  display: none;
-}
-
 body.single-post .site-content {
   padding-top: 0;
   background: #f6f6f6;
@@ -4261,33 +4256,6 @@ body.single-post .bs-article-page {
 body.single-post .bs-article-frame {
   width: min(980px, calc(100% - 48px));
   margin: 0 auto;
-}
-
-body.single-post .bs-article-topbar {
-  background: #182235;
-}
-
-body.single-post .bs-article-topbar__inner {
-  min-height: 54px;
-  display: flex;
-  align-items: center;
-}
-
-body.single-post .bs-article-brand {
-  display: inline-flex;
-  align-items: center;
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 800;
-  line-height: 1;
-  text-decoration: none;
-}
-
-body.single-post .bs-article-brand img {
-  display: block;
-  width: auto;
-  max-width: 190px;
-  max-height: 32px;
 }
 
 body.single-post .bs-article-hero {
