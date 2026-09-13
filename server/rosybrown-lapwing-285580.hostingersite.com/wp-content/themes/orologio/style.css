@@ -4315,6 +4315,7 @@ body.single-post .bs-article-featured {
   border-radius: 7px;
   aspect-ratio: 16 / 9;
   background: #111111;
+  position: relative;
 }
 
 body.single-post .bs-article-featured img {
