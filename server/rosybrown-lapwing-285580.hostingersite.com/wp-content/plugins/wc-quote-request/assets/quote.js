@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (submitBtn) {
             submitBtn.disabled = false;
-            submitBtn.textContent = "Submit Quote";
+            submitBtn.textContent = "Submit Order";
         }
 
         overlay.classList.add("is-active");
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 form.hidden = true;
 
                 if (order) {
-                    order.textContent = `Quote #${json.data.order_id}`;
+                    order.textContent = `Order #${json.data.order_id}`;
                 }
 
                 if (success) {
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            alert(json.data && json.data.message ? json.data.message : "Quote could not be submitted.");
+            alert(json.data && json.data.message ? json.data.message : "Order could not be submitted.");
         } catch (err) {
             console.error(err);
             alert("Something went wrong. Please try again.");
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (submitBtn) {
             submitBtn.disabled = false;
-            submitBtn.textContent = "Submit Quote";
+            submitBtn.textContent = "Submit Order";
         }
     });
 });

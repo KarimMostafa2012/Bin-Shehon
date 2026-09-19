@@ -10,7 +10,7 @@ ob_start();
     <div id="wcqr-modal" class="wcqr-modal" role="dialog" aria-modal="true" aria-labelledby="wcqr-title">
         <button id="wcqr-close" class="wcqr-close" type="button" aria-label="Close">&times;</button>
 
-        <h2 id="wcqr-title">Request a Quote</h2>
+        <h2 id="wcqr-title">Request an Order</h2>
 
         <form id="wcqr-form">
 
@@ -71,7 +71,7 @@ ob_start();
             ></textarea>
 
             <button type="submit">
-                Submit Quote
+                Submit Order
             </button>
 
         </form>
@@ -83,9 +83,9 @@ ob_start();
                     1.414-1.414L9 15.145z"/>
             </svg>
 
-            <h3>Quote Submitted!</h3>
+            <h3>Order Submitted!</h3>
 
-            <p>Thank you for contacting us.</p>
+            <p>Your order request has been created successfully.</p>
 
             <strong id="wcqr-success-order"></strong>
 
