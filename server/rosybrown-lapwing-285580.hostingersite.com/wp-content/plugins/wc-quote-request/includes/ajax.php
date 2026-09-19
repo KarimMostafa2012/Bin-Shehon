@@ -62,7 +62,7 @@ function wcqr_submit_quote()
         $order->update_meta_data('_quote_product_price', $product->get_price());
 
         // Internal note
-        $order->add_order_note('Order request submitted from website.');
+        $order->add_order_note('Quote request submitted from website.');
 
         // Calculate totals
         $order->calculate_totals();
@@ -81,7 +81,7 @@ function wcqr_submit_quote()
         ]);
 
         wp_send_json_success([
-            'message'  => 'Order submitted successfully!',
+            'message'  => 'Quote submitted successfully!',
             'order_id' => $order->get_id()
         ]);
 

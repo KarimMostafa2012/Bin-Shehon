@@ -66,7 +66,7 @@ function wcqr_get_quote_button_html()
             data-id="<?php echo esc_attr($product_id); ?>"
             data-name="<?php echo esc_attr($product_name); ?>"
             onclick="if (window.wcqrOpenQuote) { window.wcqrOpenQuote(this, event); }">
-            Request an Order
+            Request a Quote
         </button>
 
     </div>
